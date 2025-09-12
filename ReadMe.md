@@ -1,1 +1,1 @@
-A slicer for 3D printing with our own devices.
+A slicer for 3D printing with our own devices. This version of our projects is based on BambuStudio-02.00.03.54

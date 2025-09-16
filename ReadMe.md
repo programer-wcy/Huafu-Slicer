@@ -1,1 +1,14 @@
-A slicer for 3D printing with our own devices.
+A slicer for 3D printing with our own devices. This version of our projects is based on BambuStudio-02.00.03.54
+
+1. Install visual studio 2022 with MSVC of v143
+	visualstudiosetup.exe --channelUri https://aka.ms/vs/17/release.LTSC.17.8/channel
+
+2. Change work derectory to ./deps and excute the following commands
+	mkdir build
+	mkdir BambuStudio_dep
+	cd build
+	cmake ../ -G "Visual Studio 17 2022" -A x64 -DDESTDIR="../BambuStudio_dep" -DCMAKE_BUILD_TYPE=Release
+
+3. Copy all folders along with their contents in folder BambuStudio_dep_external_src to directory deps/build/
+
+4. Open deps/build/BambuStudio-deps.sln with Visual Studio 2022 and build project ALL_BUILD to generate dep libs and headers for the use of later building of BambuStudio

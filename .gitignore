@@ -30,3 +30,4 @@ doc/
 **/filament_full/
 deps/BambuStudio_dep/
 **/BambuStudio_dep/
+*.bak

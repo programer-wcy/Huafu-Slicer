@@ -31,3 +31,4 @@ doc/
 deps/BambuStudio_dep/
 **/BambuStudio_dep/
 *.bak
+**/*.bak

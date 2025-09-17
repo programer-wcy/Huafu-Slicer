@@ -1752,11 +1752,16 @@ PresetUpdater::UpdateResult PresetUpdater::config_update(const Semver& old_slic3
                 std::string changelog = update.change_log;
                 updates_msg.emplace_back(update.vendor, update.version.config_version, update.descriptions, std::move(changelog));
             }
+            BOOST_LOG_TRIVIAL(info) << "[BBL Updater]:selected no for updating";
+            //return R_ALL_CANCELED;
+            return R_UPDATE_REJECT;
 
-            GUI::MsgUpdateConfig dlg(updates_msg, params == UpdateParams::FORCED_BEFORE_WIZARD);
 
-            const auto res = dlg.ShowModal();
-            if (res == wxID_OK) {
+
+          /*  GUI::MsgUpdateConfig dlg(updates_msg, params == UpdateParams::FORCED_BEFORE_WIZARD);
+
+            const auto res = dlg.ShowModal();*/
+            /*if (res == wxID_OK) {
                 BOOST_LOG_TRIVIAL(debug) << "[BBL Updater]:selected yes to update";
                 if (!p->perform_updates(std::move(updates)))
                     return R_INCOMPAT_EXIT;
@@ -1770,7 +1775,7 @@ PresetUpdater::UpdateResult PresetUpdater::config_update(const Semver& old_slic3
                 if (params == UpdateParams::FORCED_BEFORE_WIZARD && res == wxID_CANCEL)
                     return R_ALL_CANCELED;
                 return R_UPDATE_REJECT;
-            }
+            }*/
         }
 
         // MsgUpdateConfig will show after the notificaation is clicked

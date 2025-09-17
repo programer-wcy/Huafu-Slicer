@@ -179,7 +179,7 @@ void GLGizmoMeshBoolean::on_render()
     }
 
     float src_color[3] = { 1.0f, 1.0f, 1.0f };
-    float tool_color[3] = { 0.0f, 174.0f / 255.0f, 66.0f / 255.0f };
+    float tool_color[3] = { 0.0f, 90.0f / 255.0f, 181.0f / 255.0f };
     m_parent.get_selection().render_bounding_box(src_bb, src_color, m_parent.get_scale());
     m_parent.get_selection().render_bounding_box(tool_bb, tool_color, m_parent.get_scale());
 }
@@ -247,13 +247,13 @@ void GLGizmoMeshBoolean::on_render_input_window(float x, float y, float bottom_l
 
         if (selected || hovered) {
             ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(1.f, 1.f, 1.f, 1.0f));
-            ImGui::PushStyleColor(ImGuiCol_Button, { 0, 174.0f / 255.0f, 66.0f / 255.0f, 1.0f });
-            ImGui::PushStyleColor(ImGuiCol_ButtonActive, { 0, 174.0f / 255.0f, 66.0f / 255.0f, 1.0f });
-            ImGui::PushStyleColor(ImGuiCol_ButtonHovered, { 0, 174.0f / 255.0f, 66.0f / 255.0f, 1.0f });
+            ImGui::PushStyleColor(ImGuiCol_Button, { 0, 90.0f / 255.0f, 181.0f / 255.0f, 1.0f });
+            ImGui::PushStyleColor(ImGuiCol_ButtonActive, { 0, 90.0f / 255.0f, 181.0f / 255.0f, 1.0f });
+            ImGui::PushStyleColor(ImGuiCol_ButtonHovered, { 0, 90.0f / 255.0f, 181.0f / 255.0f, 1.0f });
         }
         else {
-            ImGui::PushStyleColor(ImGuiCol_ButtonActive, { 0, 174.0f / 255.0f, 66.0f / 255.0f, 1.0f });
-            ImGui::PushStyleColor(ImGuiCol_ButtonHovered, { 0, 174.0f / 255.0f, 66.0f / 255.0f, 1.0f });
+            ImGui::PushStyleColor(ImGuiCol_ButtonActive, { 0, 90.0f / 255.0f, 181.0f / 255.0f, 1.0f });
+            ImGui::PushStyleColor(ImGuiCol_ButtonHovered, { 0, 90.0f / 255.0f, 181.0f / 255.0f, 1.0f });
         }
 
         bool res = ImGui::Button(label.c_str(), size_arg);

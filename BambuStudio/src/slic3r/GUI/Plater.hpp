@@ -255,6 +255,7 @@ private:
     std::unique_ptr<priv> p;
 
     wxBoxSizer* m_scrolled_sizer = nullptr;
+    ScalableButton* connection_btn = nullptr;
     bool            m_soft_first_start {true };
     bool            m_is_gcode_file{ false };
     bool            m_update_3d_state{false};
@@ -426,6 +427,8 @@ public:
 
     void send_to_printer(bool isall = false);
     void export_gcode(bool prefer_removable);
+    Point interpolate(const Point& p1, const Point& p2, double t);
+    double distance_new(const Point& a, const Point& b);
     void export_gcode_3mf(bool export_all = false);
     void send_gcode_finish(wxString name);
     void export_core_3mf();

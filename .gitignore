@@ -32,3 +32,5 @@ deps/BambuStudio_dep/
 **/BambuStudio_dep/
 *.bak
 **/*.bak
+BambuStudio_dep/
+BambuStudio/lib/src

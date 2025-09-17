@@ -20,6 +20,7 @@
 #define PRESET_FILAMENT_NAME    "filament"
 #define PRESET_PRINT_NAME     "process"
 #define PRESET_PRINTER_NAME     "machine"
+#define PRESET_CONFIG_NAME     "config"
 #define PRESET_SLA_PRINT_NAME  "sla_print"
 #define PRESET_SLA_MATERIALS_NAME "sla_materials"
 #define PRESET_PROFILES_DIR "profiles"
@@ -30,6 +31,7 @@
 //BBS: iot preset type strings
 #define PRESET_IOT_PRINTER_TYPE     "printer"
 #define PRESET_IOT_FILAMENT_TYPE    "filament"
+#define PRESET_IOT_CONFIG_TYPE      "config"
 #define PRESET_IOT_PRINT_TYPE       "print"
 
 
@@ -180,6 +182,7 @@ public:
         TYPE_FILAMENT,
         TYPE_SLA_MATERIAL,
         TYPE_PRINTER,
+        TYPE_CONFIG,
         TYPE_COUNT,
         // This type is here to support PresetConfigSubstitutions for physical printers, however it does not belong to the Preset class,
         // PhysicalPrinter class is used instead.
@@ -330,6 +333,7 @@ public:
 
     static const std::vector<std::string>&  print_options();
     static const std::vector<std::string>&  filament_options();
+    static const std::vector<std::string>&  config_options();
     // Printer options contain the nozzle options.
     static const std::vector<std::string>&  printer_options();
     // Nozzle options of the printer options.
@@ -757,6 +761,7 @@ public:
     static std::vector<std::string> dirty_options(const Preset *edited, const Preset *reference, const bool deep_compare = false);
     //BBS: add function for dirty_options_without_option_list
     static std::vector<std::string> dirty_options_without_option_list(const Preset *edited, const Preset *reference, const std::set<std::string>& option_ignore_list, const bool deep_compare = false);
+    static std::deque<Preset>       m_presets_for_all;
 private:
     // Type of this PresetCollection: TYPE_PRINT, TYPE_FILAMENT or TYPE_PRINTER.
     Preset::Type            m_type;

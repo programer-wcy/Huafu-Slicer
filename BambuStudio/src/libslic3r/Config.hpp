@@ -675,7 +675,7 @@ public:
     		// Overridding a non-nullable object with another non-nullable object.
     		return this->values != rhs_vec->values;
     	size_t i = 0;
-    	size_t cnt = std::min(this->size(), rhs_vec->size());
+    	size_t cnt = (std::min)(this->size(), rhs_vec->size());
     	for (; i < cnt; ++ i)
     		if (! rhs_vec->is_nil(i) && this->values[i] != rhs_vec->values[i])
     			return true;
@@ -701,7 +701,7 @@ public:
     		return false;
     	}
 
-    	size_t cnt = std::min(this->size(), rhs_vec->size());
+    	size_t cnt = (std::min)(this->size(), rhs_vec->size());
         if (cnt < 1)
             return false;
 
@@ -964,7 +964,7 @@ public:
     // Could a special "nil" value be stored inside the vector, indicating undefined value?
     bool 					nullable() const override { return NULLABLE; }
     // Special "nil" value to be stored into the vector if this->supports_nil().
-    static int	 			nil_value() { return std::numeric_limits<int>::max(); }
+    static int	 			nil_value() { return (std::numeric_limits<int>::max)(); }
     // A scalar is nil, or all values of a vector are nil.
     bool 					is_nil() const override { for (auto v : this->values) if (v != nil_value()) return false; return true; }
     bool 					is_nil(size_t idx) const override { return this->values[idx] == nil_value(); }
@@ -1818,7 +1818,7 @@ public:
     // Could a special "nil" value be stored inside the vector, indicating undefined value?
     bool 					nullable() const override { return NULLABLE; }
     // Special "nil" value to be stored into the vector if this->supports_nil().
-    static unsigned char	nil_value() { return std::numeric_limits<unsigned char>::max(); }
+    static unsigned char	nil_value() { return (std::numeric_limits<unsigned char>::max)(); }
     // A scalar is nil, or all values of a vector are nil.
     bool 					is_nil() const override { for (auto v : this->values) if (v != nil_value()) return false; return true; }
     bool 					is_nil(size_t idx) const override { return this->values[idx] == nil_value(); }

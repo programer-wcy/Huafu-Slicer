@@ -41,6 +41,7 @@
 #include "Widgets/RoundedRectangle.hpp"
 #include "Widgets/TextInput.hpp"
 #include "UnsavedChangesDialog.hpp"
+//#include "Preset.hpp"
 
 class TabCtrl;
 class ComboBox;
@@ -469,7 +470,36 @@ class TabPrintModel : public TabPrint
 public:
 	//BBS: GUI refactor
 	TabPrintModel(ParamsPanel* parent, std::vector<std::string> const & keys);
-	~TabPrintModel() {}
+	~TabPrintModel() {
+		for (auto it = TabPrintModel_vector.begin(); it != TabPrintModel_vector.end(); ) {
+			if (*it == this) {
+				it = TabPrintModel_vector.erase(it);
+			}
+			else {
+				++it;
+			}
+		}
+		if (m_config_combo) {
+			m_config_combo->Destroy();
+			m_config_combo = nullptr;
+		}
+		current_selections.clear();
+	}
+
+	std::deque<Preset>::iterator set_first_selection(std::deque<Preset>& m_presets_for_all);
+	bool config_changed = false;
+
+	std::deque<Preset>::iterator find_preset_internal(wxString& name);
+
+	Line line_for_config();
+
+	static std::vector<TabPrintModel*> TabPrintModel_vector;
+
+	void update_config_combo();
+
+	wxArrayString  GetExternalConfigOptions();
+
+	void on_config_selected(wxString select);
 
 	void build() override;
 
@@ -494,6 +524,7 @@ protected:
 
 	virtual void	update_custom_dirty(std::vector<std::string> &dirty_options, std::vector<std::string> &nonsys_options) override;
 
+
 protected:
 	std::vector<std::string> m_keys;
 	PresetCollection m_prints;
@@ -502,6 +533,17 @@ protected:
 	std::vector<std::string> m_all_keys;
 	std::vector<std::string> m_null_keys;
 	bool m_back_to_sys = false;
+	std::deque<Preset>::iterator m_it = PresetCollection::m_presets_for_all.begin();
+	std::map<ObjectBase*, wxString>current_selections;
+	wxArrayString OPTIONS;
+private:
+	wxWeakRef<wxComboBox> m_config_combo = nullptr;
+	wxArrayString lastOptions;
+
+	//wxString current_selection;
+	//wxComboBox* m_config_combo = nullptr;
+	std::mutex m_comboMutex;
+	bool m_isDestroying = false;
 };
 
 
@@ -579,6 +621,25 @@ public:
     void        clear_pages() override;
 	bool 		supports_printer_technology(const PrinterTechnology tech) const override { return tech == ptFFF; }
 };
+class TabConfig : public Tab
+{
+
+public:
+	//BBS: GUI refactor
+	TabConfig(ParamsPanel* parent) :
+		Tab(parent, _(L("Config")), Slic3r::Preset::TYPE_CONFIG) {
+	}
+	~TabConfig() {}
+
+	void		build() override;
+	void		reload_config() override;
+	void		update_description_lines() override;
+	void		toggle_options() override;
+	void		update() override;
+	void		clear_pages() override;
+	bool 		supports_printer_technology(const PrinterTechnology tech) const override { return tech == ptFFF; }
+};
+
 
 class TabPrinter : public Tab
 {

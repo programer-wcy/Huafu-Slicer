@@ -19,6 +19,7 @@
 #include "FillPlanePath.hpp"
 #include "FillLine.hpp"
 #include "FillRectilinear.hpp"
+#include "FillBridge.hpp"
 #include "FillAdaptive.hpp"
 #include "FillLightning.hpp"
 // BBS: new infill pattern header
@@ -49,6 +50,7 @@ Fill* Fill::new_from_type(const InfillPattern type)
     case ipArchimedeanChords:   return new FillArchimedeanChords();
     case ipHilbertCurve:        return new FillHilbertCurve();
     case ipOctagramSpiral:      return new FillOctagramSpiral();
+    case ipdoublelinebridging:  return new FillBridge();
     case ipAdaptiveCubic:       return new FillAdaptive::Filler();
     case ipSupportCubic:        return new FillAdaptive::Filler();
     case ipSupportBase:         return new FillSupportBase();  // simply line fill

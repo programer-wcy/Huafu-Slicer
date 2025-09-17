@@ -51,6 +51,7 @@ using boost::property_tree::ptree;
 
 namespace Slic3r {
 
+ std::deque<Preset> PresetCollection::m_presets_for_all;//dlut
 //BBS: add a function to load the version from xxx.json
 Semver get_version_from_json(std::string file_path)
 {
@@ -755,6 +756,12 @@ void Preset::get_extruder_names_and_keysets(Type type, std::string& extruder_id_
         *p_key_set1 = &filament_options_with_variant;
         *p_key_set2 = &empty_options;
     }
+    if (type == Preset::TYPE_CONFIG) {
+        extruder_id_name = "print_extruder_id";
+        extruder_variant_name = "print_extruder_variant";
+        *p_key_set1 = &print_options_with_variant;
+        *p_key_set2 = &empty_options;
+    }
     else {
         *p_key_set1 = &empty_options;
         *p_key_set2 = &empty_options;
@@ -905,6 +912,69 @@ static std::vector<std::string> s_Preset_print_options {
     "exclude_object", /*"seam_slope_type",*/ "seam_slope_conditional", "scarf_angle_threshold", /*"seam_slope_start_height", */"seam_slope_entire_loop",/* "seam_slope_min_length",*/
     "seam_slope_steps", "seam_slope_inner_walls", "role_base_wipe_speed"/*, "seam_slope_gap"*/,
     "interlocking_beam", "interlocking_orientation", "interlocking_beam_layer_count", "interlocking_depth", "interlocking_boundary_avoidance", "interlocking_beam_width"};
+
+static std::vector<std::string> s_Preset_config_options{
+    "layer_height", "initial_layer_print_height", "wall_loops", "slice_closing_radius", "spiral_mode", "spiral_mode_smooth", "spiral_mode_max_xy_smoothing", "slicing_mode",
+    "top_shell_layers", "top_shell_thickness", "bottom_shell_layers", "bottom_shell_thickness", "ensure_vertical_shell_thickness", "reduce_crossing_wall", "detect_thin_wall",
+    "detect_overhang_wall", "top_color_penetration_layers", "bottom_color_penetration_layers",
+    "smooth_speed_discontinuity_area","smooth_coefficient",
+    "seam_position", "wall_sequence", "is_infill_first", "sparse_infill_density", "sparse_infill_pattern", "sparse_infill_anchor", "sparse_infill_anchor_max",
+    "top_surface_pattern", "bottom_surface_pattern", "internal_solid_infill_pattern", "infill_direction", "bridge_angle","infill_shift_step", "infill_rotate_step", "symmetric_infill_y_axis",
+    "minimum_sparse_infill_area", "reduce_infill_retraction", "ironing_pattern", "ironing_type",
+    "ironing_flow", "ironing_speed", "ironing_spacing","ironing_direction", "ironing_inset",
+    "max_travel_detour_distance",
+    "fuzzy_skin", "fuzzy_skin_thickness", "fuzzy_skin_point_distance",
+#ifdef HAS_PRESSURE_EQUALIZER
+    "max_volumetric_extrusion_rate_slope_positive", "max_volumetric_extrusion_rate_slope_negative",
+#endif /* HAS_PRESSURE_EQUALIZER */
+    "inner_wall_speed", "outer_wall_speed", "sparse_infill_speed", "internal_solid_infill_speed",
+    "top_surface_speed", "support_speed", "support_object_xy_distance", "support_object_first_layer_gap","support_interface_speed",
+    "bridge_speed", "gap_infill_speed", "travel_speed", "travel_speed_z", "initial_layer_speed", "outer_wall_acceleration",
+    "initial_layer_acceleration", "top_surface_acceleration", "default_acceleration", "travel_acceleration", "initial_layer_travel_acceleration", "inner_wall_acceleration", "sparse_infill_acceleration",
+    "accel_to_decel_enable", "accel_to_decel_factor", "skirt_loops", "skirt_distance",
+    "skirt_height", "draft_shield",
+    "brim_width", "brim_object_gap", "brim_type", "enable_support", "support_type", "support_threshold_angle", "enforce_support_layers",
+    "raft_layers", "raft_first_layer_density", "raft_first_layer_expansion", "raft_contact_distance", "raft_expansion",
+    "support_base_pattern", "support_base_pattern_spacing", "support_expansion", "support_style",
+    // BBS
+    "print_extruder_id", "print_extruder_variant",
+    "independent_support_layer_height",
+    "support_angle", "support_interface_top_layers", "support_interface_bottom_layers",
+    "support_interface_pattern", "support_interface_spacing", "support_interface_loop_pattern",
+    "support_top_z_distance", "support_on_build_plate_only","support_critical_regions_only", "support_remove_small_overhang",
+    "bridge_no_support", "thick_bridges", "max_bridge_length", "print_sequence",
+    "filename_format", "wall_filament", "support_bottom_z_distance",
+    "sparse_infill_filament", "solid_infill_filament", "support_filament", "support_interface_filament","support_interface_not_for_body",
+    "ooze_prevention", "standby_temperature_delta", "interface_shells", "line_width", "initial_layer_line_width",
+    "inner_wall_line_width", "outer_wall_line_width", "sparse_infill_line_width", "internal_solid_infill_line_width",
+    "top_surface_line_width", "support_line_width", "infill_wall_overlap", "bridge_flow",
+    "elefant_foot_compensation", "xy_contour_compensation", "xy_hole_compensation", "resolution", "enable_prime_tower", "prime_tower_enable_framework",
+    "prime_tower_width", "prime_tower_brim_width", "prime_tower_skip_points","prime_tower_max_speed",
+    "prime_tower_rib_wall","prime_tower_extra_rib_length","prime_tower_rib_width","prime_tower_fillet_wall","prime_tower_infill_gap","prime_tower_lift_speed","prime_tower_lift_height",
+    "enable_circle_compensation", "circle_compensation_manual_offset", "apply_scarf_seam_on_circles",
+    "wipe_tower_no_sparse_layers", "compatible_printers", "compatible_printers_condition", "inherits",
+    "flush_into_infill", "flush_into_objects", "flush_into_support","process_notes",
+    // BBS
+     "tree_support_branch_angle", "tree_support_wall_count", "tree_support_branch_distance", "tree_support_branch_diameter",
+    "tree_support_branch_diameter_angle",
+     "detect_narrow_internal_solid_infill",
+     "gcode_add_line_number", "enable_arc_fitting", "precise_z_height", "infill_combination", /*"adaptive_layer_height",*/
+     "support_bottom_interface_spacing", "enable_overhang_speed", "overhang_1_4_speed", "overhang_2_4_speed", "overhang_3_4_speed", "overhang_4_4_speed", "overhang_totally_speed",
+    "initial_layer_infill_speed", "top_one_wall_type", "top_area_threshold", "only_one_wall_first_layer",
+     "timelapse_type", "internal_bridge_support_thickness",
+     "wall_generator", "wall_transition_length", "wall_transition_filter_deviation", "wall_transition_angle",
+     "wall_distribution_count", "min_feature_size", "min_bead_width", "post_process",
+    "seam_gap", "wipe_speed", "top_solid_infill_flow_ratio", "initial_layer_flow_ratio",
+    "default_jerk", "outer_wall_jerk", "inner_wall_jerk", "infill_jerk", "top_surface_jerk", "initial_layer_jerk", "travel_jerk",
+    "filter_out_gap_fill", "mmu_segmented_region_max_width", "mmu_segmented_region_interlocking_depth",
+    "small_perimeter_speed", "small_perimeter_threshold", "z_direction_outwall_speed_continuous",
+    "vertical_shell_speed","detect_floating_vertical_shell",
+    // calib
+   "print_flow_ratio",
+   //Orca
+   "exclude_object", /*"seam_slope_type",*/ "seam_slope_conditional", "scarf_angle_threshold", /*"seam_slope_start_height", */"seam_slope_entire_loop",/* "seam_slope_min_length",*/
+   "seam_slope_steps", "seam_slope_inner_walls", "role_base_wipe_speed"/*, "seam_slope_gap"*/,
+   "interlocking_beam", "interlocking_orientation", "interlocking_beam_layer_count", "interlocking_depth", "interlocking_boundary_avoidance", "interlocking_beam_width" };
 
 static std::vector<std::string> s_Preset_filament_options {
     /*"filament_colour", */ "default_filament_colour","required_nozzle_HRC","filament_diameter", "filament_type", "filament_soluble", "filament_is_support","filament_scarf_seam_type", "filament_scarf_height", "filament_scarf_gap","filament_scarf_length",
@@ -1061,6 +1131,7 @@ static std::vector<std::string> s_Preset_sla_printer_options {
 
 const std::vector<std::string>& Preset::print_options()          { return s_Preset_print_options; }
 const std::vector<std::string>& Preset::filament_options()       { return s_Preset_filament_options; }
+const std::vector<std::string>& Preset::config_options()         { return s_Preset_config_options; }
 const std::vector<std::string>& Preset::machine_limits_options() { return s_Preset_machine_limits_options; }
 // The following nozzle options of a printer profile will be adjusted to match the size
 // of the nozzle_diameter vector.

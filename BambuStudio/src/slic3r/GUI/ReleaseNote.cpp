@@ -1562,7 +1562,7 @@ InputIpAddressDialog::InputIpAddressDialog(wxWindow *parent)
     comfirm_last_enter_text   = _L("3. Please obtain the device SN from the printer side; it is usually found in the device information on the printer screen.");
 
     Label *wiki = new Label(this, ::Label::Body_13, _L("View wiki"), LB_AUTO_WRAP);
-    wiki->SetForegroundColour(wxColour(0, 174, 66));
+    wiki->SetForegroundColour(wxColour(0, 90, 181));
     wiki->Bind(wxEVT_ENTER_WINDOW, [this](auto &e) {SetCursor(wxCURSOR_HAND);});
     wiki->Bind(wxEVT_LEAVE_WINDOW, [this](auto &e) {SetCursor(wxCURSOR_ARROW);});
     wiki->Bind(wxEVT_LEFT_DOWN, [this](auto &e) {

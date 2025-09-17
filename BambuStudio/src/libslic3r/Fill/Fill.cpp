@@ -11,6 +11,7 @@
 
 #include "FillBase.hpp"
 #include "FillRectilinear.hpp"
+//#include "Bridge.hpp"
 #include "FillLightning.hpp"
 #include "FillConcentricInternal.hpp"
 #include "FillConcentric.hpp"
@@ -683,6 +684,7 @@ Polylines Layer::generate_sparse_infill_polylines_for_anchoring(FillAdaptive::Oc
         case ipHilbertCurve:
         case ipArchimedeanChords:
         case ipOctagramSpiral:
+        case ipdoublelinebridging:
         case ipZigZag:
         case ipCrossZag: break;
         }

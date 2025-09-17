@@ -71,7 +71,7 @@ public:
     std::string& get_first_option_key() {
         return m_options[0].opt_id;
     }
-
+	void set_m_is_separator_false() { m_is_separator = false; }
     void append_option(const Option& option) {
         m_options.push_back(option);
     }

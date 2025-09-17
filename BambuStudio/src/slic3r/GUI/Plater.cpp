@@ -412,6 +412,7 @@ struct Sidebar::priv
     StaticBox * panel_printer_preset = nullptr;
     wxStaticBitmap *      image_printer       = nullptr;
     PlaterPresetComboBox *combo_printer       = nullptr;
+    PlaterPresetComboBox *combo_config       = nullptr;
     ScalableButton *      btn_edit_printer    = nullptr;
     ScalableButton *      btn_connect_printer = nullptr;
     // Printer - bed
@@ -465,10 +466,15 @@ struct Sidebar::priv
 
     // BBS printer config
     StaticBox* m_panel_printer_title = nullptr;
+    StaticBox* m_panel_config_title = nullptr;
     ScalableButton* m_printer_icon = nullptr;
+    ScalableButton* m_config_icon = nullptr;
     ScalableButton* m_printer_setting = nullptr;
+    ScalableButton* m_config_setting = nullptr;
     wxStaticText *  m_text_printer_settings = nullptr;
+    wxStaticText *  m_text_config_settings = nullptr;
     wxPanel* m_panel_printer_content = nullptr;
+    wxPanel* m_panel_config_content = nullptr;
 
     ObjectList          *m_object_list{ nullptr };
     ObjectSettings      *object_settings{ nullptr };
@@ -575,7 +581,7 @@ void Sidebar::priv::flush_printer_sync(bool restart)
         *counter_sync_printer = 6;
         timer_sync_printer->Start(500);
     }
-    btn_sync_printer->SetBackgroundColorNormal((*counter_sync_printer & 1) ? 0xF8F8F8 : 0x00AE42);
+    btn_sync_printer->SetBackgroundColorNormal((*counter_sync_printer & 1) ? 0xF8F8F8 : 0x005AB5);
     if (--*counter_sync_printer <= 0)
         timer_sync_printer->Stop();
 }
@@ -1409,7 +1415,7 @@ void Sidebar::priv::update_sync_status(const MachineObject *obj)
     }
 
     StateColor synced_colour(std::pair<wxColour, int>(wxColour("#CECECE"), StateColor::Normal));
-    StateColor not_synced_colour(std::pair<wxColour, int>(wxColour("#00AE42"), StateColor::Normal));
+    StateColor not_synced_colour(std::pair<wxColour, int>(wxColour("#005AB5"), StateColor::Normal));
     bool all_extruder_synced = std::all_of(extruder_synced.begin(), extruder_synced.end(), [](bool value) { return value; });
     if (printer_synced && all_extruder_synced) {
         btn_sync_printer->SetBorderColor(synced_colour);
@@ -1534,8 +1540,8 @@ Sidebar::Sidebar(Plater *parent)
         p->m_panel_printer_content = new wxPanel(p->scrolled, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL);
         p->m_panel_printer_content->SetBackgroundColour(wxColour(255, 255, 255));
 
-        StateColor panel_bd_col(std::pair<wxColour, int>(wxColour(0x00AE42), StateColor::Pressed),
-                                std::pair<wxColour, int>(wxColour(0x00AE42), StateColor::Hovered),
+        StateColor panel_bd_col(std::pair<wxColour, int>(wxColour(0x005AB5), StateColor::Pressed),
+                                std::pair<wxColour, int>(wxColour(0x005AB5), StateColor::Hovered),
                                 std::pair<wxColour, int>(wxColour(0xEEEEEE), StateColor::Normal));
 
         p->panel_printer_preset = new StaticBox(p->m_panel_printer_content);
@@ -1679,8 +1685,8 @@ Sidebar::Sidebar(Plater *parent)
                 std::pair<wxColour, int>(wxColour(0xF8F8F8), StateColor::Hovered),
                 std::pair<wxColour, int>(wxColour(0xF8F8F8), StateColor::Normal));
         StateColor btn_sync_bd_col(
-                std::pair<wxColour, int>(wxColour(0x00AE42), StateColor::Pressed),
-                std::pair<wxColour, int>(wxColour(0x00AE42), StateColor::Hovered),
+                std::pair<wxColour, int>(wxColour(0x005AB5), StateColor::Pressed),
+                std::pair<wxColour, int>(wxColour(0x005AB5), StateColor::Hovered),
                 std::pair<wxColour, int>(wxColour(0xEEEEEE), StateColor::Normal));
         btn_sync->SetBackgroundColor(btn_sync_bg_col);
         btn_sync->SetBorderColor(btn_sync_bd_col);
@@ -1774,8 +1780,8 @@ Sidebar::Sidebar(Plater *parent)
                             std::pair<wxColour, int>(wxColour(107, 107, 106), StateColor::Hovered),
                             std::pair<wxColour, int>(wxColour(107, 107, 106), StateColor::Normal));
 
-    StateColor flush_bd_col(std::pair<wxColour, int>(wxColour(0, 174, 66), StateColor::Pressed),
-                            std::pair<wxColour, int>(wxColour(0, 174, 66), StateColor::Hovered),
+    StateColor flush_bd_col(std::pair<wxColour, int>(wxColour(0, 90, 181), StateColor::Pressed),
+                            std::pair<wxColour, int>(wxColour(0, 90, 181), StateColor::Hovered),
                             std::pair<wxColour, int>(wxColour(172, 172, 172), StateColor::Normal));
 
     p->m_flushing_volume_btn->SetBackgroundColor(flush_bg_col);
@@ -1892,6 +1898,74 @@ Sidebar::Sidebar(Plater *parent)
     p->m_panel_filament_content->Layout();
     scrolled_sizer->Add(p->m_panel_filament_content, 0, wxEXPAND, 0);
     }
+    //*******************3.creat config title bar***************//
+    p->m_panel_config_title = new StaticBox(p->scrolled, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL | wxBORDER_NONE);
+    p->m_panel_config_title->SetBackgroundColor(title_bg);
+    p->m_panel_config_title->SetBackgroundColor2(0xF1F1F1);
+
+    p->m_config_icon = new ScalableButton(p->m_panel_config_title, wxID_ANY, "printer");
+    p->m_text_config_settings = new Label(p->m_panel_config_title, _L("Config"), LB_PROPAGATE_MOUSE_EVENT);
+
+    wxBoxSizer* h_sizer_title = new wxBoxSizer(wxHORIZONTAL);
+    h_sizer_title->Add(p->m_config_icon, 0, wxALIGN_CENTRE | wxLEFT | wxRIGHT, em);
+    h_sizer_title->Add(p->m_text_config_settings, 0, wxALIGN_CENTER);
+    h_sizer_title->AddStretchSpacer();
+    h_sizer_title->Add(p->m_config_setting, 0, wxALIGN_CENTER);
+    h_sizer_title->Add(15 * em / 10, 0, 0, 0, 0);
+    h_sizer_title->SetMinSize(-1, 3 * em);
+
+    p->m_panel_config_title->SetSizer(h_sizer_title);
+    p->m_panel_config_title->Layout();
+    scrolled_sizer->Add(p->m_panel_config_title, 0, wxEXPAND | wxALL, 0);
+    p->m_panel_config_title->Bind(wxEVT_LEFT_UP, [this](auto& e) {
+        if (p->m_panel_config_content->GetMaxHeight() == 0)
+            p->m_panel_config_content->SetMaxSize({ -1, -1 });
+        else
+            p->m_panel_config_content->SetMaxSize({ -1, 0 });
+        m_scrolled_sizer->Layout();
+        });
+
+    auto spliter_2 = new ::StaticLine(p->scrolled);
+    spliter_2->SetLineColour("#CECECE");
+    scrolled_sizer->Add(spliter_2, 0, wxEXPAND);
+
+
+    //add config content
+    p->m_panel_config_content = new wxPanel(p->scrolled, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL);
+    p->m_panel_config_content->SetBackgroundColour(wxColour(255, 255, 255));
+    PlaterPresetComboBox* combo_config = new PlaterPresetComboBox(p->m_panel_config_content, Preset::TYPE_CONFIG);
+    ScalableButton* edit_btn = new ScalableButton(p->m_panel_config_content, wxID_ANY, "edit");
+    edit_btn->SetToolTip(_L("Click to edit preset"));
+    edit_btn->Bind(wxEVT_BUTTON, [this, combo_config](wxCommandEvent)
+        {
+            m_soft_first_start = false;
+            p->editing_filament = -1;
+            if (combo_config->switch_to_tab())
+                p->editing_filament = 0;
+        });
+    combo_config->edit_btn = edit_btn;
+    p->combo_config = combo_config;
+    wxBoxSizer* vsizer_config = new wxBoxSizer(wxVERTICAL);
+    wxBoxSizer* hsizer_config = new wxBoxSizer(wxHORIZONTAL);
+    vsizer_config->AddSpacer(FromDIP(16));
+    hsizer_config->Add(combo_config, 1, wxALIGN_CENTER_VERTICAL | wxLEFT, FromDIP(3));
+    hsizer_config->Add(edit_btn, 0, wxALIGN_CENTER_VERTICAL | wxLEFT, FromDIP(3));
+    hsizer_config->Add(FromDIP(8), 0, 0, 0, 0);
+    hsizer_config->Add(connection_btn, 0, wxALIGN_CENTER_VERTICAL | wxLEFT, FromDIP(3));
+    hsizer_config->Add(FromDIP(8), 0, 0, 0, 0);
+    vsizer_config->Add(hsizer_config, 0, wxEXPAND, 0);
+    p->m_panel_config_content->SetSizer(vsizer_config);
+    p->m_panel_config_content->Layout();
+    scrolled_sizer->Add(p->m_panel_config_content, 0, wxEXPAND, 0);
+
+
+
+
+
+
+
+
+
 
     {
     //add project title
@@ -2166,6 +2240,7 @@ void Sidebar::update_all_preset_comboboxes()
             BOOST_LOG_TRIVIAL(debug) << __FUNCTION__ << ":error:AppConfig is nullptr";
         }
         p->combo_printer_bed->Enable();
+        
     } else {
         p->btn_connect_printer->Show();
         p->m_bpButton_ams_filament->Hide();
@@ -2208,6 +2283,8 @@ void Sidebar::update_all_preset_comboboxes()
         p->combo_printer->update();
         update_printer_thumbnail();
     }
+    if (p->combo_config)
+        p->combo_config->update();
 }
 
 void Sidebar::update_presets(Preset::Type preset_type)
@@ -2264,6 +2341,12 @@ void Sidebar::update_presets(Preset::Type preset_type)
         ;// p->combo_sla_material->update();
         break;
 
+    case Preset::TYPE_CONFIG:
+    {
+        update_all_preset_comboboxes();
+        p->show_preset_comboboxes();
+        break;
+    }
     case Preset::TYPE_PRINTER:
     {
         update_all_preset_comboboxes();
@@ -4406,7 +4489,7 @@ Plater::priv::priv(Plater *q, MainFrame *main_frame)
     panel_sizer->Add(preview, 1, wxEXPAND | wxALL, 0);
     panel_sizer->Add(assemble_view, 1, wxEXPAND | wxALL, 0);
     vsizer->Add(panel_sizer, 1, wxEXPAND | wxALL, 0);
-    hsizer->Add(vsizer, 1, wxEXPAND | wxALL, 0);
+    hsizer->Insert(0,vsizer, 1, wxEXPAND | wxALL, 0);
 
     q->SetSizer(hsizer);
 
@@ -12444,10 +12527,10 @@ ProjectDropDialog::ProjectDropDialog(const std::string &filename)
 
     m_confirm = new Button(this, _L("OK"));
     StateColor btn_bg_green(std::pair<wxColour, int>(wxColour(27, 136, 68), StateColor::Pressed), std::pair<wxColour, int>(wxColour(61, 203, 115), StateColor::Hovered),
-                            std::pair<wxColour, int>(wxColour(0, 174, 66), StateColor::Normal));
+                            std::pair<wxColour, int>(wxColour(0, 90, 181), StateColor::Normal));
 
     m_confirm->SetBackgroundColor(btn_bg_green);
-    m_confirm->SetBorderColor(wxColour(0, 174, 66));
+    m_confirm->SetBorderColor(wxColour(0, 90, 181));
     m_confirm->SetTextColor(wxColour("#FFFFFE"));
     m_confirm->SetSize(PROJECT_DROP_DIALOG_BUTTON_SIZE);
     m_confirm->SetMinSize(PROJECT_DROP_DIALOG_BUTTON_SIZE);
@@ -13568,6 +13651,368 @@ void Plater::export_gcode(bool prefer_removable)
         } catch (...) {}
 
     }
+    std::string temp_file = output_path.string();
+    size_t pos = temp_file.find(".gcode");
+    if (pos != std::string::npos) {
+        temp_file.replace(pos, 5, "-process");
+    }
+
+    temp_file = temp_file + ".gcode";
+    wxString abc = wxString::FromUTF8(temp_file);
+    std::string copy_file = output_path.parent_path().string() + "\\copyFile.gcode";
+    //std::string temp_file = output_path.parent_path().string() + "\\tempFile.gcode";
+    temp_file = abc.c_str();
+    std::this_thread::sleep_for(std::chrono::seconds(3));
+    fs::copy(output_path, copy_file);
+    //std::this_thread::sleep_for(std::chrono::seconds(3));
+    std::ifstream inFile(copy_file);
+    std::ofstream tempFile(temp_file);
+    double defule_distance = 30;
+    double defule_distance_for_out = 45;
+    double total_length = defule_distance * 1000;
+    std::string line;
+    bool isSwitch = false;
+    bool isStart = false;
+  
+    //bool isProcess = false;
+    int once_e = 0;
+    std::string switch_One = "T0";
+    std::string switch_Two = "T1";
+    //std::string start_line = "; FEATURE";
+    std::string start_line1 = "; OBJECT_ID";
+    std::string start_line2 = "; FEATURE";
+    std::string end_line = "; WIPE_END";
+   // std::string end_line = "M106 S0";
+    std::regex break_point_pattern(R"(G1\sX\d*\.?\d+?\sY\d*\.?\d+?(?:\s+Z-?\d*\.?\d+?)?(?:\sE-\d*\.?\d+?)?(?:\sF\d+?)?\n?\r?\f?)");
+    //std::regex break_point_pattern(R"(G1\s+X(\d*\.?\d+?)\s+Y(\d*\.?\d+?)\s+E((?:0?\.\d*[1-9]\d*)|(?:[1-9]\d*(?:\.\d+)?))\s*[\r\n\f]*)");
+    std::regex extrusion_pattern(R"(G1\sX(\d*\.?\d+?)\sY(\d*\.?\d+?)\sE(\d+\.?\d*|\.\d+)\n?\r?\f?)");
+    //std::regex to_add_E_50(R"(G1\s+X(\d*\.?\d+?)\s+Y(\d*\.?\d+?)\s+E((?:0?\.\d*[1-9]\d*)|(?:[1-9]\d*(?:\.\d+)?))\s*[\r\n\f]*)");
+
+    if (!inFile.is_open()) {
+        std::cerr << "Failed to open files." << std::endl;
+        return;
+    }
+    if (!tempFile.is_open()) {
+        std::cerr << "Failed to open files." << std::endl;
+        return;
+    }
+
+    std::vector<std::string> tempLine;
+    std::vector<std::string> stackLine;
+    while (std::getline(inFile, line)) {
+        //todo
+        if (line.find(switch_One) == 0) {
+            isSwitch = false;
+        }
+        if (line.find(switch_Two) == 0) {
+            isSwitch = true;
+        }
+       /* if (isSwitch) {
+            if (line.find(start_line) != std::string::npos) {
+                isStart = true;
+            }
+        }*/
+        if (isSwitch) {
+            if (line.find(start_line1) != std::string::npos || line.find(start_line2) != std::string::npos) {
+                isStart = true;
+            }
+        }
+        if (isStart) {
+            tempLine.push_back(line);
+
+           // bool match = std::regex_match(line, break_point_pattern);
+            bool match = line.find(end_line) != std::string::npos;
+
+            if (match) {
+                bool isProcess = false;
+                Point last = { 0,0 };
+                double temp_length = total_length;
+                //double temp_length = defule_distance * 1000;
+                double record_extrusion = 0;
+                int size = tempLine.size();
+
+                //bool isOnceBeyond = false;
+                for (int i = size - 1; i >= 0; i--) {
+
+                    std::string tempString = tempLine[i];
+
+                    if (isProcess) {
+                        //if (tempString.find("M204") != std::string::npos) {
+                        //    if (once_e != 0) {
+                        //        std::stringstream e_initial;
+                        //        e_initial << "G1 E" << defule_distance_for_out;
+                        //        stackLine.push_back(e_initial.str());
+                        //        //isProcess = false;
+                        //    }
+                        //    once_e++;
+                        //}
+                        if (tempString.find("; OBJECT_ID") != std::string::npos || tempString.find("; FEATURE") != std::string::npos) {
+                               
+                            if (once_e >1) {
+                                std::stringstream e_initial;
+                                std::stringstream e_initial_pause;
+                                e_initial_pause << "G4 P2000";
+                                e_initial << "G1 E" << defule_distance_for_out;
+                                stackLine.push_back(e_initial_pause.str());
+                                stackLine.push_back(e_initial.str());
+                                
+                            }
+                            //once_e++;
+                        }
+
+                      /*  if (std::regex_match(tempString, to_add_E_50)) {
+                            if (once_e != 0) {
+                                std::stringstream e_initial;
+                                e_initial << "G1 E" << defule_distance_for_out;
+                                stackLine.push_back(e_initial.str());
+                            }
+                            once_e++;
+                        }*/
+                        stackLine.push_back(tempString);
+                        continue;
+                    }
+                    std::smatch matches;
+                    bool found = std::regex_search(tempString, matches, extrusion_pattern);
+                    if (found) {
+                        double x = std::stod(matches[1]);
+                        double y = std::stod(matches[2]);
+
+                        Point now = { x * 1000.0, y * 1000.0 };
+
+                        if (last == Point(0, 0)) {
+                            last = now;
+                            record_extrusion = std::stod(matches[3]);
+                            if (record_extrusion > defule_distance) {
+                                //isOnceBeyond = true;
+                                continue;
+                            }
+                            std::stringstream e_zero;
+                            e_zero << "G1 X" << std::fixed << std::setprecision(3) << x << " Y" << std::fixed << std::setprecision(3) << y;
+                            stackLine.push_back(e_zero.str());
+                        }
+                        else {
+                            //double distance = (last - now).norm();
+                            double distance = distance_new(last, now);
+                            if (distance < 0) {
+                                distance = -distance;
+                            }
+                            temp_length = temp_length - distance;
+                            if (temp_length < 0) {
+                                double percent = -temp_length / distance;
+                                Point middle_point = interpolate(now, last, percent);
+                                double front_extrusion = record_extrusion * percent;
+                                double back_extrusion = record_extrusion - front_extrusion;
+                                std::stringstream back;
+                                //back << "G1 X" << std::fixed << std::setprecision(3) << last.x() / 1000.0 << " Y" << std::fixed << std::setprecision(3) << last.y() / 1000.0 << " E" << std::fixed << std::setprecision(5) << back_extrusion;
+                                back << "G1 X" << std::fixed << std::setprecision(3) << last.x() / 1000.0 << " Y" << std::fixed << std::setprecision(3) << last.y() / 1000.0;
+                                stackLine.pop_back();
+                                stackLine.push_back(back.str());
+                                stackLine.push_back("Cut");
+                                std::stringstream front;
+                                front << "G1 X" << std::fixed << std::setprecision(3) << middle_point.x() / 1000.0 << " Y" << std::fixed << std::setprecision(3) << middle_point.y() / 1000.0 << " E" << std::fixed << std::setprecision(5) << front_extrusion;
+                                stackLine.push_back(front.str());
+                                stackLine.push_back(tempString);
+                                isProcess = true;
+                                once_e++;
+                            }
+                            else if (temp_length > 0) {
+                                std::stringstream e_zero;
+                                e_zero << "G1 X" << std::fixed << std::setprecision(3) << x << " Y" << std::fixed << std::setprecision(3) << y;
+                                stackLine.push_back(e_zero.str());
+                                record_extrusion = std::stod(matches[3]);
+                                last = now;
+                                if (i == 0) {
+                                    //
+                                    //throw Slic3r::InvalidArgument();
+                                    show_error(this, _L("test1212121212121212121212"));
+                                }
+                            }
+                            else {
+                                std::stringstream e_zero;
+                                e_zero << "G1 X" << std::fixed << std::setprecision(3) << x << " Y" << std::fixed << std::setprecision(3) << y;
+                                stackLine.push_back(e_zero.str());
+                                stackLine.push_back("Cut");
+                                isProcess = true;
+                                once_e++;
+                            }
+                        }
+                    }
+                    else {
+                        stackLine.push_back(tempString);
+                    }
+                }
+                int stackSize = stackLine.size();
+                for (int j = stackSize - 1; j >= 0; j--) {
+                    tempFile << stackLine[j] << std::endl;
+                }
+                //isStart = false;
+                tempLine.clear();
+                stackLine.clear();
+                if (line.find(end_line) != std::string::npos) {
+                    isStart = false;
+                }
+                continue;
+            }
+            else {
+                if (line.find(end_line) != std::string::npos) {
+                    isStart = false;
+                }
+                continue;
+            }
+        }
+
+        if (line.find(end_line) != std::string::npos) {
+            isStart = false;
+        }
+        //if (isStart) {
+        //    tempLine.push_back(line);
+
+        //    bool match = std::regex_match(line, break_point_pattern);
+        //    if (match) {
+        //        bool isProcess = false;
+        //        Point last = { 0,0 };
+        //        double temp_length = total_length;
+        //        //double temp_length = defule_distance * 1000;
+        //        double record_extrusion = 0;
+        //        int size = tempLine.size();
+
+        //        //bool isOnceBeyond = false;
+        //        for (int i = size - 1; i >= 0; i--) {
+
+        //            std::string tempString = tempLine[i];
+     
+        //            if (isProcess) {
+        //                //if (tempString.find("M204") != std::string::npos) {
+        //                //    if (once_e != 0) {
+        //                //        std::stringstream e_initial;
+        //                //        e_initial << "G1 E" << defule_distance_for_out;
+        //                //        stackLine.push_back(e_initial.str());
+        //                //        //isProcess = false;
+        //                //    }
+        //                //    once_e++;
+        //                //}
+        //                //if (tempString.find("; OBJECT_ID") != std::string::npos) {
+        //                //       
+        //                //    if (once_e != 0) {
+        //                //        std::stringstream e_initial;
+        //                //        std::stringstream e_initial_pause;
+        //                //        e_initial_pause << "G4 P2000";
+        //                //        e_initial << "G1 E" << defule_distance_for_out;
+        //                //        stackLine.push_back(e_initial_pause.str());
+        //                //        stackLine.push_back(e_initial.str());
+        //                //        //isProcess = false;
+        //                //    }
+        //                //}
+
+        //                if (std::regex_match(tempString, to_add_E_50)) {
+        //                    if (once_e != 0) {
+        //                        std::stringstream e_initial;
+        //                        e_initial << "G1 E" << defule_distance_for_out;
+        //                        stackLine.push_back(e_initial.str());
+        //                    }
+        //                    once_e++;
+        //                }
+        //                stackLine.push_back(tempString);
+        //                continue;
+        //            }
+        //            std::smatch matches;
+        //            bool found = std::regex_search(tempString, matches, extrusion_pattern);
+        //            if (found) {
+        //                double x = std::stod(matches[1]);
+        //                double y = std::stod(matches[2]);
+
+        //                Point now = { x * 1000.0, y * 1000.0 };
+
+        //                if (last == Point(0, 0)) {
+        //                    last = now;
+        //                    record_extrusion = std::stod(matches[3]);
+        //                    if (record_extrusion > defule_distance) {
+        //                        //isOnceBeyond = true;
+        //                        continue;
+        //                    }
+        //                    std::stringstream e_zero;
+        //                    e_zero << "G1 X" << std::fixed << std::setprecision(3) << x << " Y" << std::fixed << std::setprecision(3) << y;
+        //                    stackLine.push_back(e_zero.str());
+        //                }
+        //                else {
+        //                    //double distance = (last - now).norm();
+        //                    double distance = distance_new(last, now);
+        //                    if (distance < 0) {
+        //                        distance = -distance;
+        //                    }
+        //                    temp_length = temp_length - distance;
+        //                    if (temp_length < 0) {
+        //                        double percent = -temp_length / distance;
+        //                        Point middle_point = interpolate(now, last, percent);
+        //                        double front_extrusion = record_extrusion * percent;
+        //                        double back_extrusion = record_extrusion - front_extrusion;
+        //                        std::stringstream back;
+        //                        //back << "G1 X" << std::fixed << std::setprecision(3) << last.x() / 1000.0 << " Y" << std::fixed << std::setprecision(3) << last.y() / 1000.0 << " E" << std::fixed << std::setprecision(5) << back_extrusion;
+        //                        back << "G1 X" << std::fixed << std::setprecision(3) << last.x() / 1000.0 << " Y" << std::fixed << std::setprecision(3) << last.y() / 1000.0;
+        //                        stackLine.pop_back();
+        //                        stackLine.push_back(back.str());
+        //                        stackLine.push_back("Cut");
+        //                        std::stringstream front;
+        //                        front << "G1 X" << std::fixed << std::setprecision(3) << middle_point.x() / 1000.0 << " Y" << std::fixed << std::setprecision(3) << middle_point.y() / 1000.0 << " E" << std::fixed << std::setprecision(5) << front_extrusion;
+        //                        stackLine.push_back(front.str());
+        //                        stackLine.push_back(tempString);
+        //                        isProcess = true;
+        //                    }
+        //                    else if (temp_length > 0) {
+        //                        std::stringstream e_zero;
+        //                        e_zero << "G1 X" << std::fixed << std::setprecision(3) << x << " Y" << std::fixed << std::setprecision(3) << y;
+        //                        stackLine.push_back(e_zero.str());
+        //                        record_extrusion = std::stod(matches[3]);
+        //                        last = now;
+        //                        if (i == 0) {
+        //                            //
+        //                            //throw Slic3r::InvalidArgument();
+        //                            show_error(this, _L("test1212121212121212121212"));
+        //                        }
+        //                    }
+        //                    else {
+        //                        std::stringstream e_zero;
+        //                        e_zero << "G1 X" << std::fixed << std::setprecision(3) << x << " Y" << std::fixed << std::setprecision(3) << y;
+        //                        stackLine.push_back(e_zero.str());
+        //                        stackLine.push_back("Cut");
+        //                        isProcess = true;
+        //                    }
+        //                }
+        //            }
+        //            else {
+        //                stackLine.push_back(tempString);
+        //            }
+        //        }
+        //        int stackSize = stackLine.size();
+        //        for (int j = stackSize - 1; j >= 0; j--) {
+        //            tempFile << stackLine[j] << std::endl;
+        //        }
+        //        //isStart = false;
+        //        tempLine.clear();
+        //        stackLine.clear();
+        //        continue;
+        //    }
+        //    else {
+        //        continue;
+        //    }
+        //}
+        tempFile << line << std::endl;
+    }
+    inFile.close();
+    tempFile.close();
+    fs::remove(copy_file);
+}
+
+Point Plater::interpolate(const Point& p1, const Point& p2, double t) {
+    return {
+        double(p1.x() + t * (p2.x() - p1.x())),
+        double(p1.y() + t * (p2.y() - p1.y()))
+    };
+}
+double Plater::distance_new(const Point& a, const Point& b) {
+    double dx = b.x() - a.x();
+    double dy = b.y() - a.y();
+    return std::sqrt(dx * dx + dy * dy);
 }
 
 void Plater::send_to_printer(bool isall)

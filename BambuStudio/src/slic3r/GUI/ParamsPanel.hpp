@@ -99,8 +99,10 @@ class ParamsPanel : public wxPanel
         wxPanel* m_tab_print_layer { nullptr };
         wxStaticLine* m_staticline_print_part { nullptr };
         wxStaticLine* m_staticline_filament { nullptr };
+        wxStaticLine* m_staticline_config { nullptr };
         //wxBoxSizer* m_filament_sizer { nullptr };
         wxPanel* m_tab_filament { nullptr };
+        wxPanel* m_tab_config { nullptr };
         wxStaticLine* m_staticline_printer { nullptr };
         //wxBoxSizer* m_printer_sizer { nullptr };
         wxPanel* m_tab_printer { nullptr };

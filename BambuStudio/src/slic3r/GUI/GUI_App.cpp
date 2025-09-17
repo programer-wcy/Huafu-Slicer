@@ -353,7 +353,7 @@ public:
         memDc.DrawLabel(m_constant_text.version, version_rect, wxALIGN_LEFT | wxALIGN_BOTTOM);
 
 #if BBL_INTERNAL_TESTING
-        wxString versionText = BBL_INTERNAL_TESTING == 1 ? _L("Internal Version") : _L("Beta Version");
+        wxString versionText = BBL_INTERNAL_TESTING == 1 ? _L("") : _L("Beta Version");
         wxSize text_rect = memDc.GetTextExtent(versionText);
         int start_x = (title_rect.GetLeft() + version_rect.GetRight()) / 2 - text_rect.GetWidth();
         int start_y = version_rect.GetBottom() + 10;
@@ -366,8 +366,8 @@ public:
         BitmapCache bmp_cache;
         int logo_margin = FromDIP(72 * m_scale);
         int logo_size = FromDIP(122 * m_scale);
-        int logo_width = FromDIP(94 * m_scale);
-        wxBitmap logo_bmp = *bmp_cache.load_svg("splash_logo", logo_size, logo_size);
+        int logo_width = FromDIP(122 * m_scale);
+        wxBitmap logo_bmp = *bmp_cache.load_svg("dalianligong_logo", logo_size, logo_size);
         int logo_y = top_margin + title_rect.GetHeight() + logo_margin;
         memDc.DrawBitmap(logo_bmp, (width - logo_width) / 2, logo_y, true);
 
@@ -457,10 +457,11 @@ private:
         void init(wxFont init_font)
         {
             // title
-            title = wxGetApp().is_editor() ? SLIC3R_APP_FULL_NAME : GCODEVIEWER_APP_NAME;
+            title = wxGetApp().is_editor() ? _L("DLUT") : GCODEVIEWER_APP_NAME;
 
             // dynamically get the version to display
-            version = _L("V") + " " + GUI_App::format_display_version();
+            //version = _L("V") + " " + GUI_App::format_display_version();
+            version = "";
 
             // credits infornation
             credits = "";
@@ -2984,23 +2985,23 @@ bool GUI_App::on_init_inner()
                 }
                 if (!skip_this_version
                     || evt.GetInt() != 0) {
-                    UpdateVersionDialog dialog(this->mainframe);
-                    wxString            extmsg = wxString::FromUTF8(version_info.description);
-                    dialog.update_version_info(extmsg, version_info.version_str);
-                    //dialog.update_version_info(version_info.description);
-                    if (evt.GetInt() != 0) {
-                        dialog.m_button_skip_version->Hide();
-                    }
-                    switch (dialog.ShowModal())
-                    {
-                    case wxID_YES:
-                        wxLaunchDefaultBrowser(version_info.url);
-                        break;
-                    case wxID_NO:
-                        break;
-                    default:
-                        ;
-                    }
+                    //UpdateVersionDialog dialog(this->mainframe);
+                    //wxString            extmsg = wxString::FromUTF8(version_info.description);
+                    //dialog.update_version_info(extmsg, version_info.version_str);
+                    ////dialog.update_version_info(version_info.description);
+                    //if (evt.GetInt() != 0) {
+                    //    dialog.m_button_skip_version->Hide();
+                    //}
+                    //switch (dialog.ShowModal())
+                    //{
+                    //case wxID_YES:
+                    //    wxLaunchDefaultBrowser(version_info.url);
+                    //    break;
+                    //case wxID_NO:
+                    //    break;
+                    //default:
+                    //    ;
+                    //}
                 }
             }
             });
@@ -4387,7 +4388,10 @@ std::string GUI_App::handle_web_request(std::string cmd)
                 this->request_open_project("<new>");
             }
             else if (command_str.compare("homepage_openproject") == 0) {
-                this->request_open_project({});
+                if (mainframe) {
+                    mainframe->open_project();
+                }
+                //this->request_open_project({});
             }
             else if (command_str.compare("get_recent_projects") == 0) {
                 if (mainframe) {

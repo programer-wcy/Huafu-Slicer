@@ -153,6 +153,7 @@ static t_config_enum_values s_keys_map_InfillPattern {
     { "hilbertcurve",       ipHilbertCurve },
     { "archimedeanchords",  ipArchimedeanChords },
     { "octagramspiral",     ipOctagramSpiral },
+    { "doublelinebridging", ipdoublelinebridging },
     { "supportcubic",       ipSupportCubic },
     { "lightning",          ipLightning },
     { "crosshatch",         ipCrossHatch},
@@ -1425,6 +1426,7 @@ void PrintConfigDef::init_fff_params()
     def->enum_values.push_back("hilbertcurve");
     def->enum_values.push_back("archimedeanchords");
     def->enum_values.push_back("octagramspiral");
+    def->enum_values.push_back("doublelinebridging");
     def->enum_labels.push_back(L("Concentric"));
     def->enum_labels.push_back(L("Rectilinear"));
     def->enum_labels.push_back(L("Monotonic"));
@@ -1433,6 +1435,7 @@ void PrintConfigDef::init_fff_params()
     def->enum_labels.push_back(L("Hilbert Curve"));
     def->enum_labels.push_back(L("Archimedean Chords"));
     def->enum_labels.push_back(L("Octagram Spiral"));
+    def->enum_labels.push_back(L("Double-line Bridging"));
     def->set_default_value(new ConfigOptionEnum<InfillPattern>(ipRectilinear));
 
     def = this->add("bottom_surface_pattern", coEnum);
@@ -1700,7 +1703,7 @@ void PrintConfigDef::init_fff_params()
     def->tooltip = L("Only used as a visual help on UI");
     def->gui_type = ConfigOptionDef::GUIType::color;
     def->mode = comDevelop;
-    def->set_default_value(new ConfigOptionStrings{ "#00AE42" });
+    def->set_default_value(new ConfigOptionStrings{ "#005AB5" });//dlut_c
 
     //bbs
     def          = this->add("required_nozzle_HRC", coInts);
@@ -2060,6 +2063,7 @@ void PrintConfigDef::init_fff_params()
     def->enum_values.push_back("crosshatch");
     def->enum_values.push_back("zigzag");
     def->enum_values.push_back("crosszag");
+    def->enum_values.push_back("doublelinebridging");
     def->enum_labels.push_back(L("Concentric"));
     def->enum_labels.push_back(L("Rectilinear"));
     def->enum_labels.push_back(L("Grid"));
@@ -2080,6 +2084,7 @@ void PrintConfigDef::init_fff_params()
     def->enum_labels.push_back(L("Cross Hatch"));
     def->enum_labels.push_back(L("Zig Zag"));
     def->enum_labels.push_back(L("Cross Zag"));
+    def->enum_labels.push_back(L("Double-line Bridging"));
     def->set_default_value(new ConfigOptionEnum<InfillPattern>(ipCubic));
 
     def = this->add("top_surface_acceleration", coFloats);

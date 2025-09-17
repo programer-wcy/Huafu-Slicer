@@ -2830,7 +2830,7 @@ void Selection::render_sidebar_layers_hints(GLShaderProgram& shader, const std::
 
     ColorRGBA color1;
     if ((camera_on_top && type == 1) || (!camera_on_top && type == 2)) {
-        color1 = { 0.0f, 174.0f / 255.0f, 66.0f / 255.0f, 1.0f };
+        color1 = { 0.0f, 90.0f / 255.0f, 181.0f / 255.0f, 1.0f };
     }
     else {
         color1 = { 0.8f, 0.8f, 0.8f, 0.5 };

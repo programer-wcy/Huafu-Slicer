@@ -219,9 +219,8 @@ body
 	color: #D01B1B;
 }
 
-.PH_Status_Success
-{
-	color: #00AE42;
+.PH_Status_Success {
+	color: #005AB5;
 }
 
 .PH_Gcode_Icon

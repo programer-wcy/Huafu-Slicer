@@ -344,7 +344,7 @@ void GLCanvas3D::LayersEditing::render_variable_layer_height_dialog(const GLCanv
     ImGui::PushStyleColor(ImGuiCol_FrameBgHovered, ImVec4(238 / 255.0f, 238 / 255.0f, 238 / 255.0f, 0.00f));
     ImGui::PushStyleColor(ImGuiCol_FrameBgActive, ImVec4(238 / 255.0f, 238 / 255.0f, 238 / 255.0f, 0.00f));
     ImGui::PushStyleColor(ImGuiCol_SliderGrab, ImVec4(0.81f, 0.81f, 0.81f, 1.0f));
-    ImGui::PushStyleColor(ImGuiCol_SliderGrabActive, ImVec4(0.00f, 0.68f, 0.26f, 1.00f));
+    ImGui::PushStyleColor(ImGuiCol_SliderGrabActive, ImVec4(0.00f, 0.35f, 0.71f, 1.00f));
     if(ImGui::BBLSliderScalar("##radius_slider", ImGuiDataType_S32, &radius, &v_min, &v_max)){
         radius = std::clamp(radius, 1, 10);
         m_smooth_params.radius = (unsigned int)radius;
@@ -355,9 +355,9 @@ void GLCanvas3D::LayersEditing::render_variable_layer_height_dialog(const GLCanv
     input_align = std::max(input_align, ImGui::GetCursorPosX());
     ImGui::SetCursorPosX(input_align);
     ImGui::PushItemWidth(input_box_width);
-    ImGui::PushStyleColor(ImGuiCol_BorderActive, ImVec4(0.00f, 0.68f, 0.26f, 1.00f));
-    ImGui::PushStyleColor(ImGuiCol_FrameBgHovered, ImVec4(0.00f, 0.68f, 0.26f, 0.00f));
-    ImGui::PushStyleColor(ImGuiCol_FrameBgActive, ImVec4(0.00f, 0.68f, 0.26f, 0.00f));
+    ImGui::PushStyleColor(ImGuiCol_BorderActive, ImVec4(0.00f, 0.35f, 0.71f, 1.00f));
+    ImGui::PushStyleColor(ImGuiCol_FrameBgHovered, ImVec4(0.00f, 0.35f, 0.71f, 0.00f));
+    ImGui::PushStyleColor(ImGuiCol_FrameBgActive, ImVec4(0.00f, 0.35f, 0.71f, 0.00f));
     if (ImGui::BBLDragScalar("##radius_input", ImGuiDataType_S32, &radius, 1, &v_min, &v_max)) {
         radius = std::clamp(radius, 1, 10);
         m_smooth_params.radius = (unsigned int)radius;
@@ -6503,9 +6503,9 @@ bool GLCanvas3D::_init_main_toolbar()
         BOOST_LOG_TRIVIAL(error) << "Gizmos manager failed to load arrow texture.";
     }
 
-    m_main_toolbar.set_layout_type(GLToolbar::Layout::Horizontal);
+    m_main_toolbar.set_layout_type(GLToolbar::Layout::Vertical);
     //BBS: main toolbar is at the top and left, we don't need the rounded-corner effect at the right side and the top side
-    m_main_toolbar.set_horizontal_orientation(GLToolbar::Layout::HO_Right);
+    //m_main_toolbar.set_horizontal_orientation(GLToolbar::Layout::HO_Right);
     m_main_toolbar.set_vertical_orientation(GLToolbar::Layout::VO_Top);
     m_main_toolbar.set_border(5.0f);
     m_main_toolbar.set_separator_size(5);
@@ -7864,8 +7864,9 @@ void GLCanvas3D::_render_main_toolbar()
     float gizmo_width = m_gizmos.get_scaled_total_width();
     float assemble_width = m_assemble_view_toolbar.get_width();
     float separator_width = m_separator_toolbar.get_width();
-    float top = 0.5f * (float)cnv_size.get_height() * inv_zoom;
-    float left = std::max(-0.5f * cnv_size.get_width(), -0.5f * (m_main_toolbar.get_width() + separator_width + gizmo_width + assemble_width - collapse_toolbar_width)) * inv_zoom;
+    float top = 0.25f * (float)cnv_size.get_height() * inv_zoom;
+    //float left = std::max(-0.5f * cnv_size.get_width(), -0.5f * (m_main_toolbar.get_width() + separator_width + gizmo_width + assemble_width - collapse_toolbar_width)) * inv_zoom;
+    float left = -0.5 * (float)cnv_size.get_width() * inv_zoom;
 #else
     float gizmo_height = m_gizmos.get_scaled_total_height();
     float space_height = GLGizmosManager::Default_Icons_Size * wxGetApp().toolbar_icon_scale();
@@ -8069,12 +8070,12 @@ void GLCanvas3D::_render_imgui_select_plate_toolbar()
         ImTextureID btn_texture_id;
         if (all_plates_stats_item->slice_state == IMToolbarItem::SliceState::UNSLICED || all_plates_stats_item->slice_state == IMToolbarItem::SliceState::SLICING || all_plates_stats_item->slice_state == IMToolbarItem::SliceState::SLICE_FAILED)
         {
-            text_clr = ImVec4(0, 174.0f / 255.0f, 66.0f / 255.0f, 0.2f);
+            text_clr = ImVec4(0, 90.0f / 255.0f, 181.0f / 255.0f, 0.2f);
             btn_texture_id = (ImTextureID)(intptr_t)(all_plates_stats_item->image_texture_transparent.get_id());
         }
         else
         {
-            text_clr = ImVec4(0, 174.0f / 255.0f, 66.0f / 255.0f, 1);
+            text_clr = ImVec4(0, 90.0f / 255.0f, 181.0f / 255.0f, 1);
             btn_texture_id = (ImTextureID)(intptr_t)(all_plates_stats_item->image_texture.get_id());
         }
 
@@ -8447,7 +8448,7 @@ void GLCanvas3D::_render_separator_toolbar_left() const
     float left = main_toolbar_left + (m_main_toolbar.get_width()) * inv_zoom;
 
     m_separator_toolbar.set_position(top, left);
-    m_separator_toolbar.render(*this,GLToolbarItem::SeparatorLine);
+    //m_separator_toolbar.render(*this,GLToolbarItem::SeparatorLine);
 }
 
 void GLCanvas3D::_render_collapse_toolbar() const

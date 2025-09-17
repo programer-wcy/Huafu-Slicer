@@ -131,11 +131,11 @@ wxBoxSizer *TipsDialog::create_item_checkbox(wxString title, wxWindow *parent, w
 Button *TipsDialog::add_button(wxWindowID btn_id, const wxString &label, bool set_focus /*= false*/)
 {
     Button* btn = new Button(this, label, "", 0, 0, btn_id);
-    StateColor btn_bg_green(std::pair<wxColour, int>(wxColour(27, 136, 68), StateColor::Pressed),
-                            std::pair<wxColour, int>(wxColour(61, 203, 115), StateColor::Hovered),
-                            std::pair<wxColour, int>(wxColour(0, 174, 66), StateColor::Normal));
+    StateColor btn_bg_green(std::pair<wxColour, int>(wxColour(30,144,255), StateColor::Pressed),
+                            std::pair<wxColour, int>(wxColour(0,191,255), StateColor::Hovered),
+                            std::pair<wxColour, int>(wxColour(70,130,180), StateColor::Normal));
 
-    StateColor btn_bd_green(std::pair<wxColour, int>(wxColour(0, 174, 66), StateColor::Normal));
+    StateColor btn_bd_green(std::pair<wxColour, int>(0x005AB5, StateColor::Normal));
 
     StateColor btn_text_green(std::pair<wxColour, int>(wxColour(255, 255, 254), StateColor::Normal));
 
@@ -467,6 +467,9 @@ void ParamsPanel::create_layout()
     if (m_tab_print_layer) {
         m_left_sizer->Add(m_tab_print_layer, 0, wxEXPAND);
     }
+    if (m_tab_config) {
+        m_left_sizer->Add(m_tab_config, 0, wxEXPAND);
+    }
 
     if (m_tab_filament) {
         //m_filament_sizer = new wxBoxSizer( wxVERTICAL );
@@ -474,6 +477,11 @@ void ParamsPanel::create_layout()
        // m_left_sizer->Add( m_filament_sizer, 1, wxEXPAND, 5 );
         m_left_sizer->Add( m_tab_filament, 0, wxEXPAND );
     }
+
+  /*  if (m_tab_config) {
+        m_left_sizer->Add( m_tab_config, 0, wxEXPAND);
+    }*/
+
 
     if (m_tab_printer) {
         //m_printer_sizer = new wxBoxSizer( wxVERTICAL );
@@ -538,6 +546,10 @@ void ParamsPanel::refresh_tabs()
                     m_tab_filament = tab;
                     break;
 
+                case Preset::TYPE_CONFIG:
+                    m_tab_config = tab;
+                    break;
+
                 case Preset::TYPE_PRINTER:
                     m_tab_printer = tab;
                     break;
@@ -569,7 +581,7 @@ void ParamsPanel::OnActivate()
         BOOST_LOG_TRIVIAL(debug) << __FUNCTION__ << boost::format(": first time opened, set current tab to print");
         // BBS: open/close tab
         //m_current_tab = m_tab_print;
-        set_active_tab(m_tab_print ? m_tab_print : m_tab_filament);
+        set_active_tab(m_tab_print ? m_tab_print :m_tab_config? m_tab_config:m_tab_filament);
     }
     Tab* cur_tab = dynamic_cast<Tab *> (m_current_tab);
     if (cur_tab)
@@ -647,6 +659,7 @@ void ParamsPanel::set_active_tab(wxPanel* tab)
             {m_tab_print_layer, nullptr},
             {m_tab_print_plate, nullptr},
             {m_tab_filament, m_staticline_filament},
+            {m_tab_config, m_staticline_config},
             {m_tab_printer, m_staticline_printer}})) {
         if (!t.first) continue;
         t.first->Show(tab == t.first);
@@ -656,7 +669,7 @@ void ParamsPanel::set_active_tab(wxPanel* tab)
     }
     m_left_sizer->Layout();
     if (auto dialog = dynamic_cast<wxDialog*>(GetParent())) {
-        wxString title = cur_tab->type() == Preset::TYPE_FILAMENT ? _L("Filament settings") : _L("Printer settings");
+        wxString title = cur_tab->type() == Preset::TYPE_FILAMENT ? _L("Filament settings") : cur_tab->type() == Preset::TYPE_CONFIG ? _L("Config settings"):_L("Printer settings");
         dialog->SetTitle(title);
     }
 }
@@ -709,7 +722,7 @@ void ParamsPanel::msw_rescale()
         ((SwitchButton* )m_mode_region)->Rescale();
     if (m_mode_view)
         ((SwitchButton* )m_mode_view)->Rescale();
-    for (auto tab : {m_tab_print, m_tab_print_plate, m_tab_print_object, m_tab_print_part, m_tab_print_layer, m_tab_filament, m_tab_printer}) {
+    for (auto tab : {m_tab_print, m_tab_print_plate, m_tab_print_object, m_tab_print_part, m_tab_print_layer, m_tab_filament,m_tab_config, m_tab_printer}) {
         if (tab) dynamic_cast<Tab*>(tab)->msw_rescale();
     }
     //((Button*)m_export_to_file)->Rescale();
@@ -842,6 +855,12 @@ void ParamsPanel::delete_subwindows()
     {
         delete m_staticline_filament;
         m_staticline_filament = nullptr;
+    }
+
+    if (m_staticline_config)
+    {
+        delete m_staticline_config;
+        m_staticline_config = nullptr;
     }
 
     if (m_staticline_printer)

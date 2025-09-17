@@ -166,6 +166,7 @@ public:
     PresetCollection            prints;
     PresetCollection            sla_prints;
     PresetCollection            filaments;
+    PresetCollection            configs;
     PresetCollection            sla_materials;
 	PresetCollection& 			materials(PrinterTechnology pt)       { return pt == ptFFF ? this->filaments : this->sla_materials; }
 	const PresetCollection& 	materials(PrinterTechnology pt) const { return pt == ptFFF ? this->filaments : this->sla_materials; }
@@ -197,6 +198,7 @@ public:
         std::vector<std::string> prints;
         std::vector<std::string> sla_prints;
         std::vector<std::string> filaments;
+        std::vector<std::string> configs;
         std::vector<std::string> sla_materials;
         std::vector<std::string> printers;
     };

@@ -55,7 +55,12 @@ public:
     bool suppressed_minus() { return m_suppress_minus; }
     void set_default_colors(bool default_colors_on) { m_use_default_colors = default_colors_on; }
 
-    void set_extruder_colors(std::vector<std::string>* extruder_colors) { m_colors = extruder_colors; }
+    void set_extruder_colors(std::vector<std::string>* extruder_colors) 
+    {
+        //std::string abc = "#005AB5";
+        m_colors = extruder_colors; 
+       // m_colors = abc;
+    }
 };
 
 }} // Slic3r

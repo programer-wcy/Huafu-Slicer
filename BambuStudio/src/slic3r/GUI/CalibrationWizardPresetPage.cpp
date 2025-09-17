@@ -565,7 +565,7 @@ void CalibrationPresetPage::create_selection_panel(wxWindow* parent)
     m_btn_sync->SetCornerRadius(8);
     StateColor btn_sync_bg_col(std::pair<wxColour, int>(wxColour(0xCECECE), StateColor::Pressed), std::pair<wxColour, int>(wxColour(0xF8F8F8), StateColor::Hovered),
                                std::pair<wxColour, int>(wxColour(0xF8F8F8), StateColor::Normal));
-    StateColor btn_sync_bd_col(std::pair<wxColour, int>(wxColour(0x00AE42), StateColor::Pressed), std::pair<wxColour, int>(wxColour(0x00AE42), StateColor::Hovered),
+    StateColor btn_sync_bd_col(std::pair<wxColour, int>(wxColour(0x005AB5), StateColor::Pressed), std::pair<wxColour, int>(wxColour(0x005AB5), StateColor::Hovered),
                                std::pair<wxColour, int>(wxColour(0xEEEEEE), StateColor::Normal));
     m_btn_sync->SetBackgroundColor(btn_sync_bg_col);
     m_btn_sync->SetBorderColor(btn_sync_bd_col);
@@ -1691,7 +1691,7 @@ void CalibrationPresetPage::update_sync_button_status()
 {
     auto set_status = [this](bool synced) {
         StateColor synced_colour(std::pair<wxColour, int>(wxColour("#CECECE"), StateColor::Normal));
-        StateColor not_synced_colour(std::pair<wxColour, int>(wxColour("#00AE42"), StateColor::Normal));
+        StateColor not_synced_colour(std::pair<wxColour, int>(wxColour("#005AB5"), StateColor::Normal));//dlut_c
         if (synced) {
             m_btn_sync->SetBorderColor(synced_colour);
             m_btn_sync->SetIcon("ams_nozzle_sync");

@@ -37,7 +37,7 @@ DropDown::DropDown(std::vector<Item> &items)
     , state_handler(this)
     , border_color(0xDBDBDB)
     , text_color(0x363636)
-    , selector_border_color(std::make_pair(0x00AE42, (int) StateColor::Hovered),
+    , selector_border_color(std::make_pair(0x005AB5, (int) StateColor::Hovered),
         std::make_pair(*wxWHITE, (int) StateColor::Normal))
     , selector_background_color(std::make_pair(0xEDFAF2, (int) StateColor::Checked),
         std::make_pair(*wxWHITE, (int) StateColor::Normal))

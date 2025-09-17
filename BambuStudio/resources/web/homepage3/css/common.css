@@ -67,6 +67,20 @@ html, body {
 	border: 1px solid #009438;
 }
 
+.Btn_Blue {
+	background-color: #2894FF;
+	border: 1px solid #0072E3;
+	border-radius: 8px;
+	color: white;
+	padding: 4px 20px;
+	cursor: pointer;
+}
+
+	.Btn_Blue:hover {
+		background-color: #0080FF;
+		border: 1px solid #0072E3;
+	}
+
 /*---滚动条---*/
 .ZScrol::-webkit-scrollbar {/*滚动条整体样式*/
     width: 12px;     /*高宽分别对应横竖滚动条的尺寸*/

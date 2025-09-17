@@ -31,14 +31,15 @@ function HandleStudio( pVal )
 		
 	    if(nShow==1)
 		{
-			$("#NoPluginTip").show();
-			$("#NoPluginTip").css("display","flex");
+			//$("#NoPluginTip").show();
+			//$("#NoPluginTip").css("display","flex");
 			
 			m_HasNetworkPlugin=false;
 		}
 		else
 		{
 			$("#NoPluginTip").hide();
+			//m_HasNetworkPlugin=true;
 			m_HasNetworkPlugin=true;
 		}
 	}	

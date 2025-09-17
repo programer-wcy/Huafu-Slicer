@@ -158,13 +158,12 @@ body
 	width: 80%;
 }
 
-#LogoutBtn
-{
+#LogoutBtn {
 	font-size: 14px;
 	height: 24px;
 	line-height: 24px;
 	color: #00B731;
-	border: 1px solid  #00AE42;
+	border: 1px solid #005AB5;
 	border-radius: 4px;
 	cursor: pointer;
 	margin-top: 5px;
@@ -216,14 +215,16 @@ body
 	display: none;
 }
 
-.BtnItem:hover
-{
-	background-color: #E0FCEB;
-}
+	.BtnItem:hover 
+	{
+/*		background-color: #E0FCEB;*/
+		background-color: #D2E9FF;
+	}
 
-.BtnItemSelected
+.BtnItemSelected 
 {
-	background-color: #E0FCEB;
+/*	background-color: #E0FCEB;*/
+	background-color: #D2E9FF;
 }
 
 .BtnIcon
@@ -247,12 +248,11 @@ body
 	height: 24px;
 }
 
-.BtnNewIcon
-{
+.BtnNewIcon {
 	height: 12px;
 	line-height: 12px;
 	font-size: 10px;
-	background-color: #00AE42;
+	background-color: #005AB5;
 	color: white;
 	padding: 2px 4px;
 	position: absolute;

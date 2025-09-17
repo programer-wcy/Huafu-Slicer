@@ -309,7 +309,7 @@ DPIFrame(NULL, wxID_ANY, "", wxDefaultPosition, wxDefaultSize, BORDERLESS_FRAME_
     //SetAcceleratorTable(accel);
 
     //Bind(wxEVT_MENU, [this](wxCommandEvent&) { m_plater->new_project(); }, wxID_HIGHEST + wxID_NEW);
-    //Bind(wxEVT_MENU, [this](wxCommandEvent&) { m_plater->load_project(); }, wxID_HIGHEST + wxID_OPEN);
+    Bind(wxEVT_MENU, [this](wxCommandEvent&) { m_plater->load_project(); }, wxID_HIGHEST + wxID_OPEN);
     //// BBS: close save project
     //Bind(wxEVT_MENU, [this](wxCommandEvent&) { if (m_plater) m_plater->save_project(); }, wxID_HIGHEST + wxID_SAVE);
     //Bind(wxEVT_MENU, [this](wxCommandEvent&) { if (m_plater) m_plater->save_project(true); }, wxID_HIGHEST + wxID_SAVEAS);
@@ -1179,9 +1179,9 @@ void MainFrame::init_tabpanel()
     create_preset_tabs();
 
         //BBS add pages
-    m_monitor = new MonitorPanel(m_tabpanel, wxID_ANY, wxDefaultPosition, wxDefaultSize);
-    m_monitor->SetBackgroundColour(*wxWHITE);
-    m_tabpanel->AddPage(m_monitor, _L("Device"), std::string("tab_monitor_active"), std::string("tab_monitor_active"), false);
+    //m_monitor = new MonitorPanel(m_tabpanel, wxID_ANY, wxDefaultPosition, wxDefaultSize);
+    //m_monitor->SetBackgroundColour(*wxWHITE);
+    ////m_tabpanel->AddPage(m_monitor, _L("Device"), std::string("tab_monitor_active"), std::string("tab_monitor_active"), false);
 
     m_printer_view = new PrinterWebView(m_tabpanel);
     Bind(EVT_LOAD_PRINTER_URL, [this](wxCommandEvent &evt) {
@@ -1198,13 +1198,13 @@ void MainFrame::init_tabpanel()
         m_tabpanel->AddPage(m_multi_machine, _L("Multi-device"), std::string("tab_multi_active"), std::string("tab_multi_active"), false);
     }
 
-    m_project = new ProjectPanel(m_tabpanel, wxID_ANY, wxDefaultPosition, wxDefaultSize);
-    m_project->SetBackgroundColour(*wxWHITE);
-    m_tabpanel->AddPage(m_project, _L("Project"), std::string("tab_auxiliary_avtice"), std::string("tab_auxiliary_avtice"), false);
+   /* m_project = new ProjectPanel(m_tabpanel, wxID_ANY, wxDefaultPosition, wxDefaultSize);
+    m_project->SetBackgroundColour(*wxWHITE);*/
+   // m_tabpanel->AddPage(m_project, _L("Project"), std::string("tab_auxiliary_avtice"), std::string("tab_auxiliary_avtice"), false);
 
-    m_calibration = new CalibrationPanel(m_tabpanel, wxID_ANY, wxDefaultPosition, wxDefaultSize);
-    m_calibration->SetBackgroundColour(*wxWHITE);
-    m_tabpanel->AddPage(m_calibration, _L("Calibration"), std::string("tab_calibration_active"), std::string("tab_calibration_active"), false);
+  /*  m_calibration = new CalibrationPanel(m_tabpanel, wxID_ANY, wxDefaultPosition, wxDefaultSize);
+    m_calibration->SetBackgroundColour(*wxWHITE);*/
+    //m_tabpanel->AddPage(m_calibration, _L("Calibration"), std::string("tab_calibration_active"), std::string("tab_calibration_active"), false);
 
     if (m_plater) {
         // load initial config
@@ -1345,6 +1345,7 @@ void MainFrame::create_preset_tabs()
     add_created_tab(new TabPrintPart(m_param_panel), "cog");
     add_created_tab(new TabPrintLayer(m_param_panel), "cog");
     add_created_tab(new TabFilament(m_param_dialog->panel()), "spool");
+    add_created_tab(new TabConfig(m_param_dialog->panel()), "spool");
     /* BBS work around to avoid appearance bug */
     //add_created_tab(new TabSLAPrint(m_param_panel));
     //add_created_tab(new TabSLAMaterial(m_param_panel));
@@ -1358,6 +1359,7 @@ void MainFrame::create_preset_tabs()
 
 void MainFrame::add_created_tab(Tab* panel,  const std::string& bmp_name /*= ""*/)
 {
+  
     panel->create_preset_tab();
 
     if (panel->type() == Preset::TYPE_PLATE) {
@@ -1418,6 +1420,13 @@ bool MainFrame::can_save_as() const
 void MainFrame::save_project()
 {
     save_project_as(m_plater->get_project_filename(".3mf"));
+}
+void MainFrame::open_project() {
+    wxWindowID eventId = wxID_HIGHEST + wxID_OPEN;
+    CallAfter([this, eventId]() {
+        wxCommandEvent event(wxEVT_MENU, eventId);
+        this->ProcessEvent(event);
+        });
 }
 
 bool MainFrame::save_project_as(const wxString& filename)
@@ -1814,6 +1823,7 @@ wxBoxSizer* MainFrame::create_side_tools()
                     });
 
                 // upload and print
+
                 SideButton* send_gcode_btn = new SideButton(p, _L("Print"), "");
                 send_gcode_btn->SetCornerRadius(0);
                 send_gcode_btn->Bind(wxEVT_BUTTON, [this, p](wxCommandEvent&) {
@@ -1837,7 +1847,7 @@ wxBoxSizer* MainFrame::create_side_tools()
                     p->Dismiss();
                     });*/
 
-                p->append_button(send_gcode_btn);
+                //p->append_button(send_gcode_btn);
                 //p->append_button(upload_gcode_btn);
                 p->append_button(export_gcode_btn);
             }
@@ -2122,9 +2132,9 @@ void MainFrame::update_side_button_style()
     m_slice_btn->SetExtraSize(wxSize(FromDIP(38), FromDIP(10)));
     m_slice_btn->SetBottomColour(wxColour(0x3B4446));*/
     StateColor m_btn_bg_enable = StateColor(
-        std::pair<wxColour, int>(wxColour(27, 136, 68), StateColor::Pressed),
-        std::pair<wxColour, int>(wxColour(48, 221, 112), StateColor::Hovered),
-        std::pair<wxColour, int>(wxColour(0, 174, 66), StateColor::Normal)
+        std::pair<wxColour, int>(wxColour(30,144,255), StateColor::Pressed),
+        std::pair<wxColour, int>(wxColour(0,191,255), StateColor::Hovered),
+        std::pair<wxColour, int>(wxColour(70,130,180), StateColor::Normal)//wxcolour
     );
 
     m_slice_btn->SetTextLayout(SideButton::EHorizontalOrientation::HO_Left, FromDIP(15));
@@ -3762,10 +3772,10 @@ void MainFrame::set_print_button_to_default(PrintSelectType select_type)
         m_print_btn->Enable(m_print_enable);
         this->Layout();
     } else if (select_type == PrintSelectType::eSendGcode) {
-        m_print_btn->SetLabel(_L("Print"));
-        m_print_select = eSendGcode;
+        m_print_btn->SetLabel(_L("Export G-code file"));
+        m_print_select = eExportGcode;
         if (m_print_enable)
-            m_print_enable = get_enable_print_status() && can_send_gcode();
+            m_print_enable = get_enable_print_status();
         m_print_btn->Enable(m_print_enable);
         this->Layout();
     } else {

@@ -196,7 +196,7 @@ public:
     wxColourData m_clrData;
 
     wxColor get_color() { return m_color; }
-
+    static wxArrayString config_presets_for_model;
     bool switch_to_tab();
     void change_extruder_color();
     void show_add_menu();

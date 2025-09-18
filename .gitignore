@@ -28,3 +28,9 @@ doc/
 **/process_full/
 **/machine_full/
 **/filament_full/
+deps/BambuStudio_dep/
+**/BambuStudio_dep/
+*.bak
+**/*.bak
+BambuStudio_dep/
+BambuStudio/lib/src

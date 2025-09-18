@@ -4,11 +4,13 @@ else()
     set(library_build_type "Static")
 endif()
 
+set(patch_command git init && ${PATCH_CMD} ${CMAKE_CURRENT_LIST_DIR}/0001-OCCT-fix.patch)
+
 bambustudio_add_cmake_project(OCCT
     URL https://github.com/Open-Cascade-SAS/OCCT/archive/refs/tags/V7_6_0.zip
     URL_HASH SHA256=28334f0e98f1b1629799783e9b4d21e05349d89e695809d7e6dfa45ea43e1dbc
     #PATCH_COMMAND ${PATCH_CMD} ${CMAKE_CURRENT_LIST_DIR}/0001-OCCT-fix.patch
-    PATCH_COMMAND ${GIT_EXECUTABLE} apply --verbose --ignore-space-change --whitespace=fix ${CMAKE_CURRENT_LIST_DIR}/0001-OCCT-fix.patch
+    PATCH_COMMAND ${patch_command}
     #DEPENDS dep_Boost
     #DEPENDS dep_FREETYPE
     CMAKE_ARGS

@@ -114,6 +114,8 @@ set(lisbslic3r_sources
     Fill/FillRectilinear.hpp
     Fill/FillFloatingConcentric.hpp
     Fill/FillFloatingConcentric.cpp
+    Fill/FillBridge.hpp
+    Fill/FillBridge.cpp
     Flow.cpp
     Flow.hpp
     Frustum.cpp

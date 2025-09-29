@@ -13678,10 +13678,15 @@ void Plater::export_gcode(bool prefer_removable)
     int once_e = 0;
     std::string switch_One = "T0";
     std::string switch_Two = "T1";
+    std::string is_double_ex = "; total filament weight";
+    bool IS_DOUBLE_EX = false;
+    bool to_find_is_double_ex = true;
     //std::string start_line = "; FEATURE";
     std::string start_line1 = "; OBJECT_ID";
     std::string start_line2 = "; FEATURE";
-    std::string end_line = "; WIPE_END";
+    // std::string end_line = "; WIPE_END";
+    std::string end_line = "========";
+    std::string end_line1 = "M106 P2 S0";
    // std::string end_line = "M106 S0";
     std::regex break_point_pattern(R"(G1\sX\d*\.?\d+?\sY\d*\.?\d+?(?:\s+Z-?\d*\.?\d+?)?(?:\sE-\d*\.?\d+?)?(?:\sF\d+?)?\n?\r?\f?)");
     //std::regex break_point_pattern(R"(G1\s+X(\d*\.?\d+?)\s+Y(\d*\.?\d+?)\s+E((?:0?\.\d*[1-9]\d*)|(?:[1-9]\d*(?:\.\d+)?))\s*[\r\n\f]*)");
@@ -13699,29 +13704,55 @@ void Plater::export_gcode(bool prefer_removable)
 
     std::vector<std::string> tempLine;
     std::vector<std::string> stackLine;
+    //std::vector<std::string> in_line;
     while (std::getline(inFile, line)) {
         //todo
-        if (line.find(switch_One) == 0) {
-            isSwitch = false;
+        //in_line.push_back(line);
+        if (to_find_is_double_ex) {
+            if (line.find(is_double_ex) != std::string::npos) {
+                to_find_is_double_ex = false;
+                if (line.find(",")!=std::string::npos) {
+                    //in_line.push_back(line);
+                    IS_DOUBLE_EX = true; 
+                }
+            }
         }
-        if (line.find(switch_Two) == 0) {
-            isSwitch = true;
+        if (IS_DOUBLE_EX) {
+            if (line.find(switch_One) == 0) {
+                isSwitch = false;
+            }
+            if (line.find(switch_Two) == 0) {
+                isSwitch = true;
+            }
+            if (isSwitch) {
+                if (line.find(start_line1) != std::string::npos || line.find(start_line2) != std::string::npos) {
+                    isStart = true;
+                }
+            }
+        }
+        else {
+            if (to_find_is_double_ex == false) {
+                if (line.find(start_line1) != std::string::npos || line.find(start_line2) != std::string::npos) {
+                    isStart = true;
+                }
+            }
+
         }
        /* if (isSwitch) {
             if (line.find(start_line) != std::string::npos) {
                 isStart = true;
             }
         }*/
-        if (isSwitch) {
+        /*if (isSwitch) {
             if (line.find(start_line1) != std::string::npos || line.find(start_line2) != std::string::npos) {
                 isStart = true;
             }
-        }
+        }*/
         if (isStart) {
             tempLine.push_back(line);
 
            // bool match = std::regex_match(line, break_point_pattern);
-            bool match = line.find(end_line) != std::string::npos;
+            bool match = line.find(end_line) != std::string::npos||line.find(end_line1)!=std::string::npos;
 
             if (match) {
                 bool isProcess = false;
@@ -13848,20 +13879,20 @@ void Plater::export_gcode(bool prefer_removable)
                 //isStart = false;
                 tempLine.clear();
                 stackLine.clear();
-                if (line.find(end_line) != std::string::npos) {
+                if (line.find(end_line) != std::string::npos || line.find(end_line1) != std::string::npos) {
                     isStart = false;
                 }
                 continue;
             }
             else {
-                if (line.find(end_line) != std::string::npos) {
+                if (line.find(end_line) != std::string::npos || line.find(end_line1) != std::string::npos) {
                     isStart = false;
                 }
                 continue;
             }
         }
 
-        if (line.find(end_line) != std::string::npos) {
+        if (line.find(end_line) != std::string::npos || line.find(end_line1) != std::string::npos) {
             isStart = false;
         }
         //if (isStart) {

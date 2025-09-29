@@ -52,7 +52,7 @@ namespace Slic3r {
             b_polygon.inners().push_back(innerRing);
         }
         try {
-            generateRings();
+            generateRings();//生成环集，完成整体的填充
             formatTree();
             std::vector<IdIndex> visited;
             dfs(findNode({ 1,1 }), visited);
@@ -739,13 +739,13 @@ namespace Slic3r {
                     it2.children.emplace_back(it1);
                 }
             }
-        }
+        }//处理分裂的父子关系
         for (auto& map : containMap) {
             RingNode& it1 = findNode(map.ii1); //内
             RingNode& it2 = findNode(map.ii2);  //外
             it2.children.insert(it2.children.end(), it1.children.begin(), it1.children.end());
             it1.isHide = true;
-        }
+        }//处理包含的父子关系
         for (auto& map : mergeMap2) {
             if (map.outer_ii.id == 0 && map.outer_ii.index == 0) {  //内多边形合并
                 for (const auto& merged : map.merged_iis) {

@@ -2405,9 +2405,9 @@ void GUI_App::init_app_config()
                 dir = wxFileName::GetHomeDir() + wxS("/.config");
             std::string data_dir = (dir + "/" + GetAppName()).ToUTF8().data();
         #endif
-#if BBL_INTERNAL_TESTING
-            data_dir += BBL_INTERNAL_TESTING == 1 ? "Internal" : "Beta";
-#endif
+//#if BBL_INTERNAL_TESTING
+           // data_dir += BBL_INTERNAL_TESTING == 1 ? "Internal" : "Beta";
+//#endif
             //BBS create folder if not exists
             boost::filesystem::path data_dir_path(data_dir);
             if (!boost::filesystem::exists(data_dir_path))

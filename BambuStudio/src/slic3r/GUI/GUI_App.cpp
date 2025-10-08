@@ -242,8 +242,8 @@ bool is_associate_files(std::wstring extend)
     wchar_t app_path[MAX_PATH];
     ::GetModuleFileNameW(nullptr, app_path, sizeof(app_path));
 
-    std::wstring prog_id             = L" Bambu.Studio.1";
-    std::wstring reg_base            = L"Software\\Classes";
+    std::wstring prog_id             = REG_PROG_ID;
+    std::wstring reg_base            = REG_PROG_BASE;
     std::wstring reg_extension       = reg_base + L"\\." + extend;
 
     wchar_t szValueCurrent[1000];
@@ -7614,10 +7614,10 @@ void GUI_App::associate_files(std::wstring extend)
     ::GetModuleFileNameW(nullptr, app_path, sizeof(app_path));
 
     std::wstring prog_path = L"\"" + std::wstring(app_path) + L"\"";
-    std::wstring prog_id = L" Bambu.Studio.1";
-    std::wstring prog_desc = L"BambuStudio";
+    std::wstring prog_id = REG_PROG_ID;
+    std::wstring prog_desc = REG_PROG_DESC;
     std::wstring prog_command = prog_path + L" \"%1\"";
-    std::wstring reg_base = L"Software\\Classes";
+    std::wstring reg_base = REG_PROG_BASE;
     std::wstring reg_extension = reg_base + L"\\." + extend;
     std::wstring reg_prog_id = reg_base + L"\\" + prog_id;
     std::wstring reg_prog_id_command = reg_prog_id + L"\\Shell\\Open\\Command";
@@ -7637,10 +7637,10 @@ void GUI_App::disassociate_files(std::wstring extend)
     ::GetModuleFileNameW(nullptr, app_path, sizeof(app_path));
 
     std::wstring prog_path = L"\"" + std::wstring(app_path) + L"\"";
-    std::wstring prog_id = L" Bambu.Studio.1";
-    std::wstring prog_desc = L"BambuStudio";
+    std::wstring prog_id = REG_PROG_ID;
+    std::wstring prog_desc = REG_PROG_DESC;
     std::wstring prog_command = prog_path + L" \"%1\"";
-    std::wstring reg_base = L"Software\\Classes";
+    std::wstring reg_base = REG_PROG_BASE;
     std::wstring reg_extension = reg_base + L"\\." + extend;
     std::wstring reg_prog_id = reg_base + L"\\" + prog_id;
     std::wstring reg_prog_id_command = reg_prog_id + L"\\Shell\\Open\\Command";

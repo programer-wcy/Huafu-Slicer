@@ -36,6 +36,13 @@
 #include <IOKit/IOMessage.h>
 #endif
 
+
+#if defined(__WXMSW__) || defined(_WIN32)
+#define REG_PROG_ID L"Huafu.Slicer.1"
+#define REG_PROG_DESC L"HuafuSlicer"
+#define REG_PROG_BASE L"Software\\Classes"
+#endif
+
 //#define BBL_HAS_FIRST_PAGE          1
 #define STUDIO_INACTIVE_TIMEOUT     15*60*1000
 #define LOG_FILES_MAX_NUM           30

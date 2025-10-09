@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.13)
-project(BambuStudio)
+project(HUAFU_Slicer)
 
 include("version.inc")
 include(GNUInstallDirs)
@@ -507,7 +507,7 @@ set(BBL_L18N_DIR "${CMAKE_CURRENT_SOURCE_DIR}/bbl/i18n")
 add_custom_target(gettext_make_pot
     COMMAND xgettext --keyword=L --no-wrap --keyword=_L --keyword=_u8L --keyword=L_CONTEXT:1,2c --keyword=_L_PLURAL:1,2 --add-comments=TRN --from-code=UTF-8 --no-location --debug --boost
         -f "${BBL_L18N_DIR}/list.txt"
-        -o "${BBL_L18N_DIR}/BambuStudio.pot"
+        -o "${BBL_L18N_DIR}/${SLIC3R_APP_KEY}.pot"
 	COMMAND hintsToPot ${SLIC3R_RESOURCES_DIR} ${BBL_L18N_DIR}
     WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
     COMMENT "Generate pot file from strings in the source tree"
@@ -516,13 +516,13 @@ add_custom_target(gettext_merge_po_with_pot
     WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
     COMMENT "Merge localization po with new generted pot file"
 )
-file(GLOB BBL_L10N_PO_FILES "${BBL_L18N_DIR}/*/BambuStudio*.po")
+file(GLOB BBL_L10N_PO_FILES "${BBL_L18N_DIR}/*/${SLIC3R_APP_KEY}*.po")
 foreach(po_file ${BBL_L10N_PO_FILES})
     GET_FILENAME_COMPONENT(po_dir "${po_file}" DIRECTORY)
-    SET(po_new_file "${po_dir}/BambuStudio_.po")
+    SET(po_new_file "${po_dir}/${SLIC3R_APP_KEY}_.po")
     add_custom_command(
         TARGET gettext_merge_po_with_pot PRE_BUILD
-        COMMAND msgmerge --no-wrap -N -o ${po_file} ${po_file} "${BBL_L18N_DIR}/BambuStudio.pot"
+        COMMAND msgmerge --no-wrap -N -o ${po_file} ${po_file} "${BBL_L18N_DIR}/${SLIC3R_APP_KEY}.pot"
         DEPENDS ${po_file}
     )
 endforeach()
@@ -530,11 +530,11 @@ add_custom_target(gettext_po_to_mo
     WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
     COMMENT "Generate localization po files (binary) from mo files (texts)"
 )
-file(GLOB L10N_PO_FILES "${BBL_L18N_DIR}/*/BambuStudio*.po")
+file(GLOB L10N_PO_FILES "${BBL_L18N_DIR}/*/${SLIC3R_APP_KEY}*.po")
 foreach(po_file ${BBL_L10N_PO_FILES})
     GET_FILENAME_COMPONENT(SECOND_FOLDER_ABSOLUTE ${po_file} DIRECTORY)
     string(REGEX REPLACE ".*/(.*)" "\\1" po_dir "${SECOND_FOLDER_ABSOLUTE}" )
-    SET(mo_file "${L10N_DIR}/${po_dir}/BambuStudio.mo")
+    SET(mo_file "${L10N_DIR}/${po_dir}/${SLIC3R_APP_KEY}.mo")
     add_custom_command(
         TARGET gettext_po_to_mo PRE_BUILD
         COMMAND msgfmt ARGS --check-format -o ${mo_file} ${po_file}
@@ -543,8 +543,8 @@ foreach(po_file ${BBL_L10N_PO_FILES})
     )
 endforeach()
 
-# copy pt-BR/BamabuStudio.mo to pt_br/
-SET(PT_BR "${L10N_DIR}/pt-BR/BambuStudio.mo")
+# copy pt-BR/${SLIC3R_APP_KEY}.mo to pt_br/
+SET(PT_BR "${L10N_DIR}/pt-BR/${SLIC3R_APP_KEY}.mo")
 SET(PT_BR_DST "${L10N_DIR}/pt_br/")
 add_custom_command(
     TARGET gettext_po_to_mo POST_BUILD

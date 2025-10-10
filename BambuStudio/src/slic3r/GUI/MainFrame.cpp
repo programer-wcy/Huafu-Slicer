@@ -2568,6 +2568,8 @@ void MainFrame::init_menubar_as_editor()
 
         append_submenu(fileMenu, export_menu, wxID_ANY, _L("Export"), "");
 
+        //Added by wangcy.  The following block is intent to link to website of BambuStudio, we comment it here to avoid this action.
+        /*
         // Publish to MakerWorld
         append_menu_item(
             fileMenu, wxID_ANY, _L("Publish to MakerWorld"), _L("Publish to MakerWorld"),
@@ -2588,6 +2590,7 @@ void MainFrame::init_menubar_as_editor()
             },
             "", nullptr,
             [this](){ return wxGetApp().has_model_mall(); }, this);
+        */
 
         fileMenu->AppendSeparator();
 
@@ -3029,6 +3032,8 @@ void MainFrame::init_menubar_as_editor()
         m_topbar->AddDropDownSubMenu(viewMenu, _L("View"));
     //BBS add Preference
 
+    //By wangcy: Remove menu item "Preferences"
+    /*
     append_menu_item(
         m_topbar->GetTopMenu(), wxID_ANY, _L("Preferences") + "\t" + ctrl + "P", "",
         [this](wxCommandEvent &) {
@@ -3042,11 +3047,14 @@ void MainFrame::init_menubar_as_editor()
                 plater()->refresh_print();
         },
         "", nullptr, []() { return true; }, this);
+    */
     //m_topbar->AddDropDownMenuItem(preference_item);
     //m_topbar->AddDropDownMenuItem(printer_item);
     //m_topbar->AddDropDownMenuItem(language_item);
     //m_topbar->AddDropDownMenuItem(config_item);
-    m_topbar->AddDropDownSubMenu(helpMenu, _L("Help"));
+
+    //by wangcy: Remove "Help" menu item
+    /*m_topbar->AddDropDownSubMenu(helpMenu, _L("Help"));*/
 
      // OrcaSlicer calibrations
     {

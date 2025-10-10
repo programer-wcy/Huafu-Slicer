@@ -120,6 +120,10 @@ void AppConfig::set_defaults()
 
 #endif // _WIN32
 
+        //added by wangcy: Set default language to be zh_CN, so that we need not to select language in later stages.
+        if (get("language").empty())
+            set("language", "zh_CN");
+
         // remove old 'use_legacy_opengl' parameter from this config, if present
         if (!get("use_legacy_opengl").empty())
             erase("app", "use_legacy_opengl");

@@ -1,0 +1,1122 @@
+2025-09-18 10:38:07.775304[Thread 0x0000296c]:Instance check: Another instance not found or single-instance not set.
+2025-09-18 10:38:07.776304[Thread 0x0000296c]:gui mode, Current BambuStudio Version 02.00.03.54
+2025-09-18 10:38:07.776304[Thread 0x0000296c]:Operating System:    Windows
+System Architecture: 64 bit
+Windows Version:     Windows 10 (build 19045), 64-bit edition
+Total RAM size [MB]: 34,191MB
+2025-09-18 10:38:07.776304[Thread 0x0000296c]:processMachine architecture 0, nativeMachine 34404 m_is_arm64 0
+2025-09-18 10:38:07.778305[Thread 0x0000296c]:Slic3r::GUI::GUI_App::load_language: language , initial: 1
+2025-09-18 10:38:07.778305[Thread 0x0000296c]:language provided by BambuStudio.conf: zh_CN
+2025-09-18 10:38:07.778305[Thread 0x0000296c]:Switching wxLocales to zh_CN
+2025-09-18 10:38:07.786304[Thread 0x0000296c]:Slic3r::GUI::GUI_App::Update_dark_mode_flag: switch the current dark mode status to 0 
+2025-09-18 10:38:07.786304[Thread 0x0000296c]:last app version {2.0.3}, current version {2.0.3}
+2025-09-18 10:38:07.819304[Thread 0x0000296c]:begin to show the splash screen...
+2025-09-18 10:38:07.852304[Thread 0x0000296c]:loading systen presets...
+2025-09-18 10:38:07.853304[Thread 0x0000296c]:Slic3r::PresetCollection::select_preset: process try to select preset 0
+2025-09-18 10:38:07.853304[Thread 0x0000296c]:Slic3r::PresetCollection::select_preset: process select success, m_idx_selected 0, name Default Setting, is_system 0, is_default 1
+2025-09-18 10:38:07.853304[Thread 0x0000296c]:Slic3r::PresetCollection::select_preset: invalid try to select preset 0
+2025-09-18 10:38:07.853304[Thread 0x0000296c]:Slic3r::PresetCollection::select_preset: invalid select success, m_idx_selected 0, name Default Setting, is_system 0, is_default 1
+2025-09-18 10:38:07.853304[Thread 0x0000296c]:Slic3r::PresetCollection::select_preset: filament try to select preset 0
+2025-09-18 10:38:07.853304[Thread 0x0000296c]:Slic3r::PresetCollection::select_preset: filament select success, m_idx_selected 0, name Default Filament, is_system 0, is_default 1
+2025-09-18 10:38:07.853304[Thread 0x0000296c]:Slic3r::PresetCollection::select_preset: invalid try to select preset 0
+2025-09-18 10:38:07.853304[Thread 0x0000296c]:Slic3r::PresetCollection::select_preset: invalid select success, m_idx_selected 0, name Default Config, is_system 0, is_default 1
+2025-09-18 10:38:07.853304[Thread 0x0000296c]:Slic3r::PresetCollection::select_preset: invalid try to select preset 0
+2025-09-18 10:38:07.853304[Thread 0x0000296c]:Slic3r::PresetCollection::select_preset: invalid select success, m_idx_selected 0, name Default Setting, is_system 0, is_default 1
+2025-09-18 10:38:07.853304[Thread 0x0000296c]:Slic3r::PresetCollection::select_preset: machine try to select preset 0
+2025-09-18 10:38:07.853304[Thread 0x0000296c]:Slic3r::PresetCollection::select_preset: machine select success, m_idx_selected 0, name Default Printer, is_system 0, is_default 1
+2025-09-18 10:38:07.854304[Thread 0x0000296c]:[BBL Updater]:Checking whether the profile from resource is newer
+2025-09-18 10:38:07.858304[Thread 0x0000296c]:Slic3r::NetworkAgent::initialize_network_module, try load library directly from current directory
+2025-09-18 10:38:07.858304[Thread 0x0000296c]:Slic3r::NetworkAgent::initialize_network_module, current path D:\work2\BambuStudio\build\src\Release\bambu_networking.dll
+2025-09-18 10:38:07.858304[Thread 0x0000296c]:Slic3r::NetworkAgent::initialize_network_module, can not Load Library for C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\plugins\bambu_networking.dll
+2025-09-18 10:38:07.858304[Thread 0x0000296c]:Slic3r::GUI::GUI_App::on_init_network: on_init_network, load dll failed
+2025-09-18 10:38:07.858304[Thread 0x0000296c]:Slic3r::NetworkAgent::unload_network_module, network module 0000000000000000
+2025-09-18 10:38:07.858304[Thread 0x0000296c]:on_init_network, unload_network_module, result = 0
+2025-09-18 10:38:07.858304[Thread 0x0000296c]:preset_folder: set to empty
+2025-09-18 10:38:07.859304[Thread 0x0000296c]:Slic3r::PresetBundle::load_presets enter, substitution_rule 3, preferred printer_model_id 
+2025-09-18 10:38:07.859304[Thread 0x0000296c]:Slic3r::PresetBundle::load_vendor_configs_from_json enter, path C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\system, compatibility_rule 2
+2025-09-18 10:38:07.860304[Thread 0x0000296c]:Slic3r::PresetBundle::load_vendor_configs_from_json: parse C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\system/BBL.json, got description:  "the initial version of BBL configurations"
+2025-09-18 10:38:08.094631[Thread 0x0000296c]:Slic3r::PresetCollection::set_printer_hold_alias Bambu Lab P1P 0.2 nozzlealready has alias: Overture Matte PLA and the preset name: Overture Matte PLA @BBL A1M 0.2 nozzle
+2025-09-18 10:38:08.137947[Thread 0x0000296c]:Slic3r::PresetBundle::load_user_presets, 583 entry and user is: default
+2025-09-18 10:38:08.138947[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets enter, load presets from "C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\process\base", current type process
+2025-09-18 10:38:08.138947[Thread 0x0000296c]:Slic3r::Preset::load_info load info from: C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\process\base\process template @Anycubic Kossel Linear Plus 0.4 nozzle.info and base_id: 
+2025-09-18 10:38:08.139947[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets load preset: process template @Anycubic Kossel Linear Plus 0.4 nozzle and filament_id:  and base_id: 
+2025-09-18 10:38:08.139947[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets1374 load config successful and preset name is:process template @Anycubic Kossel Linear Plus 0.4 nozzle
+2025-09-18 10:38:08.139947[Thread 0x0000296c]:Slic3r::Preset::load_info load info from: C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\process\base\process template @DLUT 10 0.4 nozzle.info and base_id: 
+2025-09-18 10:38:08.140946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets load preset: process template @DLUT 10 0.4 nozzle and filament_id:  and base_id: 
+2025-09-18 10:38:08.140946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets1374 load config successful and preset name is:process template @DLUT 10 0.4 nozzle
+2025-09-18 10:38:08.140946[Thread 0x0000296c]:Slic3r::Preset::load_info load info from: C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\process\base\process template @DLUT FC01 1.0 nozzle.info and base_id: 
+2025-09-18 10:38:08.141946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets load preset: process template @DLUT FC01 1.0 nozzle and filament_id:  and base_id: 
+2025-09-18 10:38:08.141946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets1374 load config successful and preset name is:process template @DLUT FC01 1.0 nozzle
+2025-09-18 10:38:08.141946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets: loaded 3 presets from "C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\process\base", type process
+2025-09-18 10:38:08.141946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets enter, load presets from "C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\process", current type process
+2025-09-18 10:38:08.141946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets: loaded 0 presets from "C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\process", type process
+2025-09-18 10:38:08.141946[Thread 0x0000296c]:Slic3r::PresetCollection::select_preset_by_name: process, try to select by name Default Setting, force 0
+2025-09-18 10:38:08.141946[Thread 0x0000296c]:Slic3r::PresetCollection::select_preset_by_name: process, already selected before
+2025-09-18 10:38:08.142946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets enter, load presets from "C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\filament\base", current type filament
+2025-09-18 10:38:08.142946[Thread 0x0000296c]:Slic3r::Preset::load_info load info from: C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\filament\base\dlut PLA-CF Custom @Bambu Lab A1 0.4 nozzle.info and base_id: 
+2025-09-18 10:38:08.142946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets load preset: dlut PLA-CF Custom @Bambu Lab A1 0.4 nozzle and filament_id: P0c02662 and base_id: 
+2025-09-18 10:38:08.143946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets1374 load config successful and preset name is:dlut PLA-CF Custom @Bambu Lab A1 0.4 nozzle
+2025-09-18 10:38:08.143946[Thread 0x0000296c]:Slic3r::Preset::load_info load info from: C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\filament\base\dlut PLA-CF Custom @Bambu Lab A1 mini 0.4 nozzle.info and base_id: 
+2025-09-18 10:38:08.143946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets load preset: dlut PLA-CF Custom @Bambu Lab A1 mini 0.4 nozzle and filament_id: P0c02662 and base_id: 
+2025-09-18 10:38:08.144947[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets1374 load config successful and preset name is:dlut PLA-CF Custom @Bambu Lab A1 mini 0.4 nozzle
+2025-09-18 10:38:08.144947[Thread 0x0000296c]:Slic3r::Preset::load_info load info from: C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\filament\base\dlut PLA-CF Custom @Bambu Lab H2D 0.6 nozzle.info and base_id: 
+2025-09-18 10:38:08.145946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets load preset: dlut PLA-CF Custom @Bambu Lab H2D 0.6 nozzle and filament_id: P0c02662 and base_id: 
+2025-09-18 10:38:08.145946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets1374 load config successful and preset name is:dlut PLA-CF Custom @Bambu Lab H2D 0.6 nozzle
+2025-09-18 10:38:08.145946[Thread 0x0000296c]:Slic3r::Preset::load_info load info from: C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\filament\base\dlut PLA-CF Custom @Bambu Lab H2D 0.8 nozzle.info and base_id: 
+2025-09-18 10:38:08.145946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets load preset: dlut PLA-CF Custom @Bambu Lab H2D 0.8 nozzle and filament_id: P0c02662 and base_id: 
+2025-09-18 10:38:08.145946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets1374 load config successful and preset name is:dlut PLA-CF Custom @Bambu Lab H2D 0.8 nozzle
+2025-09-18 10:38:08.146946[Thread 0x0000296c]:Slic3r::Preset::load_info load info from: C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\filament\base\dlut PLA-CF Custom @Bambu Lab P1P 0.4 nozzle.info and base_id: 
+2025-09-18 10:38:08.146946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets load preset: dlut PLA-CF Custom @Bambu Lab P1P 0.4 nozzle and filament_id: P0c02662 and base_id: 
+2025-09-18 10:38:08.146946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets1374 load config successful and preset name is:dlut PLA-CF Custom @Bambu Lab P1P 0.4 nozzle
+2025-09-18 10:38:08.146946[Thread 0x0000296c]:Slic3r::Preset::load_info load info from: C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\filament\base\dlut PLA-CF Custom @Bambu Lab X1 Carbon 0.4 nozzle.info and base_id: 
+2025-09-18 10:38:08.147946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets load preset: dlut PLA-CF Custom @Bambu Lab X1 Carbon 0.4 nozzle and filament_id: P0c02662 and base_id: 
+2025-09-18 10:38:08.147946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets1374 load config successful and preset name is:dlut PLA-CF Custom @Bambu Lab X1 Carbon 0.4 nozzle
+2025-09-18 10:38:08.147946[Thread 0x0000296c]:Slic3r::Preset::load_info load info from: C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\filament\base\Generic ABS template @Anycubic Kossel Linear Plus 0.4 nozzle.info and base_id: 
+2025-09-18 10:38:08.148946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets load preset: Generic ABS template @Anycubic Kossel Linear Plus 0.4 nozzle and filament_id: P5c9bfff and base_id: 
+2025-09-18 10:38:08.148946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets1374 load config successful and preset name is:Generic ABS template @Anycubic Kossel Linear Plus 0.4 nozzle
+2025-09-18 10:38:08.148946[Thread 0x0000296c]:Slic3r::Preset::load_info load info from: C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\filament\base\Generic ABS template @DLUT 10 0.4 nozzle.info and base_id: 
+2025-09-18 10:38:08.148946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets load preset: Generic ABS template @DLUT 10 0.4 nozzle and filament_id: P5c9bfff and base_id: 
+2025-09-18 10:38:08.149946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets1374 load config successful and preset name is:Generic ABS template @DLUT 10 0.4 nozzle
+2025-09-18 10:38:08.149946[Thread 0x0000296c]:Slic3r::Preset::load_info load info from: C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\filament\base\Generic ABS template @DLUT FC01 1.0 nozzle.info and base_id: 
+2025-09-18 10:38:08.149946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets load preset: Generic ABS template @DLUT FC01 1.0 nozzle and filament_id: P5c9bfff and base_id: 
+2025-09-18 10:38:08.149946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets1374 load config successful and preset name is:Generic ABS template @DLUT FC01 1.0 nozzle
+2025-09-18 10:38:08.149946[Thread 0x0000296c]:Slic3r::Preset::load_info load info from: C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\filament\base\Generic ASA template @DLUT 10 0.4 nozzle.info and base_id: 
+2025-09-18 10:38:08.150946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets load preset: Generic ASA template @DLUT 10 0.4 nozzle and filament_id: Pac30b4b and base_id: 
+2025-09-18 10:38:08.150946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets1374 load config successful and preset name is:Generic ASA template @DLUT 10 0.4 nozzle
+2025-09-18 10:38:08.150946[Thread 0x0000296c]:Slic3r::Preset::load_info load info from: C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\filament\base\Generic HIPS template @DLUT 10 0.4 nozzle.info and base_id: 
+2025-09-18 10:38:08.151946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets load preset: Generic HIPS template @DLUT 10 0.4 nozzle and filament_id: P7fae02d and base_id: 
+2025-09-18 10:38:08.151946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets1374 load config successful and preset name is:Generic HIPS template @DLUT 10 0.4 nozzle
+2025-09-18 10:38:08.151946[Thread 0x0000296c]:Slic3r::Preset::load_info load info from: C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\filament\base\Generic PA template @Anycubic Kossel Linear Plus 0.4 nozzle.info and base_id: 
+2025-09-18 10:38:08.152946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets load preset: Generic PA template @Anycubic Kossel Linear Plus 0.4 nozzle and filament_id: P5260554 and base_id: 
+2025-09-18 10:38:08.152946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets1374 load config successful and preset name is:Generic PA template @Anycubic Kossel Linear Plus 0.4 nozzle
+2025-09-18 10:38:08.152946[Thread 0x0000296c]:Slic3r::Preset::load_info load info from: C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\filament\base\Generic PA template @DLUT 10 0.4 nozzle.info and base_id: 
+2025-09-18 10:38:08.153946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets load preset: Generic PA template @DLUT 10 0.4 nozzle and filament_id: P5260554 and base_id: 
+2025-09-18 10:38:08.153946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets1374 load config successful and preset name is:Generic PA template @DLUT 10 0.4 nozzle
+2025-09-18 10:38:08.153946[Thread 0x0000296c]:Slic3r::Preset::load_info load info from: C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\filament\base\Generic PA template @DLUT FC01 1.0 nozzle.info and base_id: 
+2025-09-18 10:38:08.153946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets load preset: Generic PA template @DLUT FC01 1.0 nozzle and filament_id: P5260554 and base_id: 
+2025-09-18 10:38:08.153946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets1374 load config successful and preset name is:Generic PA template @DLUT FC01 1.0 nozzle
+2025-09-18 10:38:08.154946[Thread 0x0000296c]:Slic3r::Preset::load_info load info from: C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\filament\base\Generic PET template @DLUT 10 0.4 nozzle.info and base_id: 
+2025-09-18 10:38:08.154946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets load preset: Generic PET template @DLUT 10 0.4 nozzle and filament_id: P3636c68 and base_id: 
+2025-09-18 10:38:08.154946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets1374 load config successful and preset name is:Generic PET template @DLUT 10 0.4 nozzle
+2025-09-18 10:38:08.155946[Thread 0x0000296c]:Slic3r::Preset::load_info load info from: C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\filament\base\Generic PLA template @DLUT 10 0.4 nozzle.info and base_id: 
+2025-09-18 10:38:08.155946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets load preset: Generic PLA template @DLUT 10 0.4 nozzle and filament_id: P510eff9 and base_id: 
+2025-09-18 10:38:08.155946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets1374 load config successful and preset name is:Generic PLA template @DLUT 10 0.4 nozzle
+2025-09-18 10:38:08.155946[Thread 0x0000296c]:Slic3r::Preset::load_info load info from: C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\filament\base\Generic PPA template @DLUT 10 0.4 nozzle.info and base_id: 
+2025-09-18 10:38:08.156946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets load preset: Generic PPA template @DLUT 10 0.4 nozzle and filament_id: Pb6a507f and base_id: 
+2025-09-18 10:38:08.156946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets1374 load config successful and preset name is:Generic PPA template @DLUT 10 0.4 nozzle
+2025-09-18 10:38:08.156946[Thread 0x0000296c]:Slic3r::Preset::load_info load info from: C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\filament\base\Generic PPA template @DLUT FC01 1.0 nozzle.info and base_id: 
+2025-09-18 10:38:08.157946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets load preset: Generic PPA template @DLUT FC01 1.0 nozzle and filament_id: Pb6a507f and base_id: 
+2025-09-18 10:38:08.157946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets1374 load config successful and preset name is:Generic PPA template @DLUT FC01 1.0 nozzle
+2025-09-18 10:38:08.157946[Thread 0x0000296c]:Slic3r::Preset::load_info load info from: C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\filament\base\Generic PPS template @DLUT 10 0.4 nozzle.info and base_id: 
+2025-09-18 10:38:08.157946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets load preset: Generic PPS template @DLUT 10 0.4 nozzle and filament_id: Pbd56226 and base_id: 
+2025-09-18 10:38:08.158946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets1374 load config successful and preset name is:Generic PPS template @DLUT 10 0.4 nozzle
+2025-09-18 10:38:08.158946[Thread 0x0000296c]:Slic3r::Preset::load_info load info from: C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\filament\base\Generic PVA template @DLUT 10 0.4 nozzle.info and base_id: 
+2025-09-18 10:38:08.158946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets load preset: Generic PVA template @DLUT 10 0.4 nozzle and filament_id: Pc2841e6 and base_id: 
+2025-09-18 10:38:08.158946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets1374 load config successful and preset name is:Generic PVA template @DLUT 10 0.4 nozzle
+2025-09-18 10:38:08.159946[Thread 0x0000296c]:Slic3r::Preset::load_info load info from: C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\filament\base\Generic TPU template @DLUT 10 0.4 nozzle.info and base_id: 
+2025-09-18 10:38:08.159946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets load preset: Generic TPU template @DLUT 10 0.4 nozzle and filament_id: P4b8a0cb and base_id: 
+2025-09-18 10:38:08.159946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets1374 load config successful and preset name is:Generic TPU template @DLUT 10 0.4 nozzle
+2025-09-18 10:38:08.159946[Thread 0x0000296c]:Slic3r::Preset::load_info load info from: C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\filament\base\HATCHBOX PA-CF Basic @Bambu Lab H2D 0.4 nozzle.info and base_id: 
+2025-09-18 10:38:08.160946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets load preset: HATCHBOX PA-CF Basic @Bambu Lab H2D 0.4 nozzle and filament_id: P3b90996 and base_id: 
+2025-09-18 10:38:08.160946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets1374 load config successful and preset name is:HATCHBOX PA-CF Basic @Bambu Lab H2D 0.4 nozzle
+2025-09-18 10:38:08.160946[Thread 0x0000296c]:Slic3r::Preset::load_info load info from: C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\filament\base\HATCHBOX PA-CF Basic @Bambu Lab H2D 0.6 nozzle.info and base_id: 
+2025-09-18 10:38:08.161946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets load preset: HATCHBOX PA-CF Basic @Bambu Lab H2D 0.6 nozzle and filament_id: P3b90996 and base_id: 
+2025-09-18 10:38:08.161946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets1374 load config successful and preset name is:HATCHBOX PA-CF Basic @Bambu Lab H2D 0.6 nozzle
+2025-09-18 10:38:08.161946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets: loaded 23 presets from "C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\filament\base", type filament
+2025-09-18 10:38:08.161946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets enter, load presets from "C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\filament", current type filament
+2025-09-18 10:38:08.161946[Thread 0x0000296c]:Slic3r::Preset::load_info load info from: C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\filament\CF-PA @DLUT FC01 1.0 nozzle.info and base_id: 
+2025-09-18 10:38:08.161946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets load preset: CF-PA @DLUT FC01 1.0 nozzle and filament_id: P5c9bfff and base_id: 
+2025-09-18 10:38:08.162946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets1374 load config successful and preset name is:CF-PA @DLUT FC01 1.0 nozzle
+2025-09-18 10:38:08.162946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets: loaded 1 presets from "C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\filament", type filament
+2025-09-18 10:38:08.162946[Thread 0x0000296c]:Slic3r::PresetCollection::select_preset_by_name: filament, try to select by name Default Filament, force 0
+2025-09-18 10:38:08.162946[Thread 0x0000296c]:Slic3r::PresetCollection::select_preset_by_name: filament, already selected before
+2025-09-18 10:38:08.162946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets enter, load presets from "C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\machine\base", current type machine
+2025-09-18 10:38:08.162946[Thread 0x0000296c]:Slic3r::Preset::load_info load info from: C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\machine\base\Anycubic Kossel Linear Plus 0.4 nozzle.info and base_id: 
+2025-09-18 10:38:08.163946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets load preset: Anycubic Kossel Linear Plus 0.4 nozzle and filament_id:  and base_id: 
+2025-09-18 10:38:08.163946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets1374 load config successful and preset name is:Anycubic Kossel Linear Plus 0.4 nozzle
+2025-09-18 10:38:08.163946[Thread 0x0000296c]:Slic3r::Preset::load_info load info from: C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\machine\base\DLUT 10 0.4 nozzle.info and base_id: 
+2025-09-18 10:38:08.164946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets load preset: DLUT 10 0.4 nozzle and filament_id:  and base_id: 
+2025-09-18 10:38:08.164946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets1374 load config successful and preset name is:DLUT 10 0.4 nozzle
+2025-09-18 10:38:08.164946[Thread 0x0000296c]:Slic3r::Preset::load_info load info from: C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\machine\base\DLUT FC01 1.0 nozzle.info and base_id: 
+2025-09-18 10:38:08.165946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets load preset: DLUT FC01 1.0 nozzle and filament_id:  and base_id: 
+2025-09-18 10:38:08.165946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets1374 load config successful and preset name is:DLUT FC01 1.0 nozzle
+2025-09-18 10:38:08.165946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets: loaded 3 presets from "C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\machine\base", type machine
+2025-09-18 10:38:08.165946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets enter, load presets from "C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\machine", current type machine
+2025-09-18 10:38:08.165946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets: loaded 0 presets from "C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\machine", type machine
+2025-09-18 10:38:08.165946[Thread 0x0000296c]:Slic3r::PresetCollection::select_preset_by_name: machine, try to select by name Default Printer, force 0
+2025-09-18 10:38:08.165946[Thread 0x0000296c]:Slic3r::PresetCollection::select_preset_by_name: machine, already selected before
+2025-09-18 10:38:08.165946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets enter, load presets from "C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\config\base", current type invalid
+2025-09-18 10:38:08.165946[Thread 0x0000296c]:Slic3r::Preset::load_info load info from: C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\config\base\12345.info and base_id: 
+2025-09-18 10:38:08.166946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets load preset: 12345 and filament_id:  and base_id: 
+2025-09-18 10:38:08.166946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets1374 load config successful and preset name is:12345
+2025-09-18 10:38:08.166946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets: loaded 1 presets from "C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\config\base", type invalid
+2025-09-18 10:38:08.166946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets enter, load presets from "C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\config", current type invalid
+2025-09-18 10:38:08.167946[Thread 0x0000296c]:Slic3r::Preset::load_info load info from: C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\config\10.info and base_id: 
+2025-09-18 10:38:08.167946[Thread 0x0000296c]:can not find parent 1 for config C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\config\10.json!
+2025-09-18 10:38:08.167946[Thread 0x0000296c]:Slic3r::Preset::load_info load info from: C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\config\13.info and base_id: 
+2025-09-18 10:38:08.167946[Thread 0x0000296c]:can not find parent 1 for config C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\config\13.json!
+2025-09-18 10:38:08.167946[Thread 0x0000296c]:Slic3r::Preset::load_info load info from: C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\config\2.info and base_id: 
+2025-09-18 10:38:08.167946[Thread 0x0000296c]:can not find parent 1 for config C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\config\2.json!
+2025-09-18 10:38:08.167946[Thread 0x0000296c]:Slic3r::Preset::load_info load info from: C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\config\5.info and base_id: 
+2025-09-18 10:38:08.167946[Thread 0x0000296c]:can not find parent 1 for config C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\config\5.json!
+2025-09-18 10:38:08.167946[Thread 0x0000296c]:Slic3r::Preset::load_info load info from: C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\config\E值测试.info and base_id: 
+2025-09-18 10:38:08.168946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets load preset: E值测试 and filament_id:  and base_id: 
+2025-09-18 10:38:08.168946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets1374 load config successful and preset name is:E值测试
+2025-09-18 10:38:08.168946[Thread 0x0000296c]:Slic3r::Preset::load_info load info from: C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\config\基础预设.info and base_id: 
+2025-09-18 10:38:08.168946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets load preset: 基础预设 and filament_id:  and base_id: 
+2025-09-18 10:38:08.168946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets1374 load config successful and preset name is:基础预设
+2025-09-18 10:38:08.168946[Thread 0x0000296c]:Slic3r::Preset::load_info load info from: C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\config\基础预设2.info and base_id: 
+2025-09-18 10:38:08.169946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets load preset: 基础预设2 and filament_id:  and base_id: 
+2025-09-18 10:38:08.169946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets1374 load config successful and preset name is:基础预设2
+2025-09-18 10:38:08.169946[Thread 0x0000296c]:Slic3r::Preset::load_info load info from: C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\config\基础预设3.info and base_id: 
+2025-09-18 10:38:08.169946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets load preset: 基础预设3 and filament_id:  and base_id: 
+2025-09-18 10:38:08.169946[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets1374 load config successful and preset name is:基础预设3
+2025-09-18 10:38:08.169946[Thread 0x0000296c]:Slic3r::Preset::load_info load info from: C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\config\连续.info and base_id: 
+2025-09-18 10:38:08.170948[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets load preset: 连续 and filament_id:  and base_id: 
+2025-09-18 10:38:08.170948[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets1374 load config successful and preset name is:连续
+2025-09-18 10:38:08.170948[Thread 0x0000296c]:Slic3r::Preset::load_info load info from: C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\config\连续1.info and base_id: 
+2025-09-18 10:38:08.170948[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets load preset: 连续1 and filament_id:  and base_id: 
+2025-09-18 10:38:08.170948[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets1374 load config successful and preset name is:连续1
+2025-09-18 10:38:08.170948[Thread 0x0000296c]:Slic3r::PresetCollection::load_presets: loaded 6 presets from "C:\Users\Administrator\AppData\Roaming\BambuStudioInternal\user\default\config", type invalid
+2025-09-18 10:38:08.170948[Thread 0x0000296c]:Slic3r::PresetCollection::select_preset_by_name: invalid, try to select by name Default Config, force 0
+2025-09-18 10:38:08.170948[Thread 0x0000296c]:Slic3r::PresetCollection::select_preset_by_name: invalid, already selected before
+2025-09-18 10:38:08.170948[Thread 0x0000296c]:update_compatibility for all presets enter, select_other_print_if_incompatible 0, select_other_filament_if_incompatible 0
+2025-09-18 10:38:08.170948[Thread 0x0000296c]:Slic3r::PresetCollection::update_compatible_internal: active printer Default Printer, unselect_if_incompatible 0
+2025-09-18 10:38:08.170948[Thread 0x0000296c]:Slic3r::PresetCollection::update_compatible_internal: type process returned m_idx_selected 0, some_compatible 0
+2025-09-18 10:38:08.170948[Thread 0x0000296c]:prefered filaments: size 0, previous selected 0
+2025-09-18 10:38:08.170948[Thread 0x0000296c]:previous selected filament： Default Filament
+2025-09-18 10:38:08.170948[Thread 0x0000296c]:Slic3r::PresetCollection::update_compatible_internal: active printer Default Printer, print Default Setting, unselect_if_incompatible 0
+2025-09-18 10:38:08.170948[Thread 0x0000296c]:Slic3r::PresetCollection::update_compatible_internal: type filament returned m_idx_selected 0, some_compatible 0
+2025-09-18 10:38:08.170948[Thread 0x0000296c]:update_compatibility for all presets exit
+2025-09-18 10:38:08.170948[Thread 0x0000296c]:update_compatibility for all presets enter, select_other_print_if_incompatible 0, select_other_filament_if_incompatible 0
+2025-09-18 10:38:08.170948[Thread 0x0000296c]:Slic3r::PresetCollection::update_compatible_internal: active printer Default Printer, unselect_if_incompatible 0
+2025-09-18 10:38:08.170948[Thread 0x0000296c]:Slic3r::PresetCollection::update_compatible_internal: type process returned m_idx_selected 0, some_compatible 0
+2025-09-18 10:38:08.170948[Thread 0x0000296c]:prefered filaments: size 0, previous selected 0
+2025-09-18 10:38:08.170948[Thread 0x0000296c]:previous selected filament： Default Filament
+2025-09-18 10:38:08.170948[Thread 0x0000296c]:Slic3r::PresetCollection::update_compatible_internal: active printer Default Printer, print Default Setting, unselect_if_incompatible 0
+2025-09-18 10:38:08.170948[Thread 0x0000296c]:Slic3r::PresetCollection::update_compatible_internal: type filament returned m_idx_selected 0, some_compatible 0
+2025-09-18 10:38:08.170948[Thread 0x0000296c]:update_compatibility for all presets exit
+2025-09-18 10:38:08.171948[Thread 0x0000296c]:Slic3r::PresetBundle::load_selections: enter, preferred printer_model_id 
+2025-09-18 10:38:08.171948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Lab A1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.171948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Lab A1 0.4 nozzle, is_visible set to 1
+2025-09-18 10:38:08.171948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Lab A1 0.6 nozzle, is_visible set to 1
+2025-09-18 10:38:08.171948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Lab A1 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.171948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Lab A1 mini 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.171948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Lab A1 mini 0.4 nozzle, is_visible set to 1
+2025-09-18 10:38:08.171948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Lab A1 mini 0.6 nozzle, is_visible set to 1
+2025-09-18 10:38:08.171948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Lab A1 mini 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.171948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Lab H2D 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.171948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Lab H2D 0.4 nozzle, is_visible set to 1
+2025-09-18 10:38:08.171948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Lab H2D 0.6 nozzle, is_visible set to 1
+2025-09-18 10:38:08.171948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Lab H2D 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.171948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Lab P1P 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.171948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Lab P1P 0.4 nozzle, is_visible set to 1
+2025-09-18 10:38:08.171948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Lab P1P 0.6 nozzle, is_visible set to 1
+2025-09-18 10:38:08.171948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Lab P1P 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.171948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Lab P1S 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.171948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Lab P1S 0.4 nozzle, is_visible set to 1
+2025-09-18 10:38:08.171948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Lab P1S 0.6 nozzle, is_visible set to 1
+2025-09-18 10:38:08.171948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Lab P1S 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.171948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Lab X1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.171948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Lab X1 0.4 nozzle, is_visible set to 1
+2025-09-18 10:38:08.171948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Lab X1 0.6 nozzle, is_visible set to 1
+2025-09-18 10:38:08.171948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Lab X1 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.171948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Lab X1 Carbon 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.171948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Lab X1 Carbon 0.4 nozzle, is_visible set to 1
+2025-09-18 10:38:08.171948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Lab X1 Carbon 0.6 nozzle, is_visible set to 1
+2025-09-18 10:38:08.171948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Lab X1 Carbon 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.171948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Lab X1E 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.171948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Lab X1E 0.4 nozzle, is_visible set to 1
+2025-09-18 10:38:08.171948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Lab X1E 0.6 nozzle, is_visible set to 1
+2025-09-18 10:38:08.171948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Lab X1E 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.171948[Thread 0x0000296c]:Slic3r::PresetBundle::load_installed_filaments: enter, printer size 36
+2025-09-18 10:38:08.171948[Thread 0x0000296c]:Slic3r::PresetBundle::load_installed_filaments: printer Bambu Lab A1 0.2 nozzle vendor 000001B8E48D1910 already has default filament Bambu ABS @BBL A1 0.2 nozzle
+2025-09-18 10:38:08.171948[Thread 0x0000296c]:Slic3r::PresetBundle::load_installed_filaments: printer Bambu Lab A1 0.4 nozzle vendor 000001B8E48D1910 already has default filament Bambu ABS @BBL A1
+2025-09-18 10:38:08.171948[Thread 0x0000296c]:Slic3r::PresetBundle::load_installed_filaments: printer Bambu Lab A1 0.6 nozzle vendor 000001B8E48D1910 already has default filament Bambu ABS @BBL A1
+2025-09-18 10:38:08.171948[Thread 0x0000296c]:Slic3r::PresetBundle::load_installed_filaments: printer Bambu Lab A1 0.8 nozzle vendor 000001B8E48D1910 already has default filament Bambu ABS @BBL A1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::PresetBundle::load_installed_filaments: printer Bambu Lab A1 mini 0.2 nozzle vendor 000001B8E48D1910 already has default filament Bambu PETG Basic @BBL A1M 0.2 nozzle
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::PresetBundle::load_installed_filaments: printer Bambu Lab A1 mini 0.4 nozzle vendor 000001B8E48D1910 already has default filament Bambu PETG Basic @BBL A1M 0.4 nozzle
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::PresetBundle::load_installed_filaments: printer Bambu Lab A1 mini 0.6 nozzle vendor 000001B8E48D1910 already has default filament Bambu PETG Basic @BBL A1M 0.8 nozzle
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::PresetBundle::load_installed_filaments: printer Bambu Lab A1 mini 0.8 nozzle vendor 000001B8E48D1910 already has default filament Bambu PETG Basic @BBL A1M 0.8 nozzle
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::PresetBundle::load_installed_filaments: printer Bambu Lab H2D 0.2 nozzle vendor 000001B8E48D1910 already has default filament Bambu ABS @BBL H2D 0.2 nozzle
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::PresetBundle::load_installed_filaments: printer Bambu Lab H2D 0.4 nozzle vendor 000001B8E48D1910 already has default filament Bambu ABS @BBL H2D
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::PresetBundle::load_installed_filaments: printer Bambu Lab H2D 0.6 nozzle vendor 000001B8E48D1910 already has default filament Bambu ABS @BBL H2D
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::PresetBundle::load_installed_filaments: printer Bambu Lab H2D 0.8 nozzle vendor 000001B8E48D1910 already has default filament Bambu ABS @BBL H2D 0.8 nozzle
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::PresetBundle::load_installed_filaments: printer Bambu Lab P1P 0.2 nozzle vendor 000001B8E48D1910 already has default filament Bambu ABS @BBL P1P 0.2 nozzle
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::PresetBundle::load_installed_filaments: printer Bambu Lab P1P 0.4 nozzle vendor 000001B8E48D1910 already has default filament Bambu ABS @BBL P1P
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::PresetBundle::load_installed_filaments: printer Bambu Lab P1P 0.6 nozzle vendor 000001B8E48D1910 already has default filament Bambu ABS @BBL P1P
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::PresetBundle::load_installed_filaments: printer Bambu Lab P1P 0.8 nozzle vendor 000001B8E48D1910 already has default filament Bambu ABS @BBL P1P
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::PresetBundle::load_installed_filaments: printer Bambu Lab P1S 0.2 nozzle vendor 000001B8E48D1910 already has default filament Bambu ABS @BBL X1C 0.2 nozzle
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::PresetBundle::load_installed_filaments: printer Bambu Lab P1S 0.4 nozzle vendor 000001B8E48D1910 already has default filament Bambu ABS @BBL X1C
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::PresetBundle::load_installed_filaments: printer Bambu Lab P1S 0.6 nozzle vendor 000001B8E48D1910 already has default filament Bambu ABS @BBL X1C
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::PresetBundle::load_installed_filaments: printer Bambu Lab P1S 0.8 nozzle vendor 000001B8E48D1910 already has default filament Bambu ABS @BBL X1C 0.8 nozzle
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::PresetBundle::load_installed_filaments: printer Bambu Lab X1 0.2 nozzle vendor 000001B8E48D1910 already has default filament Bambu ABS @BBL X1C 0.2 nozzle
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::PresetBundle::load_installed_filaments: printer Bambu Lab X1 0.4 nozzle vendor 000001B8E48D1910 already has default filament Bambu ABS @BBL X1C
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::PresetBundle::load_installed_filaments: printer Bambu Lab X1 0.6 nozzle vendor 000001B8E48D1910 already has default filament Bambu ABS @BBL X1C
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::PresetBundle::load_installed_filaments: printer Bambu Lab X1 0.8 nozzle vendor 000001B8E48D1910 already has default filament Bambu ABS @BBL X1C 0.8 nozzle
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::PresetBundle::load_installed_filaments: printer Bambu Lab X1 Carbon 0.2 nozzle vendor 000001B8E48D1910 already has default filament Bambu ABS @BBL X1C 0.2 nozzle
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::PresetBundle::load_installed_filaments: printer Bambu Lab X1 Carbon 0.4 nozzle vendor 000001B8E48D1910 already has default filament Bambu ABS @BBL X1C
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::PresetBundle::load_installed_filaments: printer Bambu Lab X1 Carbon 0.6 nozzle vendor 000001B8E48D1910 already has default filament Bambu ABS @BBL X1C
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::PresetBundle::load_installed_filaments: printer Bambu Lab X1 Carbon 0.8 nozzle vendor 000001B8E48D1910 already has default filament Bambu ABS @BBL X1C 0.8 nozzle
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::PresetBundle::load_installed_filaments: printer Bambu Lab X1E 0.2 nozzle vendor 000001B8E48D1910 already has default filament Bambu ABS @BBL X1E 0.2 nozzle
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::PresetBundle::load_installed_filaments: printer Bambu Lab X1E 0.4 nozzle vendor 000001B8E48D1910 already has default filament Bambu ABS @BBL X1E
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::PresetBundle::load_installed_filaments: printer Bambu Lab X1E 0.6 nozzle vendor 000001B8E48D1910 already has default filament Bambu ABS @BBL X1E
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::PresetBundle::load_installed_filaments: printer Bambu Lab X1E 0.8 nozzle vendor 000001B8E48D1910 already has default filament Bambu ABS @BBL X1E 0.8 nozzle
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu ABS @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu ABS @BBL A1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu ABS @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu ABS @BBL H2D 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu ABS @BBL H2D 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu ABS @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu ABS @BBL P1P 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu ABS @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu ABS @BBL X1C 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu ABS @BBL X1C 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu ABS @BBL X1E, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu ABS @BBL X1E 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu ABS @BBL X1E 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu ABS-GF @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu ABS-GF @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu ABS-GF @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu ABS-GF @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu ASA @BBL A1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu ASA @BBL A1 0.4 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu ASA @BBL A1 0.6 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu ASA @BBL H2D 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu ASA @BBL H2D 0.4 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu ASA @BBL H2D 0.6 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu ASA @BBL X1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu ASA @BBL X1 0.6 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu ASA @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu ASA @BBL X1C 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu ASA @BBL X1C 0.4 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu ASA @BBL X1E, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu ASA @BBL X1E 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu ASA @BBL X1E 0.4 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu ASA-Aero @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu ASA-Aero @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu ASA-Aero @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu ASA-Aero @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu ASA-CF @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu ASA-CF @BBL A1 0.6 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu ASA-CF @BBL H2D 0.4 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu ASA-CF @BBL H2D 0.6 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu ASA-CF @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu ASA-CF @BBL P1P 0.6 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu ASA-CF @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu ASA-CF @BBL X1C 0.6 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PA-CF @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PA-CF @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PA-CF @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PA-CF @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PA-CF @BBL X1E, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PA6-CF @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PA6-CF @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PA6-CF @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PA6-CF @BBL X1E, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PA6-GF @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PA6-GF @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PA6-GF @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PA6-GF @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PAHT-CF @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PAHT-CF @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PAHT-CF @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PAHT-CF @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PC @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PC @BBL A1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PC @BBL H2D 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PC @BBL H2D 0.4 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PC @BBL H2D 0.6 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PC @BBL H2D 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PC @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PC @BBL P1P 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PC @BBL P1S, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PC @BBL P1S 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PC @BBL P1S 0.6 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PC @BBL P1S 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PC @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PC @BBL X1C 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PC @BBL X1C 0.6 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PC @BBL X1C 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PC @BBL X1E, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PC @BBL X1E 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PC @BBL X1E 0.6 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PC @BBL X1E 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PC FR @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PC FR @BBL A1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PC FR @BBL H2D 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PC FR @BBL H2D 0.4 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PC FR @BBL H2D 0.6 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PC FR @BBL H2D 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PC FR @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PC FR @BBL P1P 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PC FR @BBL P1S, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PC FR @BBL P1S 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PC FR @BBL P1S 0.6 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PC FR @BBL P1S 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PC FR @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PC FR @BBL X1C 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PC FR @BBL X1C 0.6 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PC FR @BBL X1C 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PC FR @BBL X1E, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PC FR @BBL X1E 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PC FR @BBL X1E 0.6 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PC FR @BBL X1E 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PET-CF @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PET-CF @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PET-CF @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PET-CF @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PET-CF @BBL X1E, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PETG Basic @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PETG Basic @BBL A1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PETG Basic @BBL A1 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PETG Basic @BBL A1M 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PETG Basic @BBL A1M 0.4 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PETG Basic @BBL A1M 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PETG Basic @BBL H2D 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PETG Basic @BBL H2D 0.4 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PETG Basic @BBL H2D 0.6 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PETG Basic @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PETG Basic @BBL X1C 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PETG Basic @BBL X1C 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PETG HF @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PETG HF @BBL A1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.172948[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PETG HF @BBL A1 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PETG HF @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PETG HF @BBL A1M 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PETG HF @BBL A1M 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PETG HF @BBL H2D 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PETG HF @BBL H2D 0.4 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PETG HF @BBL H2D 0.6 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PETG HF @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PETG HF @BBL X1C 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PETG HF @BBL X1C 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PETG Translucent @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PETG Translucent @BBL A1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PETG Translucent @BBL A1 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PETG Translucent @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PETG Translucent @BBL A1M 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PETG Translucent @BBL A1M 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PETG Translucent @BBL H2D 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PETG Translucent @BBL H2D 0.4 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PETG Translucent @BBL H2D 0.6 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PETG Translucent @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PETG Translucent @BBL X1C 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PETG Translucent @BBL X1C 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PETG-CF @BBL A1 0.4 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PETG-CF @BBL A1 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PETG-CF @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PETG-CF @BBL A1M 0.4 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PETG-CF @BBL H2D 0.4 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PETG-CF @BBL H2D 0.6 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PETG-CF @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PETG-CF @BBL P1P 0.4 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PETG-CF @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PETG-CF @BBL X1C 0.4 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Aero @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Aero @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Aero @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Aero @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Aero @BBL X1, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Aero @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Basic @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Basic @BBL A1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Basic @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Basic @BBL A1M 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Basic @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Basic @BBL H2D 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Basic @BBL H2D 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Basic @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Basic @BBL P1P 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Basic @BBL X1, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Basic @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Basic @BBL X1C 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Basic @BBL X1C 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Dynamic @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Dynamic @BBL A1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Dynamic @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Dynamic @BBL A1M 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Dynamic @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Dynamic @BBL H2D 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Dynamic @BBL H2D 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Dynamic @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Dynamic @BBL P1P 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Dynamic @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Dynamic @BBL X1C 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Dynamic @BBL X1C 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Galaxy @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Galaxy @BBL A1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Galaxy @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Galaxy @BBL A1M 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Galaxy @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Galaxy @BBL H2D 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Galaxy @BBL H2D 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Galaxy @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Galaxy @BBL P1P 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Galaxy @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Galaxy @BBL X1C 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Galaxy @BBL X1C 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Glow @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Glow @BBL A1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Glow @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Glow @BBL A1M 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Glow @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Glow @BBL H2D 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Glow @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Glow @BBL P1P 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Glow @BBL X1, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Glow @BBL X1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Glow @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Glow @BBL X1C 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Glow @BBL X1E, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Glow @BBL X1E 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Lite @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Lite @BBL A1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Lite @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Lite @BBL A1M 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Lite @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Lite @BBL H2D 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Lite @BBL H2D 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Lite @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Lite @BBL P1P 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Lite @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Lite @BBL X1C 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Lite @BBL X1C 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Marble @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Marble @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Marble @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Marble @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Marble @BBL X1, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Marble @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Matte @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Matte @BBL A1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Matte @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Matte @BBL A1M 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Matte @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Matte @BBL H2D 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Matte @BBL H2D 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Matte @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Matte @BBL P1P 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Matte @BBL X1, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Matte @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Matte @BBL X1C 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Matte @BBL X1C 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Metal @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Metal @BBL A1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Metal @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Metal @BBL A1M 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Metal @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Metal @BBL H2D 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Metal @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Metal @BBL P1P 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Metal @BBL X1, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Metal @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Metal @BBL X1C 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Silk @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Silk @BBL A1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Silk @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Silk @BBL A1M 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Silk @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Silk @BBL H2D 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Silk @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Silk @BBL P1P 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Silk @BBL X1, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Silk @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Silk @BBL X1C 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Silk+ @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Silk+ @BBL A1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Silk+ @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Silk+ @BBL A1M 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Silk+ @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Silk+ @BBL H2D 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Silk+ @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Silk+ @BBL P1P 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Silk+ @BBL X1, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Silk+ @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Silk+ @BBL X1C 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Sparkle @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Sparkle @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Sparkle @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Sparkle @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Sparkle @BBL X1, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Sparkle @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Tough @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Tough @BBL A1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Tough @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Tough @BBL A1M 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Tough @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Tough @BBL H2D 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Tough @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Tough @BBL P1P 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Tough @BBL X1, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Tough @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Tough @BBL X1C 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Wood @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Wood @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Wood @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Wood @BBL H2D 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Wood @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Wood @BBL X1, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Wood @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA Wood @BBL X1C 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA-CF @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA-CF @BBL A1 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA-CF @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA-CF @BBL A1M 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA-CF @BBL H2D 0.4 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA-CF @BBL H2D 0.6 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA-CF @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA-CF @BBL P1P 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA-CF @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PLA-CF @BBL X1C 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PPA-CF @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PPA-CF @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PPA-CF @BBL X1E, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PPA-GF @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PPA-GF @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PPA-GF @BBL X1E, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PPS-CF @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PPS-CF @BBL X1E, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PVA @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PVA @BBL A1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PVA @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PVA @BBL A1M 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PVA @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PVA @BBL H2D 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PVA @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PVA @BBL P1P 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PVA @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu PVA @BBL X1C 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Support For PA/PET @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Support For PA/PET @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Support For PA/PET @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Support For PA/PET @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Support For PLA @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Support For PLA @BBL A1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Support For PLA @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Support For PLA @BBL A1M 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Support For PLA @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Support For PLA @BBL H2D 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Support For PLA @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Support For PLA @BBL P1P 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Support For PLA @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Support For PLA @BBL X1C 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Support For PLA/PETG @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Support For PLA/PETG @BBL A1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Support For PLA/PETG @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Support For PLA/PETG @BBL A1M 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Support For PLA/PETG @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Support For PLA/PETG @BBL H2D 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Support For PLA/PETG @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Support For PLA/PETG @BBL P1P 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Support For PLA/PETG @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Support For PLA/PETG @BBL X1C 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Support G @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Support G @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Support G @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Support G @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Support G @BBL X1E, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Support W @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Support W @BBL A1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Support W @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Support W @BBL A1M 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Support W @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Support W @BBL H2D 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Support W @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Support W @BBL P1P 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Support W @BBL X1, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Support W @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Support W @BBL X1C 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Support for ABS @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Support for ABS @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu Support for ABS @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu TPU 85A @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu TPU 85A @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu TPU 85A @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu TPU 90A @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu TPU 90A @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu TPU 90A @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu TPU 90A @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu TPU 90A @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu TPU 95A @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu TPU 95A @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu TPU 95A @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu TPU 95A @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu TPU 95A @BBL X1, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu TPU 95A @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu TPU 95A HF @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu TPU 95A HF @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu TPU 95A HF @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu TPU 95A HF @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu TPU 95A HF @BBL P1S, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu TPU 95A HF @BBL X1, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu TPU 95A HF @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu TPU 95A HF @BBL X1E, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu TPU for AMS @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu TPU for AMS @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu TPU for AMS @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu TPU for AMS @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Bambu TPU for AMS @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Fiberon PA12-CF @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Fiberon PA6-CF @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Fiberon PA6-GF @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Fiberon PA612-CF @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Fiberon PET-CF @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Fiberon PETG-ESD @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Fiberon PETG-rCF @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic ABS, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic ABS @0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic ABS @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.173947[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic ABS @BBL A1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic ABS @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic ABS @BBL H2D 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic ABS @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic ABS @BBL P1P 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic ABS @BBL X1E, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic ABS @BBL X1E 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic ASA, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic ASA @0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic ASA @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic ASA @BBL A1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic ASA @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic ASA @BBL H2D 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic ASA @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic ASA @BBL P1P 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic ASA @BBL X1E, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic ASA @BBL X1E 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic BVOH @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic BVOH @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic BVOH @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic BVOH @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic EVA @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic EVA @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic EVA @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic EVA @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic HIPS @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic HIPS @BBL A1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic HIPS @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic HIPS @BBL A1M 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic HIPS @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic HIPS @BBL H2D 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic HIPS @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic HIPS @BBL X1C 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PA, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PA @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PA @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PA @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PA-CF, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PA-CF @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PA-CF @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PA-CF @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PA-CF @BBL X1E, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PC, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PC @0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PC @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PC @BBL A1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PC @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PC @BBL H2D 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PC @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PC @BBL P1P 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PC @BBL P1S, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PC @BBL P1S 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PC @BBL X1E, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PC @BBL X1E 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PCTG @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PCTG @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PCTG @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PCTG @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PE @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PE @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PE @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PE @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PE-CF @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PE-CF @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PE-CF @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PE-CF @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PETG, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PETG @0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PETG @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PETG @BBL A1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PETG @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PETG @BBL A1M 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PETG @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PETG @BBL H2D 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PETG @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PETG @BBL P1P 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PETG HF @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PETG HF @BBL A1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PETG HF @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PETG HF @BBL A1M 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PETG HF @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PETG HF @BBL H2D 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PETG HF @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PETG HF @BBL P1P 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PETG HF @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PETG HF @BBL X1C 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PETG-CF @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PETG-CF @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PETG-CF @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PETG-CF @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PETG-CF @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PHA @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PHA @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PHA @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PHA @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PLA, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PLA @0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PLA @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PLA @BBL A1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PLA @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PLA @BBL A1M 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PLA @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PLA @BBL H2D 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PLA @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PLA @BBL P1P 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PLA High Speed @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PLA High Speed @BBL A1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PLA High Speed @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PLA High Speed @BBL A1M 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PLA High Speed @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PLA High Speed @BBL H2D 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PLA High Speed @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PLA High Speed @BBL P1P 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PLA High Speed @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PLA High Speed @BBL X1C 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PLA Silk, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PLA Silk @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PLA Silk @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PLA Silk @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PLA Silk @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PLA-CF, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PLA-CF @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PLA-CF @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PLA-CF @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PLA-CF @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PP @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PP @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PP @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PP @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PP-CF @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PP-CF @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PP-CF @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PP-GF @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PP-GF @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PP-GF @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PPA-CF @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PPA-CF @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PPA-CF @BBL X1E, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PPA-GF @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PPA-GF @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PPA-GF @BBL X1E, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PPS @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PPS @BBL X1E, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PPS-CF @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PPS-CF @BBL X1E, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PVA, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PVA @0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PVA @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PVA @BBL A1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PVA @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PVA @BBL A1M 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PVA @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PVA @BBL H2D 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PVA @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic PVA @BBL P1P 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic TPU, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic TPU @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic TPU @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic TPU @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic TPU @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic TPU for AMS @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic TPU for AMS @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic TPU for AMS @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic TPU for AMS @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Generic TPU for AMS @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Overture Matte PLA @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Overture Matte PLA @BBL A1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Overture Matte PLA @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Overture Matte PLA @BBL A1M 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Overture Matte PLA @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Overture Matte PLA @BBL H2D 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Overture Matte PLA @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Overture Matte PLA @BBL P1P 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Overture Matte PLA @BBL X1, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Overture Matte PLA @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Overture Matte PLA @BBL X1C 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Overture PLA @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Overture PLA @BBL A1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Overture PLA @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Overture PLA @BBL A1M 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Overture PLA @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Overture PLA @BBL H2D 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Overture PLA @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Overture PLA @BBL P1P 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Overture PLA @BBL X1, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Overture PLA @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name Overture PLA @BBL X1C 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyLite ABS @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyLite ABS @BBL A1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyLite ABS @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyLite ABS @BBL H2D 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyLite ABS @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyLite ABS @BBL P1P 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyLite ABS @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyLite ABS @BBL X1C 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyLite ABS @BBL X1E, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyLite ABS @BBL X1E 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyLite ASA @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyLite ASA @BBL A1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyLite ASA @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyLite ASA @BBL H2D 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyLite ASA @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyLite ASA @BBL P1P 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyLite ASA @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyLite ASA @BBL X1C 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyLite ASA @BBL X1E, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyLite ASA @BBL X1E 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyLite PETG @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyLite PETG @BBL A1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyLite PETG @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyLite PETG @BBL A1M 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyLite PETG @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyLite PETG @BBL H2D 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyLite PETG @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyLite PETG @BBL P1P 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyLite PETG @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyLite PETG @BBL X1C 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyLite PLA @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyLite PLA @BBL A1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyLite PLA @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyLite PLA @BBL A1M 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyLite PLA @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyLite PLA @BBL H2D 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyLite PLA @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyLite PLA @BBL P1P 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyLite PLA @BBL X1, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyLite PLA @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyLite PLA @BBL X1C 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyTerra PLA @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyTerra PLA @BBL A1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyTerra PLA @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyTerra PLA @BBL A1M 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyTerra PLA @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyTerra PLA @BBL H2D 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyTerra PLA @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyTerra PLA @BBL P1P 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyTerra PLA @BBL X1, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyTerra PLA @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name PolyTerra PLA @BBL X1C 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU PETG @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU PETG @BBL A1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU PETG @BBL A1 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU PETG @BBL A1M 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU PETG @BBL A1M 0.4 nozzle, is_visible set to 0
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU PETG @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU PETG @BBL X1C 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU PETG @BBL X1C 0.8 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU PLA Marble @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU PLA Marble @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU PLA Marble @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU PLA Marble @BBL X1, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU PLA Marble @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU PLA Matte @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU PLA Matte @BBL A1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU PLA Matte @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU PLA Matte @BBL A1M 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU PLA Matte @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU PLA Matte @BBL P1P 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU PLA Matte @BBL X1, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU PLA Matte @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU PLA Matte @BBL X1C 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU PLA+ 2.0 @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU PLA+ 2.0 @BBL A1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU PLA+ 2.0 @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU PLA+ 2.0 @BBL A1M 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU PLA+ 2.0 @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU PLA+ 2.0 @BBL P1P 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU PLA+ 2.0 @BBL X1, is_visible set to 1
+2025-09-18 10:38:08.174950[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU PLA+ 2.0 @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.175952[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU PLA+ 2.0 @BBL X1C 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.175952[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU PLA+ @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.175952[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU PLA+ @BBL A1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.175952[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU PLA+ @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.175952[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU PLA+ @BBL A1M 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.175952[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU PLA+ @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.175952[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU PLA+ @BBL P1P 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.175952[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU PLA+ @BBL X1, is_visible set to 1
+2025-09-18 10:38:08.175952[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU PLA+ @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.175952[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU PLA+ @BBL X1C 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.175952[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU Silk PLA+ @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.175952[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU Silk PLA+ @BBL A1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.175952[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU Silk PLA+ @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.175952[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU Silk PLA+ @BBL A1M 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.175952[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU Silk PLA+ @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.175952[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU Silk PLA+ @BBL P1P 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.175952[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU Silk PLA+ @BBL X1, is_visible set to 1
+2025-09-18 10:38:08.175952[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU Silk PLA+ @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.175952[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU Silk PLA+ @BBL X1C 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.175952[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU Wood PLA @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.175952[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU Wood PLA @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.175952[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU Wood PLA @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.175952[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU Wood PLA @BBL X1, is_visible set to 1
+2025-09-18 10:38:08.175952[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name SUNLU Wood PLA @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.175952[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name eSUN PLA+ @BBL A1, is_visible set to 1
+2025-09-18 10:38:08.175952[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name eSUN PLA+ @BBL A1 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.175952[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name eSUN PLA+ @BBL A1M, is_visible set to 1
+2025-09-18 10:38:08.175952[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name eSUN PLA+ @BBL A1M 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.175952[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name eSUN PLA+ @BBL H2D, is_visible set to 1
+2025-09-18 10:38:08.175952[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name eSUN PLA+ @BBL H2D 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.175952[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name eSUN PLA+ @BBL P1P, is_visible set to 1
+2025-09-18 10:38:08.175952[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name eSUN PLA+ @BBL P1P 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.175952[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name eSUN PLA+ @BBL X1, is_visible set to 1
+2025-09-18 10:38:08.175952[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name eSUN PLA+ @BBL X1C, is_visible set to 1
+2025-09-18 10:38:08.175952[Thread 0x0000296c]:Slic3r::Preset::set_visible_from_appconfig: name eSUN PLA+ @BBL X1C 0.2 nozzle, is_visible set to 1
+2025-09-18 10:38:08.175952[Thread 0x0000296c]:Slic3r::PresetBundle::load_installed_filaments: exit.
+2025-09-18 10:38:08.175952[Thread 0x0000296c]:Slic3r::PresetCollection::select_preset_by_name: machine, try to select by name DLUT FC01 1.0 nozzle, force 1
+2025-09-18 10:38:08.175952[Thread 0x0000296c]:Slic3r::PresetCollection::select_preset: machine try to select preset 35
+2025-09-18 10:38:08.175952[Thread 0x0000296c]:Slic3r::PresetCollection::select_preset: machine select success, m_idx_selected 35, name DLUT FC01 1.0 nozzle, is_system 0, is_default 0
+2025-09-18 10:38:08.175952[Thread 0x0000296c]:Slic3r::PresetCollection::select_preset_by_name: machine, select DLUT FC01 1.0 nozzle, success
+2025-09-18 10:38:08.175952[Thread 0x0000296c]:Slic3r::PresetCollection::select_preset_by_name_strict: process, try to select by name process template @DLUT FC01 1.0 nozzle
+2025-09-18 10:38:08.175952[Thread 0x0000296c]:Slic3r::PresetCollection::select_preset: process try to select preset 137
+2025-09-18 10:38:08.175952[Thread 0x0000296c]:Slic3r::PresetCollection::select_preset: process select success, m_idx_selected 137, name process template @DLUT FC01 1.0 nozzle, is_system 0, is_default 0
+2025-09-18 10:38:08.175952[Thread 0x0000296c]:Slic3r::PresetCollection::select_preset_by_name_strict: process, select process template @DLUT FC01 1.0 nozzle, success
+2025-09-18 10:38:08.175952[Thread 0x0000296c]:Slic3r::PresetCollection::select_preset_by_name_strict: filament, try to select by name Generic ABS template @DLUT FC01 1.0 nozzle
+2025-09-18 10:38:08.175952[Thread 0x0000296c]:Slic3r::PresetCollection::select_preset: filament try to select preset 416
+2025-09-18 10:38:08.176464[Thread 0x0000296c]:Slic3r::PresetCollection::select_preset: filament select success, m_idx_selected 416, name Generic ABS template @DLUT FC01 1.0 nozzle, is_system 0, is_default 0
+2025-09-18 10:38:08.176464[Thread 0x0000296c]:Slic3r::PresetCollection::select_preset_by_name_strict: filament, select Generic ABS template @DLUT FC01 1.0 nozzle, success
+2025-09-18 10:38:08.176464[Thread 0x0000296c]:Slic3r::PresetCollection::select_preset_by_name_strict: invalid, try to select by name 
+2025-09-18 10:38:08.176464[Thread 0x0000296c]:Slic3r::PresetCollection::select_preset_by_name_strict: invalid, select , failed
+2025-09-18 10:38:08.176464[Thread 0x0000296c]:Slic3r::PresetCollection::select_preset_by_name_strict: invalid, try to select by name 
+2025-09-18 10:38:08.176464[Thread 0x0000296c]:Slic3r::PresetCollection::select_preset_by_name_strict: invalid, select , failed
+2025-09-18 10:38:08.176464[Thread 0x0000296c]:Slic3r::PresetCollection::select_preset_by_name_strict: invalid, try to select by name 
+2025-09-18 10:38:08.176464[Thread 0x0000296c]:Slic3r::PresetCollection::select_preset_by_name_strict: invalid, select , failed
+2025-09-18 10:38:08.176464[Thread 0x0000296c]:update_compatibility for all presets enter, select_other_print_if_incompatible 2, select_other_filament_if_incompatible 2
+2025-09-18 10:38:08.176464[Thread 0x0000296c]:Slic3r::PresetCollection::update_compatible_internal: active printer DLUT FC01 1.0 nozzle, unselect_if_incompatible 2
+2025-09-18 10:38:08.176464[Thread 0x0000296c]:Slic3r::PresetCollection::update_compatible_internal: type process returned m_idx_selected 137, some_compatible 1
+2025-09-18 10:38:08.176464[Thread 0x0000296c]:prefered filaments: size 1, previous selected 416
+2025-09-18 10:38:08.176464[Thread 0x0000296c]:previous selected filament： Generic ABS template @DLUT FC01 1.0 nozzle
+2025-09-18 10:38:08.176464[Thread 0x0000296c]:prefered filament： Bambu PLA Basic @BBL H2D
+2025-09-18 10:38:08.176464[Thread 0x0000296c]:Slic3r::PresetCollection::update_compatible_internal: active printer DLUT FC01 1.0 nozzle, print process template @DLUT FC01 1.0 nozzle, unselect_if_incompatible 2
+2025-09-18 10:38:08.176464[Thread 0x0000296c]:Slic3r::PresetCollection::update_compatible_internal: type filament returned m_idx_selected 416, some_compatible 4
+2025-09-18 10:38:08.176464[Thread 0x0000296c]:update_compatibility for all presets exit
+2025-09-18 10:38:08.176464[Thread 0x0000296c]:Slic3r::PresetBundle::load_selections: finished, preferred printer_model_id 
+2025-09-18 10:38:08.176464[Thread 0x0000296c]:Slic3r::PresetBundle::load_presets finished, returned substitutions 0
+2025-09-18 10:38:08.176464[Thread 0x0000296c]:create the main window
+2025-09-18 10:38:08.367423[Thread 0x0000296c]:WebViewEdge::SetUserAgent: create web view failed.
+2025-09-18 10:38:08.375427[Thread 0x0000296c]:WebView::CreateWebView::<lambda_c7c348812565513ae8e86d02e9124686>::operator (): begin to add script message handler for wx.
+2025-09-18 10:38:08.375427[Thread 0x0000296c]:WebView::CreateWebView::<lambda_c7c348812565513ae8e86d02e9124686>::operator (): finished add script message handler for wx.
+2025-09-18 10:38:08.375427[Thread 0x0000296c]:WebViewEdge::SetUserAgent: create web view failed.
+2025-09-18 10:38:08.376422[Thread 0x0000296c]:WebViewEdge::SetUserAgent: create web view failed.
+2025-09-18 10:38:08.377422[Thread 0x0000296c]:WebView::CreateWebView::<lambda_c7c348812565513ae8e86d02e9124686>::operator (): begin to add script message handler for wx.
+2025-09-18 10:38:08.377422[Thread 0x0000296c]:WebView::CreateWebView::<lambda_c7c348812565513ae8e86d02e9124686>::operator (): finished add script message handler for wx.
+2025-09-18 10:38:08.377422[Thread 0x0000296c]:WebViewEdge::SetUserAgent: create web view failed.
+2025-09-18 10:38:08.378423[Thread 0x0000296c]:WebView::CreateWebView::<lambda_c7c348812565513ae8e86d02e9124686>::operator (): begin to add script message handler for wx.
+2025-09-18 10:38:08.378423[Thread 0x0000296c]:WebView::CreateWebView::<lambda_c7c348812565513ae8e86d02e9124686>::operator (): finished add script message handler for wx.
+2025-09-18 10:38:08.378423[Thread 0x0000296c]:WebViewEdge::SetUserAgent: create web view failed.
+2025-09-18 10:38:08.380423[Thread 0x0000296c]:WebView::CreateWebView::<lambda_c7c348812565513ae8e86d02e9124686>::operator (): begin to add script message handler for wx.
+2025-09-18 10:38:08.380423[Thread 0x0000296c]:WebView::CreateWebView::<lambda_c7c348812565513ae8e86d02e9124686>::operator (): finished add script message handler for wx.
+2025-09-18 10:38:08.380423[Thread 0x0000296c]:WebViewEdge::SetUserAgent: create web view failed.
+2025-09-18 10:38:08.381424[Thread 0x0000296c]:WebView::CreateWebView::<lambda_c7c348812565513ae8e86d02e9124686>::operator (): begin to add script message handler for wx.
+2025-09-18 10:38:08.381424[Thread 0x0000296c]:WebView::CreateWebView::<lambda_c7c348812565513ae8e86d02e9124686>::operator (): finished add script message handler for wx.
+2025-09-18 10:38:08.381424[Thread 0x0000296c]:WebViewEdge::SetUserAgent: create web view failed.
+2025-09-18 10:38:08.381424[Thread 0x0000296c]:WebViewEdge::SetUserAgent: create web view failed.
+2025-09-18 10:38:08.382423[Thread 0x0000296c]:WebViewEdge::SetUserAgent: create web view failed.
+2025-09-18 10:38:08.382423[Thread 0x0000296c]:WebViewEdge::SetUserAgent: create web view failed.
+2025-09-18 10:38:08.658337[Thread 0x0000296c]:Slic3r::BackgroundSlicingProcess::select_technology: change the printer technology from  to  
+2025-09-18 10:38:08.710337[Thread 0x0000296c]:Slic3r::GUI::PartPlateList::get_current_slice_result:m_current_plate 0, current_plate 000001B8EBC077A0
+2025-09-18 10:38:08.805888[Thread 0x0000296c]:Slic3r::GUI::Plater::priv::set_current_panel: current_panel 0000000000000000, new_panel 000001B8E986D4E0
+2025-09-18 10:38:08.934888[Thread 0x0000296c]:WebViewEdge::SetUserAgent: create web view failed.
+2025-09-18 10:38:08.936890[Thread 0x0000296c]:WebView::CreateWebView::<lambda_c7c348812565513ae8e86d02e9124686>::operator (): begin to add script message handler for wx.
+2025-09-18 10:38:08.936890[Thread 0x0000296c]:WebView::CreateWebView::<lambda_c7c348812565513ae8e86d02e9124686>::operator (): finished add script message handler for wx.
+2025-09-18 10:38:08.936890[Thread 0x0000296c]:Slic3r::DynamicPrintConfig::update_values_to_printer_extruders, Line 6641: different extruders processing
+2025-09-18 10:38:08.937889[Thread 0x0000296c]:Slic3r::DynamicPrintConfig::update_values_to_printer_extruders, Line 6641: different extruders processing
+2025-09-18 10:38:08.937889[Thread 0x0000296c]:Slic3r::DynamicPrintConfig::update_values_to_printer_extruders, Line 6641: different extruders processing
+2025-09-18 10:38:08.937889[Thread 0x0000296c]:Slic3r::DynamicPrintConfig::update_values_to_printer_extruders, Line 6677: could not found extruder_type Direct Drive, nozzle_volume_type Standard, extruder_index 2
+2025-09-18 10:38:08.937889[Thread 0x0000296c]:Slic3r::DynamicPrintConfig::update_values_to_printer_extruders, Line 6641: different extruders processing
+2025-09-18 10:38:08.937889[Thread 0x0000296c]:Slic3r::DynamicPrintConfig::update_values_to_printer_extruders, Line 6641: different extruders processing
+2025-09-18 10:38:08.937889[Thread 0x0000296c]:Slic3r::DynamicPrintConfig::update_values_to_printer_extruders, Line 6641: different extruders processing
+2025-09-18 10:38:08.937889[Thread 0x0000296c]:Slic3r::DynamicPrintConfig::update_values_to_printer_extruders, Line 6641: different extruders processing
+2025-09-18 10:38:08.937889[Thread 0x0000296c]:Slic3r::DynamicPrintConfig::update_values_to_printer_extruders, Line 6641: different extruders processing
+2025-09-18 10:38:08.937889[Thread 0x0000296c]:Slic3r::DynamicPrintConfig::update_values_to_printer_extruders, Line 6641: different extruders processing
+2025-09-18 10:38:08.937889[Thread 0x0000296c]:Slic3r::DynamicPrintConfig::update_values_to_printer_extruders, Line 6677: could not found extruder_type Direct Drive, nozzle_volume_type Standard, extruder_index 2
+2025-09-18 10:38:08.937889[Thread 0x0000296c]:Slic3r::DynamicPrintConfig::update_values_to_printer_extruders, Line 6641: different extruders processing
+2025-09-18 10:38:08.938889[Thread 0x0000296c]:Slic3r::DynamicPrintConfig::update_values_to_printer_extruders, Line 6641: different extruders processing
+2025-09-18 10:38:08.938889[Thread 0x0000296c]:Slic3r::DynamicPrintConfig::update_values_to_printer_extruders, Line 6641: different extruders processing
+2025-09-18 10:38:08.939889[Thread 0x0000296c]:Slic3r::DynamicPrintConfig::update_values_to_printer_extruders, Line 6641: different extruders processing
+2025-09-18 10:38:08.939889[Thread 0x0000296c]:Slic3r::DynamicPrintConfig::update_values_to_printer_extruders, Line 6641: different extruders processing
+2025-09-18 10:38:08.939889[Thread 0x0000296c]:Slic3r::DynamicPrintConfig::update_values_to_printer_extruders, Line 6641: different extruders processing
+2025-09-18 10:38:08.939889[Thread 0x0000296c]:Slic3r::DynamicPrintConfig::update_values_to_printer_extruders, Line 6677: could not found extruder_type Direct Drive, nozzle_volume_type Standard, extruder_index 2
+2025-09-18 10:38:08.939889[Thread 0x0000296c]:Slic3r::DynamicPrintConfig::update_values_to_printer_extruders, Line 6641: different extruders processing
+2025-09-18 10:38:08.939889[Thread 0x0000296c]:Slic3r::DynamicPrintConfig::update_values_to_printer_extruders, Line 6641: different extruders processing
+2025-09-18 10:38:08.939889[Thread 0x0000296c]:Slic3r::DynamicPrintConfig::update_values_to_printer_extruders, Line 6641: different extruders processing
+2025-09-18 10:38:08.939889[Thread 0x0000296c]:Slic3r::GUI::GCodeViewer::reset: current result id 0 
+2025-09-18 10:38:08.939889[Thread 0x0000296c]:Slic3r::GUI::Bed3D::set_shape:current position {0,0}, new position {0, 0}
+2025-09-18 10:38:08.939889[Thread 0x0000296c]:Slic3r::GUI::PartPlateList::reset_size:before size: plate_width 0, plate_depth 0, plate_height 0
+2025-09-18 10:38:08.939889[Thread 0x0000296c]:Slic3r::GUI::PartPlateList::reset_size:after size: plate_width 310, plate_depth 310, plate_height 200
+2025-09-18 10:38:08.939889[Thread 0x0000296c]:Slic3r::GUI::PartPlate::set_pos_and_size: plate_id 0, before, origin {0,0,0}, plate_width 0, plate_depth 0, plate_height 0
+2025-09-18 10:38:08.939889[Thread 0x0000296c]:Slic3r::GUI::PartPlate::set_pos_and_size: with_instance_move 0, after, origin {0,0,0}, plate_width 310, plate_depth 310, plate_height 200
+2025-09-18 10:38:08.939889[Thread 0x0000296c]:Slic3r::GUI::PartPlate::update_slice_result_valid_state: plate 0 , update slice result from 0 to 0
+2025-09-18 10:38:08.939889[Thread 0x0000296c]:Slic3r::GUI::PartPlate::set_pos_and_size: plate_id 1, before, origin {0,0,0}, plate_width 0, plate_depth 0, plate_height 0
+2025-09-18 10:38:08.939889[Thread 0x0000296c]:Slic3r::GUI::PartPlate::set_pos_and_size: with_instance_move 0, after, origin {372,0,0}, plate_width 310, plate_depth 310, plate_height 200
+2025-09-18 10:38:08.939889[Thread 0x0000296c]:Slic3r::GUI::PartPlate::update_slice_result_valid_state: plate 1 , update slice result from 0 to 0
+2025-09-18 10:38:08.939889[Thread 0x0000296c]:Slic3r::GUI::PartPlate::update_slice_result_valid_state: plate 0 , update slice result from 0 to 0
+2025-09-18 10:38:08.939889[Thread 0x0000296c]:Slic3r::GUI::PartPlate::update_slice_result_valid_state: plate 1 , update slice result from 0 to 0
+2025-09-18 10:38:08.940888[Thread 0x0000296c]:Slic3r::DynamicPrintConfig::update_values_to_printer_extruders, Line 6641: different extruders processing
+2025-09-18 10:38:08.940888[Thread 0x0000296c]:Slic3r::DynamicPrintConfig::update_values_to_printer_extruders, Line 6641: different extruders processing
+2025-09-18 10:38:08.940888[Thread 0x0000296c]:Slic3r::DynamicPrintConfig::update_values_to_printer_extruders, Line 6641: different extruders processing
+2025-09-18 10:38:08.940888[Thread 0x0000296c]:Slic3r::DynamicPrintConfig::update_values_to_printer_extruders, Line 6677: could not found extruder_type Direct Drive, nozzle_volume_type Standard, extruder_index 2
+2025-09-18 10:38:08.940888[Thread 0x0000296c]:Slic3r::DynamicPrintConfig::update_values_to_printer_extruders, Line 6641: different extruders processing
+2025-09-18 10:38:08.940888[Thread 0x0000296c]:Slic3r::DynamicPrintConfig::update_values_to_printer_extruders, Line 6641: different extruders processing
+2025-09-18 10:38:08.940888[Thread 0x0000296c]:Slic3r::DynamicPrintConfig::update_values_to_printer_extruders, Line 6641: different extruders processing
+2025-09-18 10:38:08.972888[Thread 0x0000296c]:Slic3r::GUI::PartPlateList::set_filament_count: filament_count=3
+2025-09-18 10:38:08.975888[Thread 0x0000296c]:Unable to open the fileE:\科研记录\师姐的件\测试悬挂.STL
+2025-09-18 10:38:08.976889[Thread 0x0000296c]:Unable to open the fileE:\科研记录\软件\扬州软件\模型\STL文件\余量1mm.STL
+2025-09-18 10:38:08.976889[Thread 0x000070f4]:Unable to open the fileC:\Users\Administrator\Desktop\模型\STL文件\2个三角洞的矩形.stl
+2025-09-18 10:38:08.976889[Thread 0x000037e8]:Unable to open the fileC:\Users\Administrator\Desktop\模型\STL文件\Part2.stp
+2025-09-18 10:38:08.976889[Thread 0x000070f4]:Unable to open the fileC:\Users\Administrator\Desktop\模型\STL文件\零件3.STL
+2025-09-18 10:38:08.976889[Thread 0x0000296c]:Unable to open the fileE:\科研记录\软件\扬州软件\模型\STL文件\桌子.stl
+2025-09-18 10:38:08.976889[Thread 0x000037e8]:Unable to open the fileC:\Users\Administrator\Desktop\模型\STL文件\带三角的矩形.stl
+2025-09-18 10:38:08.976889[Thread 0x00007140]:Unable to open the fileC:\Users\Administrator\Desktop\模型\STL文件\大立方体.stl
+2025-09-18 10:38:08.976889[Thread 0x000070f4]:Unable to open the fileC:\Users\Administrator\Desktop\模型\STL文件\大三角.stl
+2025-09-18 10:38:08.977889[Thread 0x000037e8]:Unable to open the fileC:\Users\Administrator\Desktop\模型\STL文件\小长方形.stl
+2025-09-18 10:38:08.977889[Thread 0x00007140]:Unable to open the fileC:\Users\Administrator\Desktop\模型\STL文件\Part3.stp
+2025-09-18 10:38:08.977889[Thread 0x00007154]:Unable to open the fileC:\Users\Administrator\Desktop\模型\STL文件\测试.stl
+2025-09-18 10:38:08.977889[Thread 0x000070f4]:Unable to open the fileE:\科研记录\软件\扬州软件\模型\STL文件\多个三角洞的矩形.stl
+2025-09-18 10:38:08.977889[Thread 0x000037e8]:Unable to open the fileG:\树脂模型1(1).stl
+2025-09-18 10:38:08.977889[Thread 0x00007140]:Unable to open the fileE:\科研记录\软件\扬州软件\模型\STL文件\小长方形.stl
+2025-09-18 10:38:08.977889[Thread 0x0000296c]:Unable to open the fileE:\科研记录\软件\扬州软件\模型\STL文件\Part3.stp
+2025-09-18 10:38:08.977889[Thread 0x00007154]:Unable to open the fileE:\科研记录\软件\扬州软件\模型\STL文件\大三角.stl
+2025-09-18 10:38:08.977889[Thread 0x00007158]:Unable to open the fileE:\科研记录\软件\扬州软件\模型\STL文件\2个三角洞的矩形.stl
+2025-09-18 10:38:09.026888[Thread 0x0000296c]:Slic3r::GUI::MainFrame::get_enable_print_status: m_print_select 1, enable= 0 
+2025-09-18 10:38:09.026888[Thread 0x0000296c]:Slic3r::GUI::MainFrame::get_enable_slice_status: m_slice_select 1, enable= 1 
+2025-09-18 10:38:09.026888[Thread 0x0000296c]:Slic3r::GUI::MainFrame::update_slice_print_status m_slice_select 1: can_slice= 1, can_print 1, enable_slice 1, enable_print 0 
+2025-09-18 10:38:09.026888[Thread 0x0000296c]:Slic3r::_BBS_Backup_Manager::_BBS_Backup_Manager inital and interval = 60
+2025-09-18 10:38:09.026888[Thread 0x0000296c]:Slic3r::_BBS_Backup_Manager::set_interval entry, and last interval is: 60
+2025-09-18 10:38:09.026888[Thread 0x0000296c]:Slic3r::_BBS_Backup_Manager::set_interval exit, and new interval is: 10
+2025-09-18 10:38:09.030888[Thread 0x0000296c]:WebViewEdge::SetUserAgent: create web view failed.
+2025-09-18 10:38:09.030888[Thread 0x0000296c]:WebViewEdge::SetUserAgent: create web view failed.
+2025-09-18 10:38:09.032888[Thread 0x0000296c]:WebViewEdge::SetUserAgent: create web view failed.
+2025-09-18 10:38:09.032888[Thread 0x0000296c]:WebViewEdge::SetUserAgent: create web view failed.
+2025-09-18 10:38:09.033888[Thread 0x0000296c]:Slic3r::GUI::Tab::load_current_preset: enter, m_type process
+2025-09-18 10:38:09.033888[Thread 0x0000296c]:Slic3r::GUI::Tab::update_extruder_variants-1
+2025-09-18 10:38:09.035888[Thread 0x0000296c]:Slic3r::GUI::Tab::update_extruder_variants-1
+2025-09-18 10:38:09.036888[Thread 0x0000296c]:Slic3r::GUI::Tab::update_extruder_variants-1
+2025-09-18 10:38:09.037888[Thread 0x0000296c]:Slic3r::GUI::Tab::update_extruder_variants-1
+2025-09-18 10:38:09.049888[Thread 0x0000296c]:Slic3r::GUI::Preview::load_print_as_fff 704: print is step done, posSlice 0, posSupportMaterial 0, psGCodeExport 0
+2025-09-18 10:38:09.049888[Thread 0x0000296c]:Slic3r::GUI::Tab::update_extruder_variants-1
+2025-09-18 10:38:09.052888[Thread 0x0000296c]:Slic3r::PresetBundle::export_selections: printer DLUT FC01 1.0 nozzle, print process template @DLUT FC01 1.0 nozzle, filaments[0] Generic ABS template @DLUT FC01 1.0 nozzle 
+2025-09-18 10:38:09.052888[Thread 0x0000296c]:put_other_changes
+2025-09-18 10:38:09.052888[Thread 0x0000296c]:Slic3r::GUI::ProjectDirtyStateManager::update_from_presetsproject file name is empty
+2025-09-18 10:38:09.055888[Thread 0x0000296c]:Slic3r::GUI::Tab::load_current_preset: exit
+2025-09-18 10:38:09.055888[Thread 0x0000296c]:Slic3r::GUI::Tab::load_current_preset: enter, m_type filament
+2025-09-18 10:38:09.056889[Thread 0x0000296c]:Slic3r::DynamicPrintConfig::update_values_to_printer_extruders, Line 6641: different extruders processing
+2025-09-18 10:38:09.056889[Thread 0x0000296c]:Slic3r::DynamicPrintConfig::update_values_to_printer_extruders, Line 6641: different extruders processing
+2025-09-18 10:38:09.056889[Thread 0x0000296c]:Slic3r::DynamicPrintConfig::update_values_to_printer_extruders, Line 6641: different extruders processing
+2025-09-18 10:38:09.056889[Thread 0x0000296c]:Slic3r::DynamicPrintConfig::update_values_to_printer_extruders, Line 6677: could not found extruder_type Direct Drive, nozzle_volume_type Standard, extruder_index 2
+2025-09-18 10:38:09.056889[Thread 0x0000296c]:Slic3r::DynamicPrintConfig::update_values_to_printer_extruders, Line 6641: different extruders processing
+2025-09-18 10:38:09.056889[Thread 0x0000296c]:Slic3r::DynamicPrintConfig::update_values_to_printer_extruders, Line 6641: different extruders processing
+2025-09-18 10:38:09.056889[Thread 0x0000296c]:Slic3r::DynamicPrintConfig::update_values_to_printer_extruders, Line 6641: different extruders processing
+2025-09-18 10:38:09.057892[Thread 0x0000296c]:Slic3r::GUI::Tab::update_extruder_variants-1
+2025-09-18 10:38:09.061888[Thread 0x0000296c]:Slic3r::PresetBundle::export_selections: printer DLUT FC01 1.0 nozzle, print process template @DLUT FC01 1.0 nozzle, filaments[0] Generic ABS template @DLUT FC01 1.0 nozzle 
+2025-09-18 10:38:09.061888[Thread 0x0000296c]:put_other_changes
+2025-09-18 10:38:09.

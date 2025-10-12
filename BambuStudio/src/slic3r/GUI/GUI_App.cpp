@@ -2381,6 +2381,45 @@ void GUI_App::init_download_path()
     }
 }
 
+namespace fs = boost::filesystem;
+
+void copy_directory_recursive(const fs::path& src, const fs::path& dst) {
+    if (!fs::exists(src)) {
+        return;
+    }
+
+    if (fs::exists(dst)) {
+        fs::remove_all(dst);
+    }
+
+    fs::create_directories(dst);
+
+    fs::directory_iterator end_it;
+    for (fs::directory_iterator it(src); it != end_it; ++it) {
+        const fs::path& p = it->path();
+        fs::path target = dst / p.filename();
+
+        if (fs::is_directory(p)) {
+            copy_directory_recursive(p, target);
+        }
+        else {
+            fs::copy_file(p, target, fs::copy_option::overwrite_if_exists);
+        }
+    }
+
+    boost::filesystem::path non_firstly_start_flag_path(dst);
+    non_firstly_start_flag_path /= "started_flag_" SLIC3R_VERSION ".ini";
+
+    std::string str_path = non_firstly_start_flag_path.make_preferred().string();
+    boost::nowide::ofstream c;
+    c.open(str_path, std::ios::app);
+    if (c.is_open()) {
+        c << "done!" << "\n";
+        c.close();
+    }
+}
+
+
 void GUI_App::init_app_config()
 {
 	// Profiles for the alpha are stored into the PrusaSlicer-alpha directory to not mix with the current release.
@@ -2393,6 +2432,28 @@ void GUI_App::init_app_config()
 	// Unix: ~/ .Slic3r
 	// Windows : "C:\Users\username\AppData\Roaming\Slic3r" or "C:\Documents and Settings\username\Application Data\Slic3r"
 	// Mac : "~/Library/Application Support/Slic3r"
+
+    //by wangcy
+    //copy predefined config files to data path of current user, this policy is only applied to non-linux OS.
+#ifndef __linux__
+    std::string config_data_dir = wxStandardPaths::Get().GetUserDataDir().ToUTF8().data();
+    boost::filesystem::path resource_dir(Slic3r::resources_dir());
+    boost::filesystem::path predefined_config_dir = resource_dir / "presets" / "HUAFU_slicer";
+
+    if (!boost::filesystem::exists(config_data_dir)) {
+        copy_directory_recursive(predefined_config_dir, config_data_dir);
+    }
+    else {
+        //TODO: (1)Determine wether it is firstly started(read a flag) (2) if it is, copy predefined config
+        boost::filesystem::path non_firstly_start_flag_path(config_data_dir);
+        non_firstly_start_flag_path /= "started_flag_" SLIC3R_VERSION ".ini";
+
+        if (!boost::filesystem::exists(non_firstly_start_flag_path)) {
+            //override current config since it is not created by our app
+            copy_directory_recursive(predefined_config_dir, config_data_dir);
+        }
+    }
+#endif
 
     if (data_dir().empty()) {
         #ifndef __linux__

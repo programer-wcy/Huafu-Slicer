@@ -1,0 +1,6 @@
+{
+    "from": "User",
+    "inherits": "1",
+    "name": "2",
+    "version": "1.9.0.1"
+}

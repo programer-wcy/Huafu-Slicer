@@ -1,0 +1,7 @@
+{
+    "from": "User",
+    "inherits": "1",
+    "internal_solid_infill_pattern": "monotonicline",
+    "name": "13",
+    "version": "1.9.0.1"
+}

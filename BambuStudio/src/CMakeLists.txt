@@ -174,7 +174,7 @@ if (WIN32)
     endif()
     target_compile_definitions(BambuStudio_app_gui PRIVATE -DSLIC3R_WRAPPER_NOCONSOLE)
     add_dependencies(BambuStudio_app_gui BambuStudio)
-    set_target_properties(BambuStudio_app_gui PROPERTIES OUTPUT_NAME "bambu-studio")
+    set_target_properties(BambuStudio_app_gui PROPERTIES OUTPUT_NAME "HUAFU_slicer")
     target_link_libraries(BambuStudio_app_gui PRIVATE boost_headeronly)
 endif ()
 

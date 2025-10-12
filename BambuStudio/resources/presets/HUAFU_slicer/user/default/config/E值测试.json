@@ -1,0 +1,20 @@
+{
+    "from": "User",
+    "inherits": "12345",
+    "initial_layer_line_width": "0.67123",
+    "inner_wall_line_width": "0.6712",
+    "internal_solid_infill_line_width": "0.6712",
+    "line_width": "0.67123",
+    "name": "E值测试",
+    "outer_wall_line_width": "0.6712",
+    "print_extruder_id": [
+        "1"
+    ],
+    "print_extruder_variant": [
+        "Direct Drive Standard"
+    ],
+    "sparse_infill_line_width": "0.6713",
+    "top_surface_line_width": "0.6712",
+    "top_surface_pattern": "zig-zag",
+    "version": "1.9.0.1"
+}

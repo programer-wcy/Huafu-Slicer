@@ -1,0 +1,15 @@
+{
+    "from": "User",
+    "inherits": "1",
+    "name": "5",
+    "print_extruder_id": [
+        "1"
+    ],
+    "print_extruder_variant": [
+        "Direct Drive Standard"
+    ],
+    "top_surface_pattern": "concentric",
+    "version": "1.9.0.1",
+    "wall_generator": "arachne",
+    "wall_loops": "1"
+}

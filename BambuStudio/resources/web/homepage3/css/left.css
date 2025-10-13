@@ -97,7 +97,7 @@ body
 	display: flex;
 	justify-content: center;
 	user-select: none;
-	cursor:pointer;
+	/* by wangcy: cursor:pointer; */
 }
 
 #Login1:hover #LoginBtn

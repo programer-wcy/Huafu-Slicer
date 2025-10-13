@@ -2444,7 +2444,7 @@ void GUI_App::init_app_config()
         copy_directory_recursive(predefined_config_dir, config_data_dir);
     }
     else {
-        //TODO: (1)Determine wether it is firstly started(read a flag) (2) if it is, copy predefined config
+        //TODO: (1)Determine whether it is firstly started(read a flag) (2) if it is, copy predefined config
         boost::filesystem::path non_firstly_start_flag_path(config_data_dir);
         non_firstly_start_flag_path /= "started_flag_" SLIC3R_VERSION ".ini";
 

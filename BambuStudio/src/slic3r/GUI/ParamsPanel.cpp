@@ -434,10 +434,16 @@ void ParamsPanel::create_layout()
         m_mode_sizer->AddSpacer(FromDIP(2));
         m_mode_sizer->Add(m_mode_view, 0, wxALIGN_CENTER);
         m_mode_sizer->AddSpacer(FromDIP(10));
+        //by wangcy: hide the button pointed by m_setting_btn
+        /*
         m_mode_sizer->Add(m_setting_btn, 0, wxALIGN_CENTER);
         m_mode_sizer->AddSpacer(FromDIP(12));
+        */
+        //by wangcy: hide the button pointed by m_compare_btn
+        /*
         m_mode_sizer->Add(m_compare_btn, 0, wxALIGN_CENTER);
         m_mode_sizer->AddSpacer(FromDIP(16));
+        */
         //m_mode_sizer->Add( m_search_btn, 0, wxALIGN_CENTER );
         //m_mode_sizer->AddSpacer(16);
         m_mode_sizer->SetMinSize(-1, FromDIP(30));

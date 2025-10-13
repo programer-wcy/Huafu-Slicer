@@ -519,7 +519,8 @@ void Sidebar::priv::layout_printer(bool isBBL, bool isDual)
         wxBoxSizer *hsizer_printer_btn = new wxBoxSizer(wxHORIZONTAL);
         hsizer_printer_btn->AddStretchSpacer(1);
         hsizer_printer_btn->Add(btn_edit_printer, 0);
-        hsizer_printer_btn->Add(btn_connect_printer, 0, wxALIGN_CENTER | wxLEFT, FromDIP(4));
+        // by wangcy: do not show "connect printer" button
+        // hsizer_printer_btn->Add(btn_connect_printer, 0, wxALIGN_CENTER | wxLEFT, FromDIP(4));
         combo_printer->SetWindowStyle(combo_printer->GetWindowStyle() & ~wxALIGN_MASK | (isDual ? wxALIGN_CENTER_HORIZONTAL : wxALIGN_RIGHT));
         if (isDual) {
             wxBoxSizer *vsizer = new wxBoxSizer(wxVERTICAL);
@@ -566,7 +567,6 @@ void Sidebar::priv::layout_printer(bool isBBL, bool isDual)
 
         vsizer_printer->AddSpacer(FromDIP(4));
     }
-
     btn_connect_printer->Show(!isBBL);
     btn_sync_printer->Show(isDual);
     panel_printer_bed->Show(isBBL);
@@ -1581,6 +1581,7 @@ Sidebar::Sidebar(Plater *parent)
                 PhysicalPrinterDialog dlg(this->GetParent());
                 dlg.ShowModal();
             });
+        
 
         {
         auto hovered = std::make_shared<wxWindow *>();

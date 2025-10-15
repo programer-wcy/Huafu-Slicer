@@ -584,7 +584,7 @@ Line OptionsGroup::create_single_option_line(const Option& option, const std::st
     wxString tooltip = _(option.opt.tooltip);
     edit_tooltip(tooltip);
 	Line retval{ _(option.opt.label), tooltip };
-	retval.label_path = path;
+	//retval.label_path = path;//modified by bzh
     retval.append_option(option);
     return retval;
 }

@@ -742,7 +742,7 @@ void OG_CustomCtrl::CtrlLine::render(wxDC& dc, wxCoord h_pos, wxCoord v_pos)
 
     Field* field = ctrl->opt_group->get_field(og_line.get_options().front().opt_id);
 
-    bool suppress_hyperlinks = false;
+    bool suppress_hyperlinks = true;//modified by bzh
     if (draw_just_act_buttons) {
         //BBS: GUI refactor
         if (field && field->undo_bitmap())
@@ -996,7 +996,8 @@ bool OG_CustomCtrl::CtrlLine::launch_browser() const
     if (!is_focused || og_line.label_path.empty())
         return false;
 
-    return OptionsGroup::launch_browser(og_line.label_path);
+    //return OptionsGroup::launch_browser(og_line.label_path);
+    return false;//modified by bzh
 }
 
 } // GUI

@@ -305,7 +305,7 @@ void AMSMaterialsSetting::create_panel_kn(wxWindow* parent)
     m_wiki_ctrl->SetVisitedColour(*wxBLUE);
     m_wiki_ctrl->SetFont(Label::Head_14);
     cali_title_sizer->Add(m_ratio_text, 0, wxALIGN_CENTER_VERTICAL);
-    cali_title_sizer->Add(m_wiki_ctrl, 0, wxALIGN_CENTER_VERTICAL);
+    //cali_title_sizer->Add(m_wiki_ctrl, 0, wxALIGN_CENTER_VERTICAL);
 
     wxBoxSizer *m_sizer_cali_resutl = new wxBoxSizer(wxHORIZONTAL);
     // pa profile

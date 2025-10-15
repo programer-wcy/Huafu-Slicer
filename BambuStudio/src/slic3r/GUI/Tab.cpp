@@ -3947,8 +3947,9 @@ void TabConfig::build()
     optgroup->append_single_option_line("inner_wall_acceleration", "", 0);
     optgroup->append_single_option_line("top_surface_acceleration", "", 0);
     optgroup->append_single_option_line("sparse_infill_acceleration", "", 0);
-    optgroup->append_single_option_line("accel_to_decel_enable", "");
-    optgroup->append_single_option_line("accel_to_decel_factor", "");
+    //modified by bzh
+  /*  optgroup->append_single_option_line("accel_to_decel_enable", "");
+    optgroup->append_single_option_line("accel_to_decel_factor", "");*/
 
     optgroup = page->new_optgroup(L("Jerk(XY)"), L"param_acceleration", 15);
     optgroup->append_single_option_line("default_jerk", "");
@@ -4026,7 +4027,8 @@ void TabConfig::build()
     optgroup->append_single_option_line("brim_width", "auto-brim#manual");
     optgroup->append_single_option_line("brim_object_gap", "auto-brim#brim-object-gap");
 
-    optgroup = page->new_optgroup(L("Prime tower"), L"param_tower");
+    //modified by bzh
+    /*optgroup = page->new_optgroup(L("Prime tower"), L"param_tower");
     optgroup->append_single_option_line("enable_prime_tower", "parameter/prime-tower");
     optgroup->append_single_option_line("prime_tower_skip_points", "parameter/prime-tower");
     optgroup->append_single_option_line("prime_tower_enable_framework", "parameter/prime-tower#internal-ribs");
@@ -4037,12 +4039,12 @@ void TabConfig::build()
     optgroup->append_single_option_line("prime_tower_rib_wall", "parameter/prime-tower#rib-wall");
     optgroup->append_single_option_line("prime_tower_extra_rib_length", "parameter/prime-tower#rib-wall");
     optgroup->append_single_option_line("prime_tower_rib_width", "parameter/prime-tower#rib-wall");
-    optgroup->append_single_option_line("prime_tower_fillet_wall", "parameter/prime-tower");
+    optgroup->append_single_option_line("prime_tower_fillet_wall", "parameter/prime-tower");*/
 
-    optgroup = page->new_optgroup(L("Flush options"), L"param_flush");
+    /*optgroup = page->new_optgroup(L("Flush options"), L"param_flush");
     optgroup->append_single_option_line("flush_into_infill", "reduce-wasting-during-filament-change#wipe-into-infill");
     optgroup->append_single_option_line("flush_into_objects", "reduce-wasting-during-filament-change#wipe-into-object");
-    optgroup->append_single_option_line("flush_into_support", "reduce-wasting-during-filament-change#wipe-into-support-enabled-by-default");
+    optgroup->append_single_option_line("flush_into_support", "reduce-wasting-during-filament-change#wipe-into-support-enabled-by-default");*/
 
     optgroup = page->new_optgroup(L("Special mode"), L"param_special");
     optgroup->append_single_option_line("slicing_mode");
@@ -4746,11 +4748,12 @@ void TabPrinter::build_unregular_pages(bool from_initial_build/* = false*/)
             optgroup->append_single_option_line("deretraction_speed", "parameter/retraction#deretraction-speed", extruder_idx);
             //optgroup->append_single_option_line("retract_restart_extra", "", extruder_idx);
             optgroup->append_single_option_line("retraction_minimum_travel", "parameter/retraction#travel-distance-threshold", extruder_idx);
-            optgroup->append_single_option_line("retract_when_changing_layer", "parameter/retraction#retract-on-layer-change", extruder_idx);
-            optgroup->append_single_option_line("wipe", "parameter/retraction#wipe-while-retracting", extruder_idx);
-            optgroup->append_single_option_line("wipe_distance", "parameter/retraction#wipe-distance", extruder_idx);
-            optgroup->append_single_option_line("retract_before_wipe", "parameter/retraction#retract-amount-before-wipe", extruder_idx);
-
+            //modified by bzh
+            //optgroup->append_single_option_line("retract_when_changing_layer", "parameter/retraction#retract-on-layer-change", extruder_idx);
+            //optgroup->append_single_option_line("wipe", "parameter/retraction#wipe-while-retracting", extruder_idx);
+            //optgroup->append_single_option_line("wipe_distance", "parameter/retraction#wipe-distance", extruder_idx);
+            //optgroup->append_single_option_line("retract_before_wipe", "parameter/retraction#retract-amount-before-wipe", extruder_idx);
+            
             optgroup = page->new_optgroup(L("Retraction when switching material"), L"param_retraction", -1, true);
             optgroup->append_single_option_line("retract_length_toolchange", "", extruder_idx);
             optgroup->append_single_option_line("retract_restart_extra_toolchange", "", extruder_idx);

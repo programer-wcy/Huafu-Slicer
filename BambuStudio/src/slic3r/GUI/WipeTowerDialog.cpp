@@ -123,7 +123,7 @@ WipingDialog::WipingDialog(wxWindow* parent, const std::vector<std::vector<int>>
     m_extra_flush_volume(extra_flush_volume),
     m_max_flush_volume(max_flush_volume)
 {
-    std::string icon_path = (boost::format("%1%/images/BambuStudioTitle.ico") % Slic3r::resources_dir()).str();
+    std::string icon_path = (boost::format("%1%/images/HuafuSlicerTitle.ico") % Slic3r::resources_dir()).str();
     SetIcon(wxIcon(Slic3r::encode_path(icon_path.c_str()), wxBITMAP_TYPE_ICO));
     wxBoxSizer* main_sizer = new wxBoxSizer(wxVERTICAL);
     this->SetSizer(main_sizer);

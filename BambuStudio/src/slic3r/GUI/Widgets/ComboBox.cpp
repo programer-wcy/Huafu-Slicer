@@ -55,7 +55,9 @@ ComboBox::ComboBox(wxWindow *parent,
             std::make_pair(0x005AB5, (int) StateColor::Hovered),
             std::make_pair(0xDBDBDB, (int) StateColor::Normal)));
         TextInput::SetBackgroundColor(StateColor(std::make_pair(0xF0F0F1, (int) StateColor::Disabled),
-            std::make_pair(0xEDFAF2, (int) StateColor::Focused),
+            //by wangcy: set foucused background color to be light blue
+            //std::make_pair(0xEDFAF2, (int) StateColor::Focused),
+            std::make_pair(0xCCE5FF, (int)StateColor::Focused),
             std::make_pair(*wxWHITE, (int) StateColor::Normal)));
         TextInput::SetLabelColor(StateColor(std::make_pair(0x909090, (int) StateColor::Disabled),
             std::make_pair(0x262E30, (int) StateColor::Normal)));

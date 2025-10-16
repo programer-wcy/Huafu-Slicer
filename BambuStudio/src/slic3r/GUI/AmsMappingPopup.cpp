@@ -341,7 +341,7 @@ void MaterialItem::doRender(wxDC& dc)
     dc.DrawRoundedRectangle(FromDIP(0), FromDIP(0), MATERIAL_ITEM_SIZE.x - FromDIP(0), MATERIAL_ITEM_SIZE.y - FromDIP(0), 5);
 
     if (m_selected) {
-        dc.SetPen(wxPen(wxColour(0x00, 0xAE, 0x42), FromDIP(2)));
+        dc.SetPen(wxPen(wxColour(0x00, 0x73, 0xBD), FromDIP(2))); //by wangcy change to be blue
         dc.SetBrush(*wxTRANSPARENT_BRUSH);
         dc.DrawRoundedRectangle(FromDIP(1), FromDIP(1), MATERIAL_ITEM_SIZE.x - FromDIP(1), MATERIAL_ITEM_SIZE.y - FromDIP(1), 5);
     }
@@ -568,7 +568,7 @@ void MaterialSyncItem::doRender(wxDC &dc)
     dc.DrawRoundedRectangle(0, 0, MATERIAL_ITEM_SIZE.x, MATERIAL_ITEM_SIZE.y, 5);
 
     if (m_selected) {
-        dc.SetPen(wxPen(wxColour(0x00, 0xAE, 0x42), FromDIP(2)));
+        dc.SetPen(wxPen(wxColour(0x00, 0x73, 0xBD), FromDIP(2))); //by wangcy:change to be blue
         dc.SetBrush(*wxTRANSPARENT_BRUSH);
         dc.DrawRoundedRectangle(FromDIP(1), FromDIP(1), MATERIAL_ITEM_SIZE.x - FromDIP(1), MATERIAL_ITEM_SIZE.y - FromDIP(1), 5);
     }

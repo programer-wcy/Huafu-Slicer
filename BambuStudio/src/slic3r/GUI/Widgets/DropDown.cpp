@@ -39,7 +39,9 @@ DropDown::DropDown(std::vector<Item> &items)
     , text_color(0x363636)
     , selector_border_color(std::make_pair(0x005AB5, (int) StateColor::Hovered),
         std::make_pair(*wxWHITE, (int) StateColor::Normal))
-    , selector_background_color(std::make_pair(0xEDFAF2, (int) StateColor::Checked),
+    //by wangcy: set selector background color to be light blue
+    //, selector_background_color(std::make_pair(0xEDFAF2, (int) StateColor::Checked),
+        , selector_background_color(std::make_pair(0xCCE5FF, (int)StateColor::Checked),
         std::make_pair(*wxWHITE, (int) StateColor::Normal))
 {
 }

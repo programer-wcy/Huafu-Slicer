@@ -449,7 +449,9 @@ class TabPrint : public Tab
 public:
 	//BBS: GUI refactor
 	TabPrint(ParamsPanel* parent, Preset::Type type = Preset::TYPE_PRINT) :
-        Tab(parent, _(L("Process")), type) {}
+		Tab(parent, _(L("Process")), type) {
+		Hide();
+	}
 	~TabPrint() {}
 
 	void		build() override;
@@ -459,6 +461,14 @@ public:
 	void		update() override;
 	void		clear_pages() override;
 	bool 		supports_printer_technology(const PrinterTechnology tech) const override { return tech == ptFFF; }
+
+	/*
+	bool	Show(bool show = true) override;
+	void	set_always_hide() {
+		b_alwayshide = true;
+	}
+	bool	b_alwayshide = true;
+	*/
 
 private:
 	ogStaticText*	m_recommended_thin_wall_thickness_description_line = nullptr;

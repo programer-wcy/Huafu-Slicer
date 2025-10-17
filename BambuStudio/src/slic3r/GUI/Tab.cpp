@@ -203,6 +203,10 @@ void Tab::create_preset_tab()
     if (m_type < Preset::TYPE_COUNT) {
         // preset chooser
         m_presets_choice = new TabPresetComboBox(panel, m_type);
+        //by wangcy: temp
+        if (m_type == Preset::TYPE_PRINT)
+            m_presets_choice->Hide();
+        
         // m_presets_choice->SetFont(Label::Body_10); // BBS
         m_presets_choice->set_selection_changed_function([this](int selection) {
             if (!m_presets_choice->selection_is_changed_according_to_physical_printers())
@@ -233,6 +237,12 @@ void Tab::create_preset_tab()
     //add_scaled_button(panel, &m_btn_compare_preset, "compare");
     add_scaled_button(m_top_panel, &m_btn_save_preset, "save");
     add_scaled_button(m_top_panel, &m_btn_delete_preset, "cross");
+    if (m_type == Preset::TYPE_PRINT)
+    {
+        m_btn_save_preset->Hide();
+        m_btn_delete_preset->Hide();
+    }
+
     //if (m_type == Preset::Type::TYPE_PRINTER)
     //    add_scaled_button(panel, &m_btn_edit_ph_printer, "cog");
 
@@ -269,6 +279,8 @@ void Tab::create_preset_tab()
     add_scaled_button(m_top_panel, &m_undo_to_sys_btn, m_bmp_white_bullet.name());
     add_scaled_button(m_top_panel, &m_btn_search,      "search");
     m_btn_search->SetToolTip(_L("Search in preset"));
+    if (m_type == Preset::TYPE_PRINT)
+        m_btn_search->Hide();
 
     //search input
     m_search_item = new StaticBox(m_top_panel);
@@ -373,6 +385,7 @@ void Tab::create_preset_tab()
     m_top_sizer->Add( m_btn_delete_preset, 0, wxALIGN_CENTER_VERTICAL | wxLEFT, FromDIP(12) );
     m_top_sizer->Add( m_btn_search, 0, wxALIGN_CENTER_VERTICAL | wxLEFT , FromDIP(12) );
     m_top_sizer->Add(m_search_item, 1, wxALIGN_CENTER_VERTICAL | wxRIGHT | wxLEFT, FromDIP(12));
+
 
     if (dynamic_cast<TabPrint*>(this) == nullptr) {
         m_static_title = new Label(m_top_panel, Label::Body_12, _L("Advance"));
@@ -2048,6 +2061,22 @@ void Tab::update_frequently_changed_parameters()
         update_wiping_button_visibility();
     }
 }
+
+/*
+bool	TabPrint::Show(bool show) {
+    if (b_alwayshide) {
+        if (show) {
+            return true;
+        }
+        else {
+            return Tab::Show(show);
+        }
+    }
+    else {
+        return Tab::Show(show);
+    }
+}
+*/
 
 //BBS: BBS new parameter list
 void TabPrint::build()
@@ -5353,8 +5382,12 @@ void Tab::update_btns_enabling()
     // we can delete any preset from the physical printer
     // and any user preset
     const Preset& preset = m_presets->get_edited_preset();
-    m_btn_delete_preset->Show((m_type == Preset::TYPE_PRINTER && m_preset_bundle->physical_printers.has_selection())
-                              || (!preset.is_default && !preset.is_system));
+    //deleted by wangcy
+    if (m_type != Preset::TYPE_PRINT) 
+    {
+        m_btn_delete_preset->Show((m_type == Preset::TYPE_PRINTER && m_preset_bundle->physical_printers.has_selection())
+            || (!preset.is_default && !preset.is_system));
+    }
 
     //if (m_btn_edit_ph_printer)
     //    m_btn_edit_ph_printer->SetToolTip( m_preset_bundle->physical_printers.has_selection() ?

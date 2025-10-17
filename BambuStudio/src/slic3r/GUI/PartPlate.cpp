@@ -66,7 +66,9 @@ const float WIPE_TOWER_DEFAULT_Y_POS = 250.;  // Max y
 const float I3_WIPE_TOWER_DEFAULT_X_POS = 0.;
 const float I3_WIPE_TOWER_DEFAULT_Y_POS = 250.; // Max y
 
-std::array<unsigned char, 4>  PlateTextureForeground = {0x0, 0xae, 0x42, 0xff};
+// by wangcy: change forgroud color of subplate number to be blue
+// std::array<unsigned char, 4>  PlateTextureForeground = {0x0, 0xae, 0x42, 0xff};
+std::array<unsigned char, 4>  PlateTextureForeground = { 0x0, 0x73, 0xbd, 0xff };
 
 namespace Slic3r {
 namespace GUI {

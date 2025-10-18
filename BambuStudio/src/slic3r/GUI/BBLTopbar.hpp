@@ -76,7 +76,8 @@ private:
     wxAuiToolBarItem *m_save_item;
     wxAuiToolBarItem* m_undo_item;
     wxAuiToolBarItem* m_redo_item;
-    wxAuiToolBarItem* m_calib_item;
+    //deleted by wangcy
+    // wxAuiToolBarItem* m_calib_item;
     wxAuiToolBarItem* maximize_btn;
 
     wxBitmap m_publish_bitmap;

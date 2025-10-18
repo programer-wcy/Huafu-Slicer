@@ -251,8 +251,9 @@ void BBLTopbar::Init(wxFrame* parent)
 
     wxBitmap calib_bitmap          = create_scaled_bitmap("calib_sf", nullptr, TOPBAR_ICON_SIZE);
     wxBitmap calib_bitmap_inactive = create_scaled_bitmap("calib_sf_inactive", nullptr, TOPBAR_ICON_SIZE);
-    m_calib_item                   = this->AddTool(ID_CALIB, _L("Calibration"), calib_bitmap);
-    m_calib_item->SetDisabledBitmap(calib_bitmap_inactive);
+    //deleted by wangcy
+    // m_calib_item                   = this->AddTool(ID_CALIB, _L("Calibration"), calib_bitmap);
+    // m_calib_item->SetDisabledBitmap(calib_bitmap_inactive);
 
     this->AddSpacer(FromDIP(10));
     this->AddStretchSpacer(1);
@@ -394,7 +395,8 @@ void BBLTopbar::EnableUndoRedoItems()
 {
     this->EnableTool(m_undo_item->GetId(), true);
     this->EnableTool(m_redo_item->GetId(), true);
-    this->EnableTool(m_calib_item->GetId(), true);
+    //deleted by wangcy
+    // this->EnableTool(m_calib_item->GetId(), true);
     Refresh();
 }
 
@@ -402,7 +404,8 @@ void BBLTopbar::DisableUndoRedoItems()
 {
     this->EnableTool(m_undo_item->GetId(), false);
     this->EnableTool(m_redo_item->GetId(), false);
-    this->EnableTool(m_calib_item->GetId(), false);
+    //deleted by wangcy
+    // this->EnableTool(m_calib_item->GetId(), false);
     Refresh();
 }
 
@@ -413,10 +416,12 @@ void BBLTopbar::SaveNormalRect()
 
 void BBLTopbar::ShowCalibrationButton(bool show)
 {
-    m_calib_item->GetSizerItem()->Show(show);
+    //deleted by wangcy
+    // m_calib_item->GetSizerItem()->Show(show);
     m_sizer->Layout();
-    if (!show)
-        m_calib_item->GetSizerItem()->SetDimension({-1000, 0}, {0, 0});
+    //deleted by wangcy
+    // if (!show)
+    //    m_calib_item->GetSizerItem()->SetDimension({-1000, 0}, {0, 0});
     Refresh();
 }
 

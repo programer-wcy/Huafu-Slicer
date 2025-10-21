@@ -847,9 +847,9 @@ void GLGizmoText::push_button_style(bool pressed) {
     }
     else {
         if (pressed) {
-            ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(219 / 255.f, 253 / 255.f, 231 / 255.f, 1.f));
-            ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4(219 / 255.f, 253 / 255.f, 231 / 255.f, 1.f));
-            ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4(219 / 255.f, 253 / 255.f, 231 / 255.f, 1.f));
+            ImGui::PushStyleColor(ImGuiCol_Button, ImVec4(204 / 255.f, 229 / 255.f, 255 / 255.f, 1.f));
+            ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4(204 / 255.f, 229 / 255.f, 255 / 255.f, 1.f));
+            ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4(204 / 255.f, 229 / 255.f, 255 / 255.f, 1.f));
             ImGui::PushStyleColor(ImGuiCol_Border, ImVec4(0.f, 90 / 255.f, 181 / 255.f, 1.f));
         }
         else {
@@ -1041,11 +1041,13 @@ void GLGizmoText::on_render_input_window(float x, float y, float bottom_limit)
     ImGui::AlignTextToFramePadding();
     m_imgui->text(_L("Size"));
     ImGui::SameLine(caption_size);
+    ImGui::PushStyleColor(ImGuiCol_TextSelectedBg, ImVec4(0.80f, 0.89f, 1.00f, 1.00f)); // by wangcy: set bg color of selected text
     ImGui::PushItemWidth(input_size);
     if (ImGui::InputFloat("###font_size", &m_font_size, 0.0f, 0.0f, "%.2f")) {
         limit_value(m_font_size, m_font_size_min, m_font_size_max);
         m_need_update_text = true;
     }
+    ImGui::PopStyleColor(1);
     ImGui::SameLine();
 
     ImGui::PushStyleVar(ImGuiStyleVar_FrameBorderSize, 1.0f * currt_scale);
@@ -1071,7 +1073,9 @@ void GLGizmoText::on_render_input_window(float x, float y, float bottom_limit)
     ImGui::SameLine(caption_size);
     ImGui::PushItemWidth(list_width);
     float old_value = m_thickness;
+    ImGui::PushStyleColor(ImGuiCol_TextSelectedBg, ImVec4(0.80f, 0.89f, 1.00f, 1.00f)); // by wangcy: set bg color of selected text
     ImGui::InputFloat("###text_thickness", &m_thickness, 0.0f, 0.0f, "%.2f");
+    ImGui::PopStyleColor(1); //by wangcy
     m_thickness = ImClamp(m_thickness, m_thickness_min, m_thickness_max);
     if (old_value != m_thickness)
         m_need_update_text = true;
@@ -1106,20 +1110,23 @@ void GLGizmoText::on_render_input_window(float x, float y, float bottom_limit)
     m_imgui->text(_L("Embeded\r\ndepth"));
     ImGui::SameLine(caption_size);
     ImGui::PushItemWidth(list_width);
+    ImGui::PushStyleColor(ImGuiCol_TextSelectedBg, ImVec4(0.80f, 0.89f, 1.00f, 1.00f)); // by wangcy: set bg color of selected text
     old_value = m_embeded_depth;
     if (ImGui::InputFloat("###text_embeded_depth", &m_embeded_depth, 0.0f, 0.0f, "%.2f")) {
         limit_value(m_embeded_depth, 0.0f, m_embeded_depth_max);
     }
     if (old_value != m_embeded_depth)
         m_need_update_text = true;
+    ImGui::PopStyleColor(1); //by wangcy
 
     ImGui::AlignTextToFramePadding();
     m_imgui->text(_L("Input text"));
     ImGui::SameLine(caption_size);
     ImGui::PushItemWidth(list_width);
-
+    ImGui::PushStyleColor(ImGuiCol_TextSelectedBg, ImVec4(0.80f, 0.89f, 1.00f, 1.00f)); // by wangcy: set bg color of selected text
     if(ImGui::InputText("", m_text, sizeof(m_text)))
         m_need_update_text = true;
+    ImGui::PopStyleColor(1); //by wangcy
     std::string text = std::string(m_text);
     if (text.empty() && m_is_modify) {
         m_imgui->warning_text(_L("Warning:Input cannot be empty!"));

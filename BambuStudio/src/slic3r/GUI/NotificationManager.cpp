@@ -150,7 +150,7 @@ NotificationManager::PopNotification::PopNotification(const NotificationData &n,
 {
     m_ErrorColor  = ImVec4(0.9, 0.36, 0.36, 1);
     m_WarnColor   = ImVec4(0.99, 0.69, 0.455, 1);
-    m_NormalColor = ImVec4(0.03, 0.6, 0.18, 1);
+    m_NormalColor = ImVec4(14/255.0, 181/255.0, 247/255.0, 1);
 
 	m_CurrentColor = m_NormalColor;   //Default
 

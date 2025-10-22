@@ -1234,9 +1234,10 @@ void MainFrame::show_device(bool bBBLPrinter) {
         if (m_monitor) // by wangcy: avoid calling the following Show when it is not created
             m_monitor->Show(false);
         m_tabpanel->RemovePage(tpMonitor);
-        m_tabpanel->InsertPage(tpMonitor, m_monitor, _L("Device"),
+        //deleted by wangcy
+        /*m_tabpanel->InsertPage(tpMonitor, m_monitor, _L("Device"),
                              std::string("tab_monitor_active"),
-                             std::string("tab_monitor_active"), false);
+                             std::string("tab_monitor_active"), false);*/
     }
   } else {
     if (m_tabpanel->GetPage(tpMonitor) != m_printer_view) {
@@ -1244,9 +1245,10 @@ void MainFrame::show_device(bool bBBLPrinter) {
         if(m_monitor) // by wangcy: avoid calling the following Show when it is not created
             m_monitor->Show(false);
         m_tabpanel->RemovePage(tpMonitor);
-        m_tabpanel->InsertPage(tpMonitor, m_printer_view, _L("Device"),
+        //deleted by wangcy
+        /*m_tabpanel->InsertPage(tpMonitor, m_printer_view, _L("Device"),
                           std::string("tab_monitor_active"),
-                          std::string("tab_monitor_active"), false);
+                          std::string("tab_monitor_active"), false);*/
     }
   }
 }

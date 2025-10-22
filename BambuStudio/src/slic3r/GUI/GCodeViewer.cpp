@@ -4828,7 +4828,7 @@ void GCodeViewer::render_legend_color_arr_recommen(float window_padding)
         ImGui::PushStyleColor(ImGuiCol_Separator, ImVec4(.8f, .8f, .8f, 1.0f));
         imgui.bold_text(_u8L("Filament Grouping"));
         ImGui::SameLine();
-        std::string tip_str = _u8L("Why this grouping");
+        std::string tip_str = "";
         ImGui::SetCursorPosX(ImGui::GetWindowContentRegionWidth() - window_padding - ImGui::CalcTextSize(tip_str.c_str()).x);
         link_filament_group_wiki(tip_str);
         ImGui::Separator();

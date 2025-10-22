@@ -559,13 +559,14 @@ wxMenu* MenuFactory::append_submenu_add_generic(wxMenu* menu, ModelVolumeType ty
             [type, item](wxCommandEvent&) { obj_list()->load_generic_subobject(item, type); }, Slic3r::resources_dir() + "/model/" + icons[i++] + ".png", menu);
     }
 
-    if (type == ModelVolumeType::INVALID) {
+    //by wangcy: Remove Bambu or other manufactor's models
+    /*if (type == ModelVolumeType::INVALID) {
         sub_menu->AppendSeparator();
         for (auto &item : {L("Bambu Cube"), L("Bambu Cube V2"), L("3DBenchy"), L("ksr FDMTest")}) {
             append_menu_item(
                 sub_menu, wxID_ANY, _(item), "", [type, item](wxCommandEvent &) { obj_list()->load_generic_subobject(item, type); }, "", menu);
         }
-    }
+    }*/
     append_menu_item_add_svg(sub_menu, type);
     return sub_menu;
 }

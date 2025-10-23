@@ -1774,7 +1774,7 @@ Sidebar::Sidebar(Plater *parent)
     p->m_flushing_volume_btn->SetPaddingSize(wxSize(FromDIP(6),FromDIP(3)));
     p->m_flushing_volume_btn->SetCornerRadius(FromDIP(8));
 
-    StateColor flush_bg_col(std::pair<wxColour, int>(wxColour(219, 253, 231), StateColor::Pressed),
+    StateColor flush_bg_col(std::pair<wxColour, int>(wxColour(210, 235, 253), StateColor::Pressed),
                             std::pair<wxColour, int>(wxColour(238, 238, 238), StateColor::Hovered),
                             std::pair<wxColour, int>(wxColour(238, 238, 238), StateColor::Normal));
 

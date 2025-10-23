@@ -150,10 +150,10 @@
 
       .btn-ok {
         color: #fff;
-        background-color: #21a452;
+        background-color: #0061A1;
       }
       .btn-ok:hover {
-        background-color: #3dcb73;
+        background-color: #78A4DE;
       }
 
       .btn-cancel {
@@ -190,8 +190,8 @@
       select:hover,
       select:focus {
         outline: none;
-        border-color: #00ae42;
-        background-color: #edfaf2;
+        border-color: #0073BD;
+        background-color: #D2EBFD;
       }
 
       .button-container {
@@ -297,12 +297,13 @@
 
   <body>
     <div class="container">
+
       <div class="tip-panel" id="auto_flush_tip">
         Studio would re-calculate your flushing volumes every time the filament
         color changed or filaments changed. You could disable the auto-calculate
         in Bambu Studio &gt; Preferences.
       </div>
-
+	  
       <div style="margin-bottom: 10px; ">
         <button
           class="btn btn-ok"
@@ -452,7 +453,7 @@
         document.getElementById('volume_desp_panel').innerText = data.volume_desp_panel
         document.getElementById('volume_range_panel').innerText = data.volume_range_panel
         document.getElementById('multiplier_range_panel').innerText = data.multiplier_range_panel
-        document.getElementById('auto_flush_tip').innerText = data.auto_flush_tip
+		document.getElementById('auto_flush_tip').innerText = data.auto_flush_tip
         document.getElementById('calc_btn').innerText = data.calc_btn_panel
         document.getElementById('extruder_label_0').innerText = data.extruder_label_0
         document.getElementById('extruder_label_1').innerText = data.extruder_label_1

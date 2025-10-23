@@ -1308,7 +1308,8 @@ void PlaterPresetComboBox::update()
         add_presets(project_embedded_presets, selected_user_preset, L("Project-inside presets"));
         add_presets(nonsys_presets, selected_user_preset, L("User presets"));
         // BBS: move system to the end
-        add_presets(system_presets, selected_system_preset, L("System presets"));
+        //by wangcy: system presets
+        /*add_presets(system_presets, selected_system_preset, L("System presets"));*/
 
         //BBS: remove unused pysical printer logic
         /*if (m_type == Preset::TYPE_PRINTER)
@@ -1346,7 +1347,8 @@ void PlaterPresetComboBox::update()
         else if (m_type == Preset::TYPE_SLA_MATERIAL)
             set_label_marker(Append(separator(L("Add/Remove materials")), *bmp), LABEL_ITEM_WIZARD_MATERIALS);
         else {
-            set_label_marker(Append(separator(L("Select/Remove printers(system presets)")), *bmp), LABEL_ITEM_WIZARD_PRINTERS);
+            //by wangcy: system presets
+            /*set_label_marker(Append(separator(L("Select/Remove printers(system presets)")), *bmp), LABEL_ITEM_WIZARD_PRINTERS);*/
             set_label_marker(Append(separator(L("Create printer")), *bmp), LABEL_ITEM_WIZARD_ADD_PRINTERS);
         }
     }
@@ -1581,7 +1583,8 @@ void TabPresetComboBox::update()
         //BBS: move system to the end
         if (!system_presets.empty())
         {
-            set_label_marker(Append(separator(L("System presets")), wxNullBitmap));
+            //by wangcy: system presets
+            /*set_label_marker(Append(separator(L("System presets")), wxNullBitmap));
             for (std::map<wxString, std::pair<wxBitmap*, bool>>::iterator it = system_presets.begin(); it != system_presets.end(); ++it) {
                 int item_id = Append(it->first, *it->second.first);
                 SetItemTooltip(item_id, preset_descriptions[it->first]);
@@ -1589,7 +1592,7 @@ void TabPresetComboBox::update()
                 if (!is_enabled)
                     set_label_marker(item_id, LABEL_ITEM_DISABLED);
                 validate_selection(it->first == selected);
-            }
+            }*/
         }
     }
 
@@ -1824,11 +1827,12 @@ void GUI::CalibrateFilamentComboBox::update()
     }
     if (!m_system_presets.empty())
     {
-        set_label_marker(Append(separator(L("System presets")), wxNullBitmap));
+        //by wangcy: system presets
+        /*set_label_marker(Append(separator(L("System presets")), wxNullBitmap));
         for (auto it = m_system_presets.begin(); it != m_system_presets.end(); ++it) {
             Append(it->first, *(it->second.second));
             validate_selection(it->first == selected_preset);
-        }
+        }*/
     }
 
     update_selection();

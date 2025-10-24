@@ -1938,7 +1938,7 @@ Sidebar::Sidebar(Plater *parent)
     p->m_panel_config_content->SetBackgroundColour(wxColour(255, 255, 255));
     PlaterPresetComboBox* combo_config = new PlaterPresetComboBox(p->m_panel_config_content, Preset::TYPE_CONFIG);
     ScalableButton* edit_btn = new ScalableButton(p->m_panel_config_content, wxID_ANY, "edit");
-    edit_btn->SetToolTip(_L("Click to edit preset"));
+    edit_btn->SetToolTip(_L("Click to edit preset 0002"));
     edit_btn->Bind(wxEVT_BUTTON, [this, combo_config](wxCommandEvent)
         {
             m_soft_first_start = false;

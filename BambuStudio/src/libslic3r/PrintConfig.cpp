@@ -1665,6 +1665,18 @@ void PrintConfigDef::init_fff_params()
     def->mode=comAdvanced;
     def->set_default_value(new ConfigOptionString(""));
 
+
+    //added by wangcy: 
+    def = this->add("continuous_fiber_spacing", coFloat);
+    def->label = L("continuous fiber spacing");
+    def->category = L("Quality");
+    def->tooltip = L("Distance between two neighboring fiber lines");
+    def->sidetext = L("mm");
+    def->min = 0;
+    def->max = 10000;
+    def->mode = comAdvanced;
+    def->set_default_value(new ConfigOptionFloat(0.6));
+
     def = this->add("line_width", coFloat);
     def->label = L("Default");
     def->category = L("Quality");

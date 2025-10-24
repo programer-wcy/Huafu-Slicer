@@ -3829,6 +3829,8 @@ void TabConfig::build()
     optgroup->append_single_option_line("initial_layer_print_height", "layer-height");
 
     optgroup = page->new_optgroup(L("Line width"), L"param_line_width");
+    //added by wangcy:
+    optgroup->append_single_option_line("continuous_fiber_spacing", "parameter/line-width");
     optgroup->append_single_option_line("line_width", "parameter/line-width");
     optgroup->append_single_option_line("initial_layer_line_width", "parameter/line-width");
     optgroup->append_single_option_line("outer_wall_line_width", "parameter/line-width");

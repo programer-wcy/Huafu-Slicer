@@ -788,6 +788,7 @@ PRINT_CONFIG_CLASS_DEFINE(
     ((ConfigOptionFloat,               elefant_foot_compensation))
     ((ConfigOptionFloat,               max_bridge_length))
     ((ConfigOptionFloat,               line_width))
+    ((ConfigOptionFloat,               continuous_fiber_spacing)) /*added by wangcy*/
     // Force the generation of solid shells between adjacent materials/volumes.
     ((ConfigOptionBool,                interface_shells))
     ((ConfigOptionFloat,               layer_height))
@@ -1130,6 +1131,7 @@ PRINT_CONFIG_CLASS_DERIVED_DEFINE(
     ((ConfigOptionPoints,             bed_exclude_area))
     ((ConfigOptionPoints,             head_wrap_detect_zone))
     // BBS
+    ((ConfigOptionFloat,               continuous_fiber_spacing)) /*added by wangcy*/
     ((ConfigOptionStrings,            unprintable_filament_types))
     ((ConfigOptionString,             bed_custom_texture))
     ((ConfigOptionString,             bed_custom_model))

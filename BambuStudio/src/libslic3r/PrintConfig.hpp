@@ -780,7 +780,7 @@ protected: \
 // This object is mapped to Perl as Slic3r::Config::PrintObject.
 PRINT_CONFIG_CLASS_DEFINE(
     PrintObjectConfig,
-
+    ((ConfigOptionFloat,               continuous_fiber_spacing)) /*added by wangcy*/
     ((ConfigOptionFloat,               brim_object_gap))
     ((ConfigOptionEnum<BrimType>,      brim_type))
     ((ConfigOptionFloat,               brim_width))
@@ -788,7 +788,7 @@ PRINT_CONFIG_CLASS_DEFINE(
     ((ConfigOptionFloat,               elefant_foot_compensation))
     ((ConfigOptionFloat,               max_bridge_length))
     ((ConfigOptionFloat,               line_width))
-    ((ConfigOptionFloat,               continuous_fiber_spacing)) /*added by wangcy*/
+    // ((ConfigOptionFloat,               continuous_fiber_spacing)) /*added by wangcy*/
     // Force the generation of solid shells between adjacent materials/volumes.
     ((ConfigOptionBool,                interface_shells))
     ((ConfigOptionFloat,               layer_height))
@@ -1113,6 +1113,7 @@ PRINT_CONFIG_CLASS_DEFINE(
     ((ConfigOptionStrings,             printer_extruder_variant))
     //Orca
     ((ConfigOptionBool,                has_scarf_joint_seam))
+    ((ConfigOptionFloat,               continuous_fiber_spacing)) /*added by wangcy*/
 )
 
 // This object is mapped to Perl as Slic3r::Config::Print.

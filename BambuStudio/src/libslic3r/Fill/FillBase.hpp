@@ -111,6 +111,9 @@ public:
     // BBS: all no overlap expolygons in same layer
     ExPolygons  no_overlap_expolygons;
 
+    //added by wangcy: only for FillBridge, we declare it here just for convenience
+    const PrintConfig* curr_print_config = nullptr;
+
 public:
     virtual ~Fill() {}
     virtual Fill* clone() const = 0;

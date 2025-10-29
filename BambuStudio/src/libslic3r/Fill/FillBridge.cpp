@@ -653,6 +653,8 @@ namespace Slic3r {
             std::vector<RingNode> nodes = compute_complex_polygon_merge(
                 outers, inners);
             std::vector<RingNode> offsetNodes;
+       
+			double offset = curr_print_config ? (curr_print_config->continuous_fiber_spacing) * 100000 : 80000;
             //偏移
             for (auto node : nodes) {
                 std::vector<Ring> ring0 = offsetRing(node.ring, static_cast<double>(node.orientation) * offset * t, area_threshold);
@@ -940,7 +942,7 @@ namespace Slic3r {
         RingNode& inner = findNode(i_ii);
         RingNode& outer = findNode(o_ii);
 
-        double _offset = offset;
+        double _offset = curr_print_config ? (curr_print_config->continuous_fiber_spacing) * 100000 : 80000;
         Point_t p0, p1, p2, p3;
         size_t p0_index = 0, p1_index = 0, p2_index = 0, p3_index = 0, _index = 0;
         double perimeter = 0;

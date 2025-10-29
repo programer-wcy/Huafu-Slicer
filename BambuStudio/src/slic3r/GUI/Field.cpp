@@ -333,6 +333,19 @@ void Field::get_value_by_opt_type(wxString& str, const bool check_value/* = true
                     set_value(double_to_string(val), true);
                 }
             }
+            else if (m_opt.f_min > val || val > m_opt.f_max) {
+                if (!check_value) {
+                    m_value.clear();
+                    break;
+                }
+                std::string opt_key_without_idx = m_opt_id.substr(0, m_opt_id.find('#'));
+                if (m_opt_id == "continuous_fiber_spacing") {
+                    show_error(m_parent, _L("Value is out of range."));
+                    if (m_opt.f_min > val) val = m_opt.f_min;
+                    if (val > m_opt.f_max) val = m_opt.f_max;
+                    set_value(double_to_string(val), true);
+                }
+            }
         }
         m_value = val;
 		break; }

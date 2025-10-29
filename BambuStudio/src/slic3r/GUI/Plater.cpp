@@ -13670,8 +13670,8 @@ void Plater::export_gcode(bool prefer_removable)
     //std::this_thread::sleep_for(std::chrono::seconds(3));
     std::ifstream inFile(copy_file);
     std::ofstream tempFile(temp_file);
-    double defule_distance = 30;
-    double defule_distance_for_out = 45;
+    double defule_distance = 30; //todo by wangcy: 提前挤出距离
+    double defule_distance_for_out = 45; //todo by wangcy: 提前切断距离
     double total_length = defule_distance * 1000;
     std::string line;
     bool isSwitch = false;

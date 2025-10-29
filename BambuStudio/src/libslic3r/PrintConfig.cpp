@@ -1672,8 +1672,8 @@ void PrintConfigDef::init_fff_params()
     def->category = L("Quality");
     def->tooltip = L("Distance between two neighboring fiber lines");
     def->sidetext = L("mm");
-    def->min = 0;
-    def->max = 10000;
+    def->f_min = 0.6;
+    def->f_max = 1.0;
     def->mode = comAdvanced;
     def->set_default_value(new ConfigOptionFloat(0.6));
 
@@ -7183,6 +7183,7 @@ void compute_filament_override_value(const std::string& opt_key, const ConfigOpt
 std::map<std::string, std::string> validate(const FullPrintConfig &cfg, bool under_cli)
 {
     std::map<std::string, std::string> error_message;
+
     // --layer-height
     if (cfg.get_abs_value("layer_height") <= 0) {
         error_message.emplace("layer_height", L("invalid value ") + std::to_string(cfg.get_abs_value("layer_height")));

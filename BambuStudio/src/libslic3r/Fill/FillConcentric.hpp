@@ -28,7 +28,7 @@ protected:
 
 	bool no_sort() const override { return true; }
 
-	const PrintConfig* print_config = nullptr;
+	const PrintConfig* m_my_print_config = nullptr;
 	const PrintObjectConfig* print_object_config = nullptr;
 
 	friend class Layer;

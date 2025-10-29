@@ -2309,6 +2309,9 @@ public:
     int                                 max = INT_MAX;
     // To check if it's not a typo and a % is missing
     double                              max_literal = 1;
+
+    double                              f_min = INT_MIN;
+    double                              f_max = INT_MAX;
     ConfigOptionMode                    mode = comSimple;
     // Legacy names for this configuration option.
     // Used when parsing legacy configuration file.

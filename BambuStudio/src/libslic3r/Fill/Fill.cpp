@@ -505,6 +505,8 @@ void Layer::make_fills(FillAdaptive::Octree* adaptive_fill_octree, FillAdaptive:
         f->z 		= this->print_z;
         f->angle 	= surface_fill.params.angle;
         f->adapt_fill_octree = (surface_fill.params.pattern == ipSupportCubic) ? support_fill_octree : adaptive_fill_octree;
+		f->curr_print_config = &this->object()->print()->config(); //added by wangcy
+
         if (surface_fill.params.pattern == ipZigZag) {
             if (f->layer_id % 2 == 0)
                 f->angle -= surface_fill.params.infill_rotate_step * (f->layer_id / 2);
@@ -519,7 +521,7 @@ void Layer::make_fills(FillAdaptive::Octree* adaptive_fill_octree, FillAdaptive:
         } else if (surface_fill.params.pattern == ipConcentric) {
             FillConcentric *fill_concentric = dynamic_cast<FillConcentric *>(f.get());
             assert(fill_concentric != nullptr);
-            fill_concentric->print_config = &this->object()->print()->config();
+            fill_concentric->m_my_print_config = &this->object()->print()->config();
             fill_concentric->print_object_config = &this->object()->config();
         } else if (surface_fill.params.pattern == ipLightning){
             dynamic_cast<FillLightning::Filler*>(f.get())->generator = lightning_generator;
@@ -561,7 +563,7 @@ void Layer::make_fills(FillAdaptive::Octree* adaptive_fill_octree, FillAdaptive:
 			}
 			fill_contour->lower_sparse_polys = lower_sparse_polys;
 			fill_contour->lower_layer_unsupport_areas = lower_unsuporrt_expolys;
-			fill_contour->print_config = &this->object()->print()->config();
+			fill_contour->m_my_print_config = &this->object()->print()->config();
 			fill_contour->print_object_config = &this->object()->config();
 		}
         // calculate flow spacing for infill pattern generation
@@ -696,6 +698,7 @@ Polylines Layer::generate_sparse_infill_polylines_for_anchoring(FillAdaptive::Oc
 		f->z = this->print_z;
 		f->angle = surface_fill.params.angle;
 		f->adapt_fill_octree = (surface_fill.params.pattern == ipSupportCubic) ? support_fill_octree : adaptive_fill_octree;
+		f->curr_print_config = &this->object()->print()->config(); //added by wangcy
 
 
 		if (surface_fill.params.pattern == ipLightning)

@@ -364,7 +364,6 @@ void OptionsGroup::activate_line(Line& line)
         if (custom_ctrl)
             line.widget_sizer = wgt;
         else
-            ;
             grid_sizer->Add(wgt, 0, wxEXPAND | wxBOTTOM | wxTOP, (wxOSX || line.label.IsEmpty()) ? 0 : 5);
 		return;
 	}

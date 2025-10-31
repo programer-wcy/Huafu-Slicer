@@ -13672,6 +13672,10 @@ void Plater::export_gcode(bool prefer_removable)
     std::ofstream tempFile(temp_file);
     double defule_distance = 30; //todo by wangcy: 提前挤出距离
     double defule_distance_for_out = 45; //todo by wangcy: 提前切断距离
+    //---------------added by wangcy -------------------
+    // wxMessageBox(double_to_string(defule_distance));
+    // defule_distance = p->config->get_abs_value("extrusion_length_before_print");
+    //--------------- end adding -----------------------
     double total_length = defule_distance * 1000;
     std::string line;
     bool isSwitch = false;

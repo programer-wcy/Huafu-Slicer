@@ -4346,6 +4346,11 @@ void TabPrinter::build_fff()
         optgroup->append_single_option_line("machine_unload_filament_time");
         optgroup->append_single_option_line("machine_switch_extruder_time");
 
+        // ------------- added by wangcy -----------------------------
+        optgroup->append_single_option_line("extrusion_length_before_print");
+        optgroup->append_single_option_line("retraction_length_before_wipe");
+        // -------------- end adding ---------------------------------
+
         optgroup = page->new_optgroup(L("Extruder Clearance"));
         optgroup->append_single_option_line("extruder_clearance_max_radius");
         optgroup->append_single_option_line("extruder_clearance_dist_to_rod");

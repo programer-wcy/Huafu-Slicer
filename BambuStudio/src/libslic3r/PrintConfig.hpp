@@ -1052,6 +1052,10 @@ PRINT_CONFIG_CLASS_DEFINE(
     ((ConfigOptionFloat,               machine_load_filament_time))
     ((ConfigOptionFloat,               machine_unload_filament_time))
     ((ConfigOptionFloat,               machine_switch_extruder_time))
+    //------------ added by wagncy ----------
+    ((ConfigOptionFloat,               extrusion_length_before_print))
+    ((ConfigOptionFloat,               retraction_length_before_wipe))
+    //------------- end adding -------------
     ((ConfigOptionBool,                enable_pre_heating))
     ((ConfigOptionEnum<BedTempFormula>, bed_temperature_formula))
     ((ConfigOptionInts,                physical_extruder_map))

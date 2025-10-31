@@ -1811,6 +1811,24 @@ void PrintConfigDef::init_fff_params()
     def->mode = comAdvanced;
     def->set_default_value(new ConfigOptionFloat(5));
 
+    //---------- added by wangcy ---------------------
+    def = this->add("extrusion_length_before_print", coFloat);
+    def->label = L("Extrusion Length Before Print");
+    def->tooltip = L("Extra length for an extruder to extrude before printing");
+    def->min = 0;
+    def->sidetext = L("mm");
+    def->mode = comAdvanced;
+    def->set_default_value(new ConfigOptionFloat(30));
+
+    def = this->add("retraction_length_before_wipe", coFloat);
+    def->label = L("Retraction Length Before Wipe");
+    def->tooltip = L("The length for an extruder to retract before wiping");
+    def->min = 0;
+    def->sidetext = L("mm");
+    def->mode = comAdvanced;
+    def->set_default_value(new ConfigOptionFloat(45));
+    //---------- end adding ------------------------
+
     def = this->add("hotend_cooling_rate", coFloats);
     def->nullable = true;
     def->set_default_value(new ConfigOptionFloatsNullable{2});

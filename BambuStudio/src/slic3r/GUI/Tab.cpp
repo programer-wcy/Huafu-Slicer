@@ -2543,7 +2543,7 @@ void TabPrintModel::on_config_selected(wxString select) {
         return;
     }
     std::vector<std::string> it_keys = m_it->config.keys();
-  /*  for (std::vector<string>::iterator it = it_keys.begin(); it != it_keys.end();) {
+    for (std::vector<string>::iterator it = it_keys.begin(); it != it_keys.end();) {
         if (it->find("filament") != std::string::npos) {
             it = it_keys.erase(it);
         }
@@ -2555,7 +2555,7 @@ void TabPrintModel::on_config_selected(wxString select) {
         else {
             it++;
         }
-    }*/
+    }
     for (auto& p : m_object_configs) {
         p.second->apply_only(m_it->config, it_keys);
     }

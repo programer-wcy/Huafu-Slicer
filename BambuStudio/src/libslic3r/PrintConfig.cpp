@@ -1675,7 +1675,7 @@ void PrintConfigDef::init_fff_params()
     def->f_min = 0.6;
     def->f_max = 1.0;
     def->mode = comAdvanced;
-    def->set_default_value(new ConfigOptionFloat(0.6));
+    def->set_default_value(new ConfigOptionFloat(0.8));
 
     def = this->add("line_width", coFloat);
     def->label = L("Default");
@@ -1818,7 +1818,7 @@ void PrintConfigDef::init_fff_params()
     def->min = 0;
     def->sidetext = L("mm");
     def->mode = comAdvanced;
-    def->set_default_value(new ConfigOptionFloat(30));
+    def->set_default_value(new ConfigOptionFloat(45));
 
     def = this->add("retraction_length_before_wipe", coFloat);
     def->label = L("Retraction Length Before Wipe");
@@ -1826,7 +1826,7 @@ void PrintConfigDef::init_fff_params()
     def->min = 0;
     def->sidetext = L("mm");
     def->mode = comAdvanced;
-    def->set_default_value(new ConfigOptionFloat(45));
+    def->set_default_value(new ConfigOptionFloat(30));
     //---------- end adding ------------------------
 
     def = this->add("hotend_cooling_rate", coFloats);

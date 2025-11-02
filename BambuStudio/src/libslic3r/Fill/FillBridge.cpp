@@ -7,23 +7,43 @@
 #include <string>
 #include <filesystem>
 #include "FillBridge.hpp"
-#include <algorithm>
 
 namespace Slic3r {
 
-
+    /*void FillBridge::_fill_surface_single(
+        const FillParams& params,
+        unsigned int                     thickness_layers,
+        const std::pair<float, Point>& direction,
+        ExPolygon                        expolygon,
+        Polylines& polylines_out)*/
     Polylines FillBridge::fill_surface(const Surface* surface, const FillParams& params)
     {
         Polylines polylines_out;
-        polylines_out.clear();
         double area = surface->expolygon.contour.area();
         if (area < 900000000) {
             return polylines_out;
         }
+        //BoundingBox bounding_box = surface->expolygon.contour.bounding_box();
+
+        //coord_t min_spacing = scale_(this->spacing);
+        //coord_t distance = coord_t(min_spacing / params.density);
+
+        //if (params.density > 0.9999f && !params.dont_adjust) {
+        //    distance = this->_adjust_solid_spacing(bounding_box.size()(0), distance);
+        //    this->spacing = unscale<double>(distance);
+        //}
+
+        BoundingBox bounding_box = surface->expolygon.contour.bounding_box();
+        double _min_spacing = scale_(this->spacing);
+        _line_spacing = coord_t(coordf_t(_min_spacing) / params.density);
+        bounding_box.merge(align_to_grid(
+            bounding_box.min,
+            Point(_line_spacing, _line_spacing) ));
+
+
         Points points = surface->expolygon.contour.points;
         Point first = points[0];
         points.push_back(first);
-
 
         std::vector<Point_t> outerBoundary;
         outerBoundary.reserve(points.size() + 1);
@@ -33,7 +53,10 @@ namespace Slic3r {
             Point_t temp = { x,y };
             outerBoundary.push_back(temp);
         }
-        bg::append(b_polygon.outer(), outerBoundary);
+        Polygon_t _poly;
+        bg::append(_poly.outer(), outerBoundary);
+        //bg::append(b_polygon.outer(), outerBoundary);
+        o_polygons = extractPolygonsWithoutThreshold(outerBoundary,_poly);
 
         Polygons inPolygons = surface->expolygon.holes;
         for (Polygon one : inPolygons) {
@@ -46,152 +69,146 @@ namespace Slic3r {
                 double x = two.x();
                 double y = two.y();
                 Point_t temp = { x,y };
-                //BOOST_LOG_TRIVIAL(info) << "Point:( " << x << " ," << y << ")";
                 innerRing.push_back(temp);
             }
             b_polygon.inners().push_back(innerRing);
         }
-        try {
-            generateRings();//生成环集，完成整体的填充
-            formatTree();
+
+        //初始化
+        maxRid = 1;
+        ringNodes.clear();
+        offsetMap.clear();
+        containMap.clear();
+        mergeMap2.clear(); 
+        
+        generateRings();
+        formatTree();
+        std::vector<IdIndex> iis;
+            
+        for (auto& rn : ringNodes) {
+            for (auto& node : rn.second) {
+                //for (size_t i = 0; i < node.ring.size(); i++) {
+                //    size_t j = (i + 1) % node.ring.size();
+                //    Point_t p1 = node.ring[i];  // 顶点 u 的坐标
+                //    Point_t p2 = node.ring[j];  // 顶点 v 的坐标
+                //    polylines_out.push_back({ { p1.x(),p1.y() }, { p2.x() ,p2.y() } });
+                //}
+                if (node.parent == nullptr && !node.isHide) {
+                    iis.push_back(node.id);
+                }
+            }
+        }
+        /*std::vector<IdIndex> visited;
+        dfs(findNode({1,1}), visited);
+        std::reverse(bridges.begin(), bridges.end());
+        for (auto& bridge : bridges) {
+            polylines_out.push_back({ { bridge.from.x(),bridge.from.y() }, 
+                { bridge.to.x() ,bridge.to.y() } });
+            polylines_out.push_back({ { bridge.from2.x(),bridge.from2.y() },
+                { bridge.to2.x() ,bridge.to2.y() } });
+        }*/
+        for (auto& id : iis) {
             std::vector<IdIndex> visited;
-            dfs(findNode({ 1,1 }), visited);
+            bridges.clear();
+            ShapeGraph graph;
+            dfs(findNode(id), visited);
             std::reverse(bridges.begin(), bridges.end());
 
+            std::map<IdIndex, std::vector<Vertex>> ring_vertices;
+            std::vector<std::pair<Vertex, Vertex>> bridge_vertices;
+            std::vector<std::pair<Vertex, Vertex>> bridge_edges;
+
             //形成图
-            for (auto& id : visited) {
-                RingNode& node = findNode(id); //环
-                std::vector<std::pair<Point_t, Point_t>> bridge_pairs; //环上桥接点对
-                std::vector<Point_t> ring_points;
-                std::vector<Vertex> ring_verteies;
-                std::vector<int> _point_index_list;
-                remove_duplicate_points(node.ring); //去掉环中重复的点
-
-                //本环上的桥接点对
-                for (auto& bridge : bridges) {
-                    if (bridge.from_ii == id) {
-                        bridge_pairs.push_back(std::make_pair(bridge.from, bridge.from2));
-                    }
-                    if (bridge.to_ii == id) {
-                        bridge_pairs.push_back(std::make_pair(bridge.to, bridge.to2));
-                    }
-                }
- 
-                //需删除桥接点对的点
-                for (auto& pair : bridge_pairs) {
-                    int h, k;
-                    for (int i=0; i < node.ring.size(); i++) {
-                        if (bg::equals(node.ring[i], pair.first)) {
-                            k = i;
-                        }else if (bg::equals(node.ring[i], pair.second)) {
-                            h = i;
-                        }
-                    }
-                    int start = k < h ? k : h;
-                    int end = k > h ? k : h;
-                    if (end - start < node.ring.size() - end + start) {
-                        for (int j = start + 1; j < end; j++) {
-                            _point_index_list.push_back(j);
-                        }
-                    }
-                    else {
-                        for (int j = 0; j < start; j++) {
-                            _point_index_list.push_back(j);
-                        }
-                        for (int j = end + 1; j < node.ring.size(); j++) {
-                            _point_index_list.push_back(j);
-                        }
-                    }
-                }
-                for (int i = 0; i < node.ring.size(); i++) {
-                    if (!isInVertexList(i, _point_index_list)) {
-                        ring_points.push_back(node.ring[i]);
-                    }
-                }
+            for (auto& id0 : visited) {
+                RingNode& node = findNode(id0); //环
+                std::vector<Vertex> _vertices;
                 //形成顶点
-                for (int i = 0; i < ring_points.size(); i++) {
-                    Vertex v = boost::add_vertex(ring_points[i], graph);
-                    ring_verteies.push_back(v);
+                for (size_t i = 0; i < node.ring.size(); i++) {
+                    Vertex v = boost::add_vertex(node.ring[i], graph);
+                    _vertices.push_back(v);
                 }
-                
-                //形成边
-                for (int i = 0; i < ring_verteies.size() - 1; i++) {
-                    boost::add_edge(ring_verteies[i], ring_verteies[i+1], graph);
-                }
-                boost::add_edge(ring_verteies[ring_verteies.size() - 1], ring_verteies[0], graph);
-
-                //删除桥接点对的边
-                for (auto& pair : bridge_pairs) {
-                    Vertex v_s, v_e;
-                    bool s = false, e = false;
-                    for (Vertex v : ring_verteies) {
-                        if (bg::equals(graph[v], pair.first)) {
-                            v_s = v;
-                            s = true;
-                        }
-                        else if (bg::equals(graph[v], pair.second)) {
-                            v_e = v;
-                            e = true;
-                        }
-                        if (s && e) {
-                            break;
-                        }
-                    }
-                    // 检查边是否存在
-                    std::pair<Edge, bool> edge_pair = boost::edge(v_s, v_e, graph);
-                    if (edge_pair.second) {
-                        // 边存在，删除它
-                        boost::remove_edge(edge_pair.first, graph);
-                    }
-                }
-                RingVertices rv(id, bridge_pairs, ring_verteies);
-                rv_vertices.push_back(rv);
+                ring_vertices[id0] = _vertices;
             }
+            std::pair<VertexIter, VertexIter> vertices = boost::vertices(graph);
 
             //形成桥接边
             for (auto& bridge : bridges) {
-                Vertex v1, v2, v3, v4;
-                bool from = false, to = false;
-                for (auto& rv : rv_vertices) {
-                    if (rv.ii == bridge.from_ii) {
-                        v1 = find_vertex_by_point(rv.ring_vertices, graph, bridge.from);
-                        v3 = find_vertex_by_point(rv.ring_vertices, graph, bridge.from2);
-                        from = true;
+                Vertex from, to, from2, to2;
+                for (VertexIter it = vertices.first; it != vertices.second; ++it) {
+                    Vertex v = *it;
+                    Point_t p = graph[v];
+                    if (equal(p, bridge.from)) {
+                        from = v;
                     }
-                    if (rv.ii == bridge.to_ii) {
-                        v2 = find_vertex_by_point(rv.ring_vertices, graph, bridge.to);
-                        v4 = find_vertex_by_point(rv.ring_vertices, graph, bridge.to2);
-                        to = true;
+                    if (equal(p, bridge.to)) {
+                        to = v;
                     }
-                    if (from && to) {
-                        break;
+                    if (equal(p, bridge.from2)) {
+                        from2 = v;
+                    }
+                    if (equal(p, bridge.to2)) {
+                        to2 = v;
                     }
                 }
-                if (from && to) {
-                    //桥接边
-                    boost::add_edge(v1, v2, graph); //构成边
-                    boost::add_edge(v3, v4, graph); //构成边
+                auto it_from = ring_vertices.find(bridge.from_ii);
+                std::vector<Vertex>& from_vertices = it_from->second;
+                auto it_to = ring_vertices.find(bridge.to_ii);
+                std::vector<Vertex>& to_vertices = it_to->second;
+
+                //删除桥接点对间的顶点
+                erase_between_vertices_ring(graph, from_vertices, from, from2);
+                erase_between_vertices_ring(graph, to_vertices, to, to2);
+
+                bridge_vertices.push_back({ from, from2 });
+                bridge_vertices.push_back({ to, to2 });
+
+                bridge_edges.push_back({ from, to });
+                bridge_edges.push_back({ from2, to2 });
+
+            }
+            //形成边及删除桥接点间的边
+            for (auto& rv : ring_vertices) {
+                size_t count = rv.second.size();
+                for (size_t i = 0; i < count; i++) {
+                    size_t j = (i + 1) % count;
+                    boost::add_edge(rv.second[i], rv.second[j], graph);
                 }
+            }
+            for (auto& pair : bridge_vertices) {
+                remove_edge_between_vertices(graph, pair.first, pair.second);
+            }
+            for (auto& pair : bridge_edges) {
+                boost::add_edge(pair.first, pair.second, graph);
+            }
+
+            std::pair<EdgeIter, EdgeIter> edge_range = boost::edges(graph);
+
+            // 遍历所有边
+            for (EdgeIter ei = edge_range.first; ei != edge_range.second; ++ei) {
+                Edge edge = *ei;  // 获取边描述符
+
+                // 获取边的源顶点和目标顶点
+                Vertex source_vertex = boost::source(edge, graph);
+                Vertex target_vertex = boost::target(edge, graph);
+
+                // 获取顶点属性
+                Point_t source_point = graph[source_vertex];
+                Point_t target_point = graph[target_vertex];
+
+                polylines_out.push_back({ { source_point.x(),source_point.y() },
+                    { target_point.x() ,target_point.y() } });
 
             }
-            removeDegreeOneVertices(graph);
-            Vertex start = rv_vertices[0].ring_vertices[0];
-            std::vector<Vertex> vertices = findEulerPath(graph, start);
+        //    //std::vector<Vertex> v = findEulerCircuit(graph);
+        //    //for (size_t i = 0; i < v.size(); i++) {
+        //    //    size_t j = (i + 1) % v.size();
+        //    //    Point_t p1 = graph[v[i]];  // 顶点 u 的坐标
+        //    //    Point_t p2 = graph[v[j]];  // 顶点 v 的坐标
+        //    //    polylines_out.push_back({ { p1.x(),p1.y() }, { p2.x() ,p2.y() } });
+        //    //}
+        }
+        return polylines_out;
 
-            size_t s = 0;
-            for (; s < vertices.size() - 1; s++) {
-                Point_t p1 = graph[vertices[s]];  // 起点坐标
-                Point_t p2 = graph[vertices[s + 1]];  // 终点坐标
-                b_polylines.push_back({ { p1.x(),p1.y() }, { p2.x() ,p2.y() } });
-            }
-            Point_t p1 = graph[vertices[vertices.size() -1]];  // 起点坐标
-            Point_t p2 = graph[vertices[0]];  // 终点坐标
-            b_polylines.push_back({ { p1.x(),p1.y() }, { p2.x() ,p2.y() } });
-        }
-        catch (const std::exception& e) {
-            std::string error = std::string(e.what());
-        }
-        return b_polylines; // polylines_out; //
     }
 
 
@@ -211,13 +228,13 @@ namespace Slic3r {
 
         // 检查键是否存在
         const auto it = ringNodes.find(node.id.id);
-        if (it != ringNodes.end()) {//键就是Exy中的x，ringnodes是一个map，前面就应该是x，后面是所有x的环
+        if (it != ringNodes.end()) {
             // 键已存在，将新节点添加到对应向量的末尾
             it->second.emplace_back(node);
         }
         else {
             // 键不存在，创建一个新的向量并插入到 map 中
-            ringNodes[node.id.id] = { node };//ringnodes看来是最终的环集
+            ringNodes[node.id.id] = { node };
         }
     }
 
@@ -303,12 +320,111 @@ namespace Slic3r {
         // 提取偏移后的环
         std::vector<Ring> offsetRing;
         for (const auto& poly : result) {
-            if (std::abs(bg::area(poly.outer())) > area_threshold) {
+            if (std::abs(bg::area(poly.outer())) > 0) {
                 offsetRing.emplace_back(poly.outer());
             }
         }
         return offsetRing;
     }
+
+
+    //std::vector<Ring> FillBridge::offsetRing(const Ring& ring,
+    //    double distance,
+    //    double area_threshold /*= 1e-6*/,
+    //    double max_shrink_ratio = 0.3) {
+    //    if (ring.empty()) {
+    //        return {};
+    //    }
+
+    //    // 步骤1：清洁环（去重顶点）
+    //    Ring processed_ring = ring;
+    //    const double eps = 1e-3;
+    //    Ring cleaned_ring;
+    //    for (size_t i = 0; i < processed_ring.size(); ++i) {
+    //        if (cleaned_ring.empty() || bg::distance(processed_ring[i], cleaned_ring.back()) > eps) {
+    //            cleaned_ring.push_back(processed_ring[i]);
+    //        }
+    //    }
+    //    if (cleaned_ring.size() < 4) {
+    //        return {};
+    //    }
+    //    processed_ring.swap(cleaned_ring);
+
+    //    // 步骤2：构建多边形（含外部环，若有内部洞需补充）
+    //    Polygon_t input_poly;
+    //    input_poly.outer() = processed_ring;
+    //    bg::correct(input_poly); // 自动修正环方向、闭合性等
+    //    processed_ring = input_poly.outer();
+
+    //    // 步骤3：计算原始多边形关键参数并校验
+    //    double original_area = bg::area(input_poly);
+    //    double original_perimeter = bg::perimeter(input_poly);
+    //    if (original_area <= area_threshold) {
+    //        return {};
+    //    }
+
+    //    // 步骤4：动态调整偏移距离（内缩时限制最大收缩量）
+    //    double adjusted_distance = distance;
+    //    if (distance < 0) { // 内缩场景
+    //        double original_radius = std::sqrt(original_area / M_PI);
+    //        double max_shrink_by_radius = original_radius * max_shrink_ratio;
+    //        double max_shrink_by_perimeter = original_perimeter * max_shrink_ratio / (2 * M_PI);
+    //        double max_allowed_shrink = std::min(max_shrink_by_radius, max_shrink_by_perimeter);
+
+    //        if (std::abs(distance) > max_allowed_shrink) {
+    //            adjusted_distance = -max_allowed_shrink;
+    //        }
+    //    }
+
+    //    // 步骤5：执行偏移（优化圆角分段数，提升形状平滑度）
+    //    bg::model::multi_polygon<Polygon_t> offset_result;
+    //    bg::strategy::buffer::distance_symmetric<double> distance_strategy(adjusted_distance);
+    //    bg::strategy::buffer::side_straight side_strategy;
+    //    bg::strategy::buffer::join_round join_strategy(16); // 增加分段数，使圆角更平滑
+    //    bg::strategy::buffer::end_round end_strategy(16);
+    //    bg::strategy::buffer::point_circle point_strategy(16);
+    //    bg::buffer(input_poly, offset_result,
+    //        distance_strategy, side_strategy,
+    //        join_strategy, end_strategy, point_strategy);
+
+    //    // 步骤6：过滤并保留有效环（含内部填充环）
+    //    std::vector<Ring> valid_rings;
+    //    for (const auto& poly : offset_result) {
+    //        // 处理外部环
+    //        const Ring& outer_ring = poly.outer();
+    //        double outer_area = std::abs(bg::area(outer_ring));
+    //        if (outer_area < area_threshold) continue;
+
+    //        // 区分内外环的面积逻辑：外扩时面积增大，内缩时面积减小
+    //        bool is_outer_valid = (distance >= 0 && outer_area > original_area) || (distance < 0 && outer_area < original_area);
+    //        if (is_outer_valid) {
+    //            Ring output_ring = outer_ring;
+    //            if (!bg::equals(output_ring.front(), output_ring.back())) {
+    //                output_ring.push_back(output_ring.front());
+    //            }
+    //            valid_rings.push_back(output_ring);
+    //        }
+
+    //        // 处理内部环（偏移后可能成为中间填充环）
+    //        for (const auto& inner_ring : poly.inners()) {
+    //            double inner_area = std::abs(bg::area(inner_ring));
+    //            if (inner_area < area_threshold) continue;
+
+    //            bool is_inner_valid = (distance < 0 && inner_area < original_area) || (distance >= 0 && inner_area > original_area);
+    //            if (is_inner_valid) {
+    //                Ring output_inner = inner_ring;
+    //                if (!bg::equals(output_inner.front(), output_inner.back())) {
+    //                    output_inner.push_back(output_inner.front());
+    //                }
+    //                valid_rings.push_back(output_inner);
+    //            }
+    //        }
+    //    }
+
+    //    return valid_rings;
+    //}
+
+
 
     auto FillBridge::get_bbox(const Polygon_t& poly) {
         bg::model::box<Point_t> bbox;
@@ -404,49 +520,49 @@ namespace Slic3r {
 
         for (size_t i = 0; i < inputs.size(); i++) {
             rtree.insert(std::make_pair(get_bbox(inputs[i].first), i));
-        }//构建rtree
+        }
 
-        std::vector<bool> merged(inputs.size(), false);//初始化标识全部是未被处理
+        std::vector<bool> merged(inputs.size(), false);
         std::vector<std::pair<Polygon_t, std::vector<IdIndex>>> combined_inner_polys;
 
-        // 首先，尝试合并所有明显相交的多边形
+        // 尝试合并所有明显相交的多边形
         for (size_t i = 0; i < inputs.size(); i++) {
-            if (merged[i]) continue;//检查该环是否已经被处理
+            if (merged[i]) continue;
 
             auto current = inputs[i];
-            merged[i] = true;//标记该环已被处理
+            merged[i] = true;
 
             // 查找所有可能相交的多边形
-            std::vector<BoxValue> candidates;//储存查找到的与本多边形相交的多边形
-            auto bbox = get_bbox(current.first);//获取当前多边形边界框
-            rtree.query(bgi::intersects(bbox), std::back_inserter(candidates));//通过rtree查找与当前边界框相交的多边形
+            std::vector<BoxValue> candidates;
+            auto bbox = get_bbox(current.first);
+            rtree.query(bgi::intersects(bbox), std::back_inserter(candidates));
 
             // 尝试合并所有相交的多边形
             for (const auto& candidate : candidates) {
-                size_t j = candidate.second;//获取该多边形在inputs中的索引(第几个)
-                if (merged[j] || i == j) continue;//跳过已经被处理过的环和自己本身
+                size_t j = candidate.second;
+                if (merged[j] || i == j) continue;
 
-                if (polyIntersect(current.first, inputs[j].first)) {//精确检查是否相交
+                if (polyIntersect(current.first, inputs[j].first)) {
                     Polygon_t union_result = safe_union(current.first, inputs[j].first);
-                    //执行多边形合并操作
+
                     // 检查合并后的多边形是否有效
-                    if (bg::is_valid(union_result)) {//检查多边形是否有效
-                        current.first = union_result;//更新当前多边形为合并后的结果
-                        current.second.insert(current.second.end(),//？啥意思？没看懂，应该是合并索引，但是具体怎么合并的？
+                    if (bg::is_valid(union_result)) {
+                        current.first = union_result;
+                        current.second.insert(current.second.end(),
                             inputs[j].second.begin(),
                             inputs[j].second.end());
-                        merged[j] = true;//标记为已处理
+                        merged[j] = true;
                     }
                 }
             }
 
-            combined_inner_polys.push_back(current);//将已经处理的环储存好(未处理的也会存)
+            combined_inner_polys.push_back(current);
         }
 
-        // 第二步：检查合并后的多边形之间是否还有相交
+        //检查合并后的多边形之间是否还有相交
         bool has_intersection = true;
         while (has_intersection) {
-            has_intersection = false;//默认无相交
+            has_intersection = false;
             std::vector<std::pair<Polygon_t, std::vector<IdIndex>>> new_combined;
             std::vector<bool> processed(combined_inner_polys.size(), false);
 
@@ -460,9 +576,9 @@ namespace Slic3r {
                 for (size_t j = i + 1; j < combined_inner_polys.size(); j++) {
                     if (processed[j]) continue;
 
-                    if (polyIntersect(current.first, combined_inner_polys[j].first)) {//检查
+                    if (polyIntersect(current.first, combined_inner_polys[j].first)) {
                         Polygon_t union_result = safe_union(current.first, combined_inner_polys[j].first);
-                        //合并
+
                         if (bg::is_valid(union_result)) {
                             current.first = union_result;
                             current.second.insert(current.second.end(),
@@ -480,7 +596,7 @@ namespace Slic3r {
             combined_inner_polys = std::move(new_combined);
         }
 
-        // 第三步：最终检查，确保没有多边形相交
+        // 最终检查，确保没有多边形相交
         for (size_t i = 0; i < combined_inner_polys.size(); i++) {
             for (size_t j = i + 1; j < combined_inner_polys.size(); j++) {
                 if (polyIntersect(combined_inner_polys[i].first, combined_inner_polys[j].first)) {
@@ -530,31 +646,31 @@ namespace Slic3r {
         std::vector<std::pair<Polygon_t, std::vector<IdIndex>>> inner_polys;
         for (const auto& inner : inners) {
             Polygon_t poly;
-            poly.outer() = inner.ring;//这是内多边形的边框
+            poly.outer() = inner.ring;
             bg::correct(poly);
-            inner_polys.emplace_back(poly, std::vector<IdIndex>{inner.id});//其中包含了一个元素，就是这个多边形的键值
-        }//精简参数，存档的就是多边形、键值。
+            inner_polys.emplace_back(poly, std::vector<IdIndex>{inner.id});
+        }
 
         std::vector<std::pair<Polygon_t, IdIndex>> final_inners;
-        polygonsMerge(inner_polys, final_inners, 1);//合并相交的内多边形，存在final——inners中
+        polygonsMerge(inner_polys, final_inners, 1);
 
         //外多边形与内多边形合并
-        std::vector<IdIndex> result_iis;//用来存储结果
-        for (const auto& outer : outers) {//遍历外多边形
+        std::vector<IdIndex> result_iis;
+        for (const auto& outer : outers) {
             Polygon_t outer_poly;
             outer_poly.outer() = outer.ring;
-            bg::correct(outer_poly);//完成提取外多变形操作
-            std::vector<Polygon_t> intersected_polys;//存放与当前外多边形相交的内多边形
-            std::vector<IdIndex> intersected_iis;//以及其id
+            bg::correct(outer_poly);
+            std::vector<Polygon_t> intersected_polys;
+            std::vector<IdIndex> intersected_iis;
 
             // 与内多边形依次检查交集
-            for (const auto& combined : final_inners) {//遍历刚才处理过的内多边形集合
-                if (polyIntersect(outer_poly, combined.first)) {//检查是否相交
+            for (const auto& combined : final_inners) {
+                if (polyIntersect(outer_poly, combined.first)) {
                     intersected_polys.emplace_back(combined.first);
-                    intersected_iis.emplace_back(combined.second);//加入相交集合
+                    intersected_iis.emplace_back(combined.second);
                 }
                 else {
-                    result_iis.emplace_back(combined.second);//不相交直接加入结果
+                    result_iis.emplace_back(combined.second);
                 }
             }
             //去掉相交的内多边形
@@ -576,14 +692,13 @@ namespace Slic3r {
             if (intersected_polys.size() > 0) {  // 有相交的内多边形
                 MultiPolygon result;
                 MultiPolygon intersected_mp;
-                for (const auto& poly : intersected_polys) {//遍历有相交的内多边形
-                    intersected_mp.push_back(poly);//存入临时内存
+                for (const auto& poly : intersected_polys) {
+                    intersected_mp.push_back(poly);
                 }
-                bg::difference(outer_poly, intersected_mp, result);//计算外多边形减去所有相交的内多边形的差集
-                //类似于处理内外环互交形成子环的操作，子环存放在result中
+                bg::difference(outer_poly, intersected_mp, result);
                 for (const auto& poly : result) {
-                    Ring _ring = bg::exterior_ring(poly);//获取计算的差集的外环（还是以多边形进行操作）
-                    if (bg::area(_ring) > area_threshold) {//检测新环面积是否过小，不是很小再进行下一步操作
+                    Ring _ring = bg::exterior_ring(poly);
+                    if (bg::area(_ring) > area_threshold) {
                         RingNode node = formatNode(++maxRid, 1, _ring, -1);
                         addNode(node);
                         IdIndex _ii(node.id.id, 1);
@@ -622,20 +737,20 @@ namespace Slic3r {
 
     //生成环集
     void FillBridge::generateRings() {
-
-        std::vector<RingNode> nodeHandles;//记录未处理的环集
-
-        Ring ring = bg::exterior_ring(b_polygon);//取出外环并修正
-        bg::correct(ring);
-        RingNode node = formatNode(maxRid++, 1, ring, -1);//将外环包装为node对象格式，添加对应参数，maxrid是1
-        nodeHandles.emplace_back(node);//将外环放到nodehandles中
-        addNode(node);
-
-        for (auto& inner : b_polygon.inners()) {//取出内环并修正
+        std::vector<RingNode> nodeHandles;
+       
+        for (auto& poly : o_polygons) {
+            Ring ring = bg::exterior_ring(poly);
+            bg::correct(ring);
+            RingNode node = formatNode(maxRid++, 1, ring, -1);
+            nodeHandles.emplace_back(node);
+            addNode(node);
+        }
+         for (auto& inner : b_polygon.inners()) {
             bg::correct(inner);
             RingNode node = formatNode(maxRid++, 1, inner, 1);
             nodeHandles.emplace_back(node);
-            addNode(node);//目的同外环
+            addNode(node);
         }
         double t = 1;
         //遍历当前用于判断互交的节点集
@@ -643,7 +758,7 @@ namespace Slic3r {
             std::vector<RingNode> outers;
             std::vector<RingNode> inners;
             for (const auto& rn : nodeHandles) {
-                if (rn.orientation == -1) {//通过方向判断nodehandles中的单个环应该添加到outers中还是inners中
+                if (rn.orientation == -1) {
                     outers.emplace_back(rn);
                 }
                 else {
@@ -653,8 +768,8 @@ namespace Slic3r {
             std::vector<RingNode> nodes = compute_complex_polygon_merge(
                 outers, inners);
             std::vector<RingNode> offsetNodes;
-       
-			double offset = curr_print_config ? (curr_print_config->continuous_fiber_spacing) * 100000 : 80000;
+            
+            offset = curr_print_config ? (curr_print_config->continuous_fiber_spacing) * 100000 : 80000;
             //偏移
             for (auto node : nodes) {
                 std::vector<Ring> ring0 = offsetRing(node.ring, static_cast<double>(node.orientation) * offset * t, area_threshold);
@@ -741,13 +856,14 @@ namespace Slic3r {
                     it2.children.emplace_back(it1);
                 }
             }
-        }//处理分裂的父子关系
+        }
         for (auto& map : containMap) {
             RingNode& it1 = findNode(map.ii1); //内
             RingNode& it2 = findNode(map.ii2);  //外
             it2.children.insert(it2.children.end(), it1.children.begin(), it1.children.end());
             it1.isHide = true;
-        }//处理包含的父子关系
+            it1.parent = nullptr;
+        }
         for (auto& map : mergeMap2) {
             if (map.outer_ii.id == 0 && map.outer_ii.index == 0) {  //内多边形合并
                 for (const auto& merged : map.merged_iis) {
@@ -756,6 +872,7 @@ namespace Slic3r {
                         RingNode& inner_rn = findNode(inner_ii);
                         merge_rn.children.insert(merge_rn.children.end(),
                             inner_rn.children.begin(), inner_rn.children.end());
+                        inner_rn.isHide = true;
                     }
                 }
             }
@@ -763,10 +880,10 @@ namespace Slic3r {
                 RingNode& outer = findNode(map.outer_ii);
                 for (const auto& merged : map.merged_iis) {
                     RingNode& merge_rn = findNode(merged);
-                    size_t size = ringNodes.size();
 
                     outer.parent->children.emplace_back(merge_rn);
                     merge_rn.parent = outer.parent;
+                    outer.isHide = true;
                     IdIndex _ii = outer.id;
                     //将outer从父节点的子节点集中移除
                     outer.parent->children.erase(std::remove_if(outer.parent->children.begin(), outer.parent->children.end(),
@@ -777,6 +894,7 @@ namespace Slic3r {
                         RingNode& inner_rn = findNode(inner_ii);
                         merge_rn.children.insert(merge_rn.children.end(),
                             inner_rn.children.begin(), inner_rn.children.end());
+                        inner_rn.isHide = true;
                     }
                 }
 
@@ -823,7 +941,7 @@ namespace Slic3r {
         double t = ((x - x1) * dx + (y - y1) * dy) / (dx * dx + dy * dy);
 
         // 限制 t 在 [0,1] 范围内，确保投影点在线段上
-        t = std::max<double>(0.0, std::min<double>(1.0, t));
+        t = std::max(0.0, std::min(1.0, t));
 
         // 计算投影点坐标
         return Point_t(bg::get<0>(seg_start) + t * dx,
@@ -932,238 +1050,292 @@ namespace Slic3r {
     }
 
 
-    void FillBridge::handleBridge(IdIndex o_ii, IdIndex i_ii)
-    {   //判断环上是否存在桥接
-        for (auto& b : bridges) {
-            if (b.to_ii == i_ii) {
-                return;
-            }
-        }
-        RingNode& inner = findNode(i_ii);
-        RingNode& outer = findNode(o_ii);
+    //void FillBridge::handleBridge(IdIndex o_ii, IdIndex i_ii)
+    //{   //判断环上是否存在桥接
+    //    for (auto& b : bridges) {
+    //        if ((b.to_ii == i_ii && b.from_ii == o_ii)
+    //        || (b.to_ii == o_ii && b.from_ii == i_ii)){
+    //            return;
+    //        }
+    //    }
+    //    RingNode& inner = findNode(i_ii);
+    //    RingNode& outer = findNode(o_ii);
 
-        double _offset = curr_print_config ? (curr_print_config->continuous_fiber_spacing) * 100000 : 80000;
-        Point_t p0, p1, p2, p3;
-        size_t p0_index = 0, p1_index = 0, p2_index = 0, p3_index = 0, _index = 0;
-        double perimeter = 0;
-        //内环所有边的中点（降序）及周长
-        std::vector<MidPoints> points = find_mid_points_on_ring(inner.ring, perimeter);
-        if (bridges.size() == 0) {
-            p0 = points[0].mid_point;
-            p0_index = points[0].index;
+    //    double _offset = offset;
+    //    Point_t p0, p1, p2, p3;
+    //    size_t p0_index = 0, p1_index = 0, p2_index = 0, p3_index = 0, _index = 0;
+    //    double perimeter = 0;
+    //    //内环所有边的中点（降序）及周长
+    //    std::vector<MidPoints> points = find_mid_points_on_ring(inner.ring, perimeter);
+    //    if (bridges.size() == 0) {
+    //        p0 = points[0].mid_point;
+    //        p0_index = points[0].index;
+    //    }
+    //    else {
+    //        BridgeMap bridge = bridges.back();
+    //        size_t _index = findPointIndex(inner.ring, bridge.from);
+    //        find_further_point(points, bridge.from, _index, p0, p0_index);
+    //    }
+    //    
+    //    bool findBridge = false;
+    //    double total_len = 0;
+    //    int idx = 0;
+    //    const double min_distance = 0.95 * _offset; // 最小距离阈值
+    //    const int max_attempts = 200; // 最大尝试次数限制
+    //    int attempt_count = 0;
+
+    //    while (!findBridge && attempt_count < max_attempts) {
+    //        attempt_count++;
+
+    //        p1 = find_point_at_distance_clockwise(inner.ring, p0, p0_index, _offset, p1_index);
+    //        //得到离内环p0点最近的外环点p2
+    //        p2 = find_closest_point_on_ring_edges(outer.ring, p0, p2_index);
+    //        p3 = find_closest_point_on_ring_edges(outer.ring, p1, p3_index);
+    //        total_len += _offset;
+
+    //        // 检查点对距离是否过近
+    //        if (bg::distance(p0, p1) < min_distance 
+    //            || bg::distance(p2, p3) < min_distance
+    //            || bg::distance(p3, p2) < min_distance
+    //            ) {
+    //            if (total_len > perimeter) {
+    //                //_offset *= 0.9;
+    //                total_len = 0;
+    //                idx = (idx + 1) % points.size();
+    //                p0 = points[idx].mid_point;
+    //                p0_index = points[idx].index;
+    //            }
+    //            else {
+    //                p0 = p1;
+    //                p0_index = p1_index;
+    //            }
+    //            continue;
+    //        }
+
+    //        Segment seg1(p2, p1), seg2(p3, p0), seg3(p2, p0), seg4(p3, p1);
+    //        std::vector<Point_t> temp, temp1;
+    //        bg::intersection(seg1, seg2, temp);
+    //        bg::intersection(seg3, seg4, temp1);
+    //        if (temp.empty() || temp.size() > 1) {
+    //            // 处理无交点情况
+    //            if (total_len > perimeter) {
+    //                _offset *= 0.9;
+    //                total_len = 0;
+    //                idx = (idx + 1) % points.size();
+    //                p0 = points[idx].mid_point;
+    //                p0_index = points[idx].index;
+    //            }
+    //            else {
+    //                p0 = p1;
+    //                p0_index = p1_index;
+    //            }
+    //            continue;
+    //        }
+
+    //         // 验证桥接线段长度
+    //        if (bg::distance(p1, p2) > 1.5 * _offset || bg::distance(p0, p3) > 1.5 * _offset) {
+    //            // 处理过长线段
+    //            if (total_len > perimeter) {
+    //                _offset *= 0.9;
+    //                total_len = 0;
+    //                idx = (idx + 1) % points.size();
+    //                p0 = points[idx].mid_point;
+    //                p0_index = points[idx].index;
+    //            }
+    //            else {
+    //                p0 = p1;
+    //                p0_index = p1_index;
+    //            }
+    //            continue;
+    //        }
+    //        // 检查新桥接是否与已有桥接交叉
+    //        bool crossesExisting = false;
+    //        for (const auto& existing_bridge : bridges) { 
+    //            // 检查新桥接线段是否与已有桥接线段相交
+    //            if (bg::distance(p0, existing_bridge.from) < _offset 
+    //                || bg::distance(p1, existing_bridge.from2) < _offset
+    //                || bg::distance(p0, existing_bridge.from2) < _offset
+    //                || bg::distance(p1, existing_bridge.from) < _offset
+    //                ) {
+    //                crossesExisting = true;
+    //                break;
+    //            }
+    //        }
+
+    //        if (crossesExisting) {
+    //            // 如果与已有桥接交叉，尝试调整位置
+    //            if (total_len > perimeter) {
+    //                _offset *= 0.9;
+    //                total_len = 0;
+    //                idx = (idx + 1) % points.size();
+    //                p0 = points[idx].mid_point;
+    //                p0_index = points[idx].index;
+    //            }
+    //            else {
+    //                p0 = p1;
+    //                p0_index = p1_index;
+    //            }
+    //            continue;
+    //        }
+    //        insertPointIntoRing(inner.ring, p0);
+    //        insertPointIntoRing(inner.ring, p1);
+    //        insertPointIntoRing(outer.ring, p2);
+    //        insertPointIntoRing(outer.ring, p3);
+
+    //        bridges.emplace_back(p2, p1, p3, p0, o_ii, i_ii);
+    //        findBridge = true;
+    //    }
+    //    if (attempt_count >= max_attempts) {
+    //        // 处理无法找到合适桥接的情况
+    //        std::cout << "Warning: Could not find non-crossing bridge after "
+    //            << max_attempts << " attempts." << std::endl;
+    //    }
+    //}
+
+
+void FillBridge::handleBridge(IdIndex o_ii, IdIndex i_ii) {
+    // 检查是否已存在相同桥接，存在则直接返回
+    for (const auto& b : bridges) {
+        if ((b.to_ii == i_ii && b.from_ii == o_ii) || (b.to_ii == o_ii && b.from_ii == i_ii)) {
+            return;
+        }
+    }
+
+    RingNode& inner = findNode(i_ii);
+    RingNode& outer = findNode(o_ii);
+
+    // 计算内环中点及周长，同时计算内环到外环的平均距离
+    double perimeter = 0;
+    std::vector<MidPoints> inner_mid_points = find_mid_points_on_ring(inner.ring, perimeter);
+    if (inner_mid_points.empty() || perimeter <= 0) { // 异常处理：内环无有效点
+        return;
+    }
+
+    // 计算内环中点到外环的平均距离（环间平均距离）
+    double total_ring_dist = 0.0;
+    int valid_points = 0;
+    for (const auto& mid : inner_mid_points) {
+        size_t dummy_idx;
+        Point_t closest_outer = find_closest_point_on_ring_edges(outer.ring, mid.mid_point, dummy_idx);
+        double dist = bg::distance(mid.mid_point, closest_outer);
+        if (dist > 1e-6) { 
+            total_ring_dist += dist;
+            valid_points++;
+        }
+    }
+    if (valid_points == 0) { 
+        std::cout << "Warning: No valid distance between inner and outer rings." << std::endl;
+        return;
+    }
+
+    offset = curr_print_config ? (curr_print_config->continuous_fiber_spacing) * 100000 : 80000;
+    double _avg_ring_dist = total_ring_dist / valid_points; // 环间平均距离（核心基准）
+    if (_avg_ring_dist > 1.5 * offset) {
+        _avg_ring_dist = 1.5 * offset;
+    }
+
+    // 初始化参数
+    Point_t p0, p1, p2, p3;
+    size_t p0_idx = 0, p1_idx = 0, p2_idx = 0, p3_idx = 0;
+    double total_len = 0;
+    int start_idx = 0;
+    const int max_attempts = 300;
+    int attempt_count = 0;
+    bool find_bridge = false;
+
+    // 初始化p0（首次或基于最后一个桥接）
+    if (bridges.empty()) {
+        p0 = inner_mid_points[0].mid_point;
+        p0_idx = inner_mid_points[0].index;
+    }
+    else {
+        const BridgeMap& last_bridge = bridges.back();
+        size_t last_idx = findPointIndex(inner.ring, last_bridge.from);
+        find_further_point(inner_mid_points, last_bridge.from, last_idx, p0, p0_idx);
+    }
+
+    // 辅助函数：调整p0位置和基准距离
+    auto adjust_params = [&]() {
+        if (total_len > perimeter) {
+            _avg_ring_dist *= 0.9; // 多次尝试失败后，缩小环间基准距离
+            total_len = 0;
+            start_idx = (start_idx + 1) % inner_mid_points.size();
+            p0 = inner_mid_points[start_idx].mid_point;
+            p0_idx = inner_mid_points[start_idx].index;
         }
         else {
-            BridgeMap bridge = bridges.back();
-            size_t _index = findPointIndex(inner.ring, bridge.from);
-            find_further_point(points, bridge.from, _index, p0, p0_index);
+            p0 = p1;
+            p0_idx = p1_idx;
         }
-        
-        bool findBridge = false;
-        double total_len = 0;
-        int idx = 0;
-        const double min_distance = 0.95 * _offset; // 最小距离阈值
-        const int max_attempts = 200; // 最大尝试次数限制
-        int attempt_count = 0;
+     };
 
-        while (!findBridge && attempt_count < max_attempts) {
-            attempt_count++;
+    // 核心桥接逻辑（基于环间平均距离）
+    while (!find_bridge && attempt_count < max_attempts) {
+        attempt_count++;
 
-            p1 = find_point_at_distance_clockwise(inner.ring, p0, p0_index, _offset, p1_index);
-            //得到离内环p0点最近的外环点p2
-            p2 = find_closest_point_on_ring_edges(outer.ring, p0, p2_index);
-            p3 = find_closest_point_on_ring_edges(outer.ring, p1, p3_index);
-            total_len += _offset;
+        // 在内环上按环间平均距离找p1（顺时针方向）
+        p1 = find_point_at_distance_clockwise(inner.ring, p0, p0_idx, _avg_ring_dist, p1_idx);
+        // 找外环上与p0、p1最近的点p2、p3
+        p2 = find_closest_point_on_ring_edges(outer.ring, p0, p2_idx);
+        p3 = find_closest_point_on_ring_edges(outer.ring, p1, p3_idx);
+        total_len += _avg_ring_dist;
 
-            // 检查点对距离是否过近
-            if (bg::distance(p0, p1) < min_distance 
-                || bg::distance(p2, p3) < min_distance
-                || bg::distance(p3, p2) < min_distance
-                ) {
-                if (total_len > perimeter) {
-                    //_offset *= 0.9;
-                    total_len = 0;
-                    idx = (idx + 1) % points.size();
-                    p0 = points[idx].mid_point;
-                    p0_index = points[idx].index;
-                }
-                else {
-                    p0 = p1;
-                    p0_index = p1_index;
-                }
-                continue;
-            }
-
-            Segment seg1(p2, p1), seg2(p3, p0), seg3(p2, p0), seg4(p3, p1);
-            std::vector<Point_t> temp, temp1;
-            bg::intersection(seg1, seg2, temp);
-            bg::intersection(seg3, seg4, temp1);
-            if (temp.empty() || temp.size() > 1) {
-                // 处理无交点情况
-                if (total_len > perimeter) {
-                    _offset *= 0.9;
-                    total_len = 0;
-                    idx = (idx + 1) % points.size();
-                    p0 = points[idx].mid_point;
-                    p0_index = points[idx].index;
-                }
-                else {
-                    p0 = p1;
-                    p0_index = p1_index;
-                }
-                continue;
-            }
-
-             // 验证桥接线段长度
-            if (bg::distance(p1, p2) > 1.5 * _offset || bg::distance(p0, p3) > 1.5 * _offset) {
-                // 处理过长线段
-                if (total_len > perimeter) {
-                    _offset *= 0.9;
-                    total_len = 0;
-                    idx = (idx + 1) % points.size();
-                    p0 = points[idx].mid_point;
-                    p0_index = points[idx].index;
-                }
-                else {
-                    p0 = p1;
-                    p0_index = p1_index;
-                }
-                continue;
-            }
-            // 检查新桥接是否与已有桥接交叉
-            bool crossesExisting = false;
-            for (const auto& existing_bridge : bridges) { 
-                // 检查新桥接线段是否与已有桥接线段相交
-                if (bg::distance(p0, existing_bridge.from) < _offset 
-                    || bg::distance(p1, existing_bridge.from2) < _offset
-                    || bg::distance(p0, existing_bridge.from2) < _offset
-                    || bg::distance(p1, existing_bridge.from) < _offset
-                    ) {
-                    crossesExisting = true;
-                    break;
-                }
-            }
-
-            if (crossesExisting) {
-                // 如果与已有桥接交叉，尝试调整位置
-                if (total_len > perimeter) {
-                    _offset *= 0.9;
-                    total_len = 0;
-                    idx = (idx + 1) % points.size();
-                    p0 = points[idx].mid_point;
-                    p0_index = points[idx].index;
-                }
-                else {
-                    p0 = p1;
-                    p0_index = p1_index;
-                }
-                continue;
-            }
-            //// 插入点并记录桥接
-            if (p0_index < p1_index) {
-                insert_point_on_ring(inner.ring, p0, p0_index);
-                insert_point_on_ring(inner.ring, p1, p1_index);
-            }
-            else {
-                insert_point_on_ring(inner.ring, p1, p1_index);
-                insert_point_on_ring(inner.ring, p0, p0_index);
-            }
-            if (p2_index < p3_index) {
-                insert_point_on_ring(outer.ring, p2, p2_index);
-                insert_point_on_ring(outer.ring, p3, p3_index);
-            }
-            else {
-                insert_point_on_ring(outer.ring, p3, p3_index);
-                insert_point_on_ring(outer.ring, p2, p2_index);
-            }
-            /*insertPointIntoRing(inner.ring, p0);
-            insertPointIntoRing(inner.ring, p1);
-            insertPointIntoRing(outer.ring, p2);
-            insertPointIntoRing(outer.ring, p3);*/
-
-            bridges.emplace_back(p2, p1, p3, p0, o_ii, i_ii);
-            findBridge = true;
+        // 检查点对距离是否过近（基于环间平均距离的95%）
+        const double min_dist = 0.95 * _avg_ring_dist;
+        if (bg::distance(p0, p1) < min_dist || bg::distance(p2, p3) < min_dist) {
+            adjust_params();
+            continue;
         }
-        if (attempt_count >= max_attempts) {
-            // 处理无法找到合适桥接的情况
-            std::cout << "Warning: Could not find non-crossing bridge after "
-                << max_attempts << " attempts." << std::endl;
-        }
-    }
 
-
-    int FillBridge::findIndex(std::vector<Point_t> points, const Point_t& p0) {
-        for (int i = 0; i < points.size(); ++i) {
-            if (equal(points[i], p0)) {
-                return static_cast<int>(i);
-            }
+        // 检查桥接线段是否相交（seg1: p2-p1 与 seg2: p3-p0）
+        Segment seg1(p2, p1), seg2(p3, p0);
+        std::vector<Point_t> intersections;
+        bg::intersection(seg1, seg2, intersections);
+        if (intersections.empty() || intersections.size() > 1) { // 无交点或多交点（无效）
+            adjust_params();
+            continue;
         }
-        return -1; // 未找到
-    }
 
+        // 检查桥接长度是否过长（不超过环间平均距离的1.5倍）
+        const double max_len = 1.5 * _avg_ring_dist;
+        if (bg::distance(p1, p2) > max_len || bg::distance(p0, p3) > max_len) {
+            adjust_params();
+            continue;
+        }
 
-     //递归遍历环
-    void FillBridge::traverseRing(
-        RingNode& node,
-        Point_t& start,
-        Point_t& end,
-        bool isOutermostLayer) {
-
-        int size = node.ring.size();
-        int s_index = findPointIndex(node.ring, start);
-        int e_index = findPointIndex(node.ring, end);
-        std::vector<Point_t> c_points;
-        std::vector<Point_t> cc_points;
-        std::vector<Point_t> points;
-        for (int i = s_index; !equal(node.ring[i], end); i = (i + 1) % size) {
-            c_points.emplace_back(node.ring[i]);
-        }
-        c_points.emplace_back(end);
-        for (int i = s_index; !equal(node.ring[i], end); i = (i - 1 + size) % size) {
-            cc_points.emplace_back(node.ring[i]);
-        }
-        cc_points.emplace_back(end);
-
-        if (cc_points.size() > c_points.size()) {
-            points.assign(cc_points.begin(), cc_points.end());
-        }
-        else
-        {
-            points.assign(c_points.begin(), c_points.end());
-        }
-        int index = 0;
-        do {
-            path.emplace_back(points[index]);
-            BridgeMap* bridge = nullptr;
-            //判断该点是否为桥接点
-            for (auto& bm : bridges) {
-                if (equal(bm.from, points[index]) || equal(bm.from2, points[index])) {
-                    bridge = &bm;
-                    break;
-                }
-            }
-            if (bridge != nullptr) {
-                RingNode& rn = findNode(bridge->to_ii); //to 环
-                if (equal(bridge->from, points[index])) {
-                    traverseRing(rn, bridge->to, bridge->to2, false);
-                    index = findIndex(points, bridge->from2);
-                }
-                else if (equal(bridge->from2, points[index])) {
-                    traverseRing(rn, bridge->to2, bridge->to, false);
-                    index = findIndex(points, bridge->from);
-                }
-                if (index == -1) {
-                    std::cout << bridge->from.x() << "," << bridge->from.y() << std::endl;
-                    break;
-                }
-                path.emplace_back(points[index]);
-            }
-            index += isOutermostLayer ? -1 : 1;
-            // 额外检查：防止index溢出导致死循环
-            if (index > points.size() || index < 0) {
+        // 检查与已有桥接是否过近（距离小于环间平均距离）
+        bool too_close = false;
+        for (const auto& existing : bridges) {
+            if (bg::distance(p0, existing.from) < _avg_ring_dist ||
+                bg::distance(p1, existing.from2) < _avg_ring_dist ||
+                bg::distance(p0, existing.from2) < _avg_ring_dist ||
+                bg::distance(p1, existing.from) < _avg_ring_dist) {
+                too_close = true;
                 break;
             }
-        } while (index > 0 && index < points.size());
+        }
+        if (too_close) {
+            adjust_params();
+            continue;
+        }
+
+        // 插入点并添加桥接
+        insertPointIntoRing(inner.ring, p0);
+        insertPointIntoRing(inner.ring, p1);
+        insertPointIntoRing(outer.ring, p2);
+        insertPointIntoRing(outer.ring, p3);
+
+        bridges.emplace_back(p2, p1, p3, p0, o_ii, i_ii);
+        find_bridge = true;
     }
+
+    if (!find_bridge) {
+        std::cout << "Warning: Could not find non-crossing bridge after "
+            << max_attempts << " attempts." << std::endl;
+    }
+}
+
+
 } // namespace Slic3r
 
 

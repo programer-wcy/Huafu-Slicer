@@ -13670,11 +13670,11 @@ void Plater::export_gcode(bool prefer_removable)
     //std::this_thread::sleep_for(std::chrono::seconds(3));
     std::ifstream inFile(copy_file);
     std::ofstream tempFile(temp_file);
-    double defule_distance = 30; //by wangcy: 提前挤出距离
-    double defule_distance_for_out = 45; //by wangcy: 提前切断距离
+    double defule_distance = 30; //by wangcy: 提前切断距离
+    double defule_distance_for_out = 45; //by wangcy: 提前挤出距离
     //---------------added by wangcy -------------------
-    defule_distance = p->background_process.fff_print()->config().extrusion_length_before_print;
-    defule_distance_for_out = p->background_process.fff_print()->config().retraction_length_before_wipe;
+    defule_distance_for_out = p->background_process.fff_print()->config().extrusion_length_before_print;
+    defule_distance = p->background_process.fff_print()->config().retraction_length_before_wipe;
     //--------------- end adding -----------------------
     double total_length = defule_distance * 1000;
     std::string line;

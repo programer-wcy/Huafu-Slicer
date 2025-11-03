@@ -369,7 +369,9 @@ public:
         int logo_width = FromDIP(122 * m_scale);
         wxBitmap logo_bmp = *bmp_cache.load_png("huafu_logo", logo_size, logo_size);
         int logo_y = top_margin + title_rect.GetHeight() + logo_margin;
-        memDc.DrawBitmap(logo_bmp, (width - logo_width) / 2, logo_y, true);
+
+        int logo_actual_width = logo_bmp.GetWidth();
+        memDc.DrawBitmap(logo_bmp, (width - logo_actual_width) / 2, logo_y, true);
 
         // calculate position for the dynamic text
         int text_margin = FromDIP(80 * m_scale);
@@ -457,11 +459,10 @@ private:
         void init(wxFont init_font)
         {
             // title
-            title = wxGetApp().is_editor() ? _L("DLUT") : GCODEVIEWER_APP_NAME;
+            title = wxGetApp().is_editor() ? _L("HUAFU Slicer") : GCODEVIEWER_APP_NAME;
 
             // dynamically get the version to display
-            //version = _L("V") + " " + GUI_App::format_display_version();
-            version = "";
+            version = _L("V") + " " + GUI_App::format_display_version();
 
             // credits infornation
             credits = "";
@@ -5420,7 +5421,7 @@ std::string GUI_App::format_display_version()
 {
     if (!version_display.empty()) return version_display;
 
-    auto version_text = std::string(SLIC3R_VERSION);
+    auto version_text = std::string(HUAFU_SLICER_VERSION);
     int len = version_text.length();
     for (int i = 0, j = 0; i < len; ++i) {
         if (!(version_text[i] == '0' && j == 0))

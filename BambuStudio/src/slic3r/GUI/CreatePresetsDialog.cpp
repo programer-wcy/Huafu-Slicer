@@ -3897,6 +3897,10 @@ void ExportConfigsDialog::select_curr_radiobox(std::vector<std::pair<RadioBox *,
                     std::string preset_name = preset.first;
                     //printer preset mast have user's filament or process preset or printer preset is user preset
                     if (m_filament_presets.find(preset_name) == m_filament_presets.end() && m_process_presets.find(preset_name) == m_process_presets.end() && preset.second->is_system) continue;
+                    // ---- added by wangcy ---------------------
+                    // eliminate Bambu Printers
+                    if (preset.second->is_system) continue;
+                    // ------ end adding -------------------------
                     wxString printer_name = wxString::FromUTF8(preset_name);
                     m_preset_sizer->Add(create_checkbox(m_presets_window, preset.second, printer_name, m_preset), 0, wxEXPAND | wxTOP | wxLEFT | wxRIGHT, FromDIP(5));
                 }
@@ -4308,7 +4312,7 @@ wxBoxSizer *ExportConfigsDialog::create_button_item(wxWindow* parent)
     wxBoxSizer *bSizer_button = new wxBoxSizer(wxHORIZONTAL);
     bSizer_button->Add(0, 0, 1, wxEXPAND, 0);
 
-    StateColor btn_bg_green(std::pair<wxColour, int>(wxColour(27, 136, 68), StateColor::Pressed), std::pair<wxColour, int>(wxColour(61, 203, 115), StateColor::Hovered),
+    StateColor btn_bg_green(std::pair<wxColour, int>(wxColour(80, 128, 173), StateColor::Pressed), std::pair<wxColour, int>(wxColour(87, 139, 189), StateColor::Hovered),
                             std::pair<wxColour, int>(wxColour(0, 90, 181), StateColor::Normal));
 
     m_button_ok = new Button(this, _L("OK"));

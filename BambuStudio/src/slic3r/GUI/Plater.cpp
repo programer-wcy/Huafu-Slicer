@@ -13663,11 +13663,15 @@ void Plater::export_gcode(bool prefer_removable)
     temp_file = temp_file + ".gcode";
     wxString abc = wxString::FromUTF8(temp_file);
     std::string copy_file = output_path.parent_path().string() + "\\copyFile.gcode";
-    //std::string temp_file = output_path.parent_path().string() + "\\tempFile.gcode";
     temp_file = abc.c_str();
     std::this_thread::sleep_for(std::chrono::seconds(3));
-    fs::copy(output_path, copy_file);
-    //std::this_thread::sleep_for(std::chrono::seconds(3));
+    try {
+        fs::copy(output_path, copy_file);
+    }
+    catch (const fs::filesystem_error& e) {
+        show_error(this, wxString::Format(_L("文件复制失败: %s"), e.what()));
+        return;
+    }
     std::ifstream inFile(copy_file);
     std::ofstream tempFile(temp_file);
     double defule_distance = 30; //by wangcy: 提前切断距离
